@@ -51,6 +51,19 @@ test('MCP server: listTools + three tools over stdio', async (t) => {
     assert.equal(palOut.pal.rank, 480);
     assert.equal(palOut.pal.name, 'Anubis');
     assert.equal(palOut.pal.url, 'https://paldb.cc/Anubis');
+    assert.equal(palOut.pal.breeding.breedableAsResult, true);
+    assert.equal(palOut.pal.breeding.canActAsParent, true);
+
+    const ji = await withTimeout(client.callTool({ name: 'get_pal', arguments: { name: 'Jormuntide Ignis' } }), 10000, 'get_pal ji');
+    const jiOut = JSON.parse(ji.content[0].text);
+    assert.equal(jiOut.pal.breeding.breedableAsResult, false);
+    assert.equal(jiOut.pal.breeding.canActAsParent, true);
+    assert.equal(jiOut.pal.breeding.uniqueCombos.length, 0);
+    assert.equal(jiOut.pal.breeding.obtainedVia.length, 1);
+    assert.deepEqual(
+      [jiOut.pal.breeding.obtainedVia[0].parent1, jiOut.pal.breeding.obtainedVia[0].parent2].sort(),
+      ['Blazehowl', 'Jormuntide'],
+    );
 
     const breed = await withTimeout(
       client.callTool({ name: 'get_breeding_result', arguments: { parent1: 'Lamball', parent2: 'Foxparks' } }),

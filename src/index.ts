@@ -33,19 +33,23 @@ function palSummary(p: PalRecord) {
     stats: p.stats,
     captureRate: p.captureRate,
     rank: p.rank,
-    breedable: p.rankResult,
+    breedableAsResult: p.rankResult,
     boss: p.boss ? true : false,
     url: `https://paldb.cc/${p.slug}`,
   };
 }
 
 function palDetail(p: PalRecord, data: PalworldData) {
+  const nameOf = (code: string) => data.byCodeLookup(code)?.name ?? code;
+  // Unique combos where THIS pal is a parent (the offspring it can create).
   const uniqueCombos = data.dataset.uniqueCombos
     .filter(([a, b]) => a === p.code || b === p.code)
-    .map(([a, b, c]) => ({
-      parent: data.byCodeLookup(a === p.code ? b : a)?.name ?? b,
-      child: data.byCodeLookup(c)?.name ?? c,
-    }));
+    .map(([a, b, c]) => ({ parent: nameOf(a === p.code ? b : a), child: nameOf(c) }));
+  // Unique combos where THIS pal is the child (how it is obtained).
+  const obtainedVia = data.dataset.uniqueCombos
+    .filter(([, , c]) => c === p.code)
+    .map(([a, b]) => ({ parent1: nameOf(a), parent2: nameOf(b) }))
+    .sort((x, y) => x.parent1.localeCompare(y.parent1) || x.parent2.localeCompare(y.parent2));
   return {
     ...palSummary(p),
     friendship: p.friendship,
@@ -53,8 +57,12 @@ function palDetail(p: PalRecord, data: PalworldData) {
     ignoreCombi: p.ignoreCombi,
     breeding: {
       rank: p.rank,
-      breedable: p.rankResult,
+      // Producible by generic rank-math breeding (false = unique-combo/legendary/raid only).
+      breedableAsResult: p.rankResult,
+      // Every pal can be used as a parent — eligibility only restricts who can be a result.
+      canActAsParent: true,
       uniqueCombos: uniqueCombos.sort((x, y) => x.parent.localeCompare(y.parent)),
+      obtainedVia,
     },
   };
 }
@@ -166,7 +174,8 @@ server.registerTool(
   'get_pal',
   {
     title: 'Get pal details',
-    description: 'Full record for one pal: stats, element, capture rate, boss block, breeding rank, eligibility and unique combos it participates in. Accepts exact name, internal code, or a unique substring.',
+    description:
+      'Full record for one pal: stats, element, capture rate, boss block, breeding rank, eligibility, unique combos it participates in as a parent, and how it is obtained (unique combos where it is the child). Accepts exact name, internal code, or a unique substring.',
     inputSchema: { name: z.string().min(1) },
   },
   async ({ name }) => {
