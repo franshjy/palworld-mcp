@@ -1,0 +1,13 @@
+# Build artifacts
+node_modules/
+dist/
+build/
+
+# Logs & env
+*.log
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

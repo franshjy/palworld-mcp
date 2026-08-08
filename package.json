@@ -1,0 +1,33 @@
+{
+  "name": "palworld-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Palworld database queries — pals, stats, breeding. Data sourced from paldb.cc.",
+  "type": "module",
+  "bin": {
+    "palworld-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "refresh": "node scripts/build-dataset.mjs --fetch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2"
+  }
+}

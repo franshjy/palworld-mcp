@@ -1,0 +1,209 @@
+/**
+ * palworld-mcp — MCP server for Palworld database queries.
+ *
+ * Tools:
+ *   - search_pals          text/stat/element filters over the full pal roster
+ *   - get_pal              full record for one pal (stats, breeding data, combos)
+ *   - get_breeding_result  breeding outcome for a parent pair (offline engine)
+ *
+ * All data is served from the shipped dataset (data/dataset.json) — no network.
+ * Override the dataset location with PALWORLD_MCP_DATA.
+ *
+ * Logs go to stderr only: stdout is reserved for the MCP stdio protocol.
+ */
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { z } from 'zod';
+import { loadDataset, PalworldData, type PalRecord } from './dataset.js';
+
+function fail(message: string) {
+  return { content: [{ type: 'text' as const, text: message }], isError: true };
+}
+
+function ok(payload: unknown) {
+  return { content: [{ type: 'text' as const, text: JSON.stringify(payload, null, 2) }] };
+}
+
+function palSummary(p: PalRecord) {
+  return {
+    code: p.code,
+    name: p.name,
+    deck: p.deck,
+    element: p.element,
+    stats: p.stats,
+    captureRate: p.captureRate,
+    rank: p.rank,
+    breedable: p.rankResult,
+    boss: p.boss ? true : false,
+    url: `https://paldb.cc/${p.slug}`,
+  };
+}
+
+function palDetail(p: PalRecord, data: PalworldData) {
+  const uniqueCombos = data.dataset.uniqueCombos
+    .filter(([a, b]) => a === p.code || b === p.code)
+    .map(([a, b, c]) => ({
+      parent: data.byCodeLookup(a === p.code ? b : a)?.name ?? b,
+      child: data.byCodeLookup(c)?.name ?? c,
+    }));
+  return {
+    ...palSummary(p),
+    friendship: p.friendship,
+    maleRatio: p.maleRatio,
+    ignoreCombi: p.ignoreCombi,
+    breeding: {
+      rank: p.rank,
+      breedable: p.rankResult,
+      uniqueCombos: uniqueCombos.sort((x, y) => x.parent.localeCompare(y.parent)),
+    },
+  };
+}
+
+interface RankMathInfo {
+  childRank: number;
+  rankA: number;
+  rankB: number;
+}
+
+interface BreedingToolResult {
+  result?: {
+    kind: string;
+    parents: string[];
+    child: ReturnType<typeof palSummary>;
+    child2?: ReturnType<typeof palSummary>;
+    rankMath?: RankMathInfo;
+    note?: string;
+  };
+  error?: string;
+}
+
+function buildRankMathNote(rm: RankMathInfo | undefined): string {
+  if (!rm) return '';
+  return (
+    `child rank = floor((${rm.rankA} + ${rm.rankB} + 1) / 2) = ${rm.childRank}; ` +
+    `result = nearest eligible pal to rank ${rm.childRank} (ties resolve to the higher rank).`
+  );
+}
+
+function breedResultOf(data: PalworldData, name1: string, name2: string): BreedingToolResult {
+  const a = data.resolve(name1);
+  const b = data.resolve(name2);
+  if (!a.pal || !b.pal) {
+    const missing = !a.pal ? name1 : name2;
+    const matches = (!a.pal ? a : b).matches.map((p) => p.name);
+    return { error: `unknown pal "${missing}"` + (matches.length ? ` — did you mean: ${matches.join(', ')}?` : '') };
+  }
+  const r = data.engine.breed(a.pal.code, b.pal.code);
+  const child = data.byCodeLookup(r.child);
+  if (!child) return { error: `engine returned unknown child code ${r.child}` };
+
+  let note: string | undefined;
+  if (r.kind === 'directional') {
+    const entries = data.dataset.directional[`${a.pal.code < b.pal.code ? a.pal.code + '|' + b.pal.code : b.pal.code + '|' + a.pal.code}`] ?? [];
+    note = entries
+      .map(([m, f, c]) => `${data.byCodeLookup(m)?.name ?? m} (male) + ${data.byCodeLookup(f)?.name ?? f} (female) -> ${data.byCodeLookup(c)?.name ?? c}`)
+      .join('; ') + ' — child depends on which parent is male.';
+  } else if (r.kind === 'unique') {
+    note = 'fixed unique combination (overrides rank math).';
+  } else if (r.kind === 'identity') {
+    note = 'breeding a pal with itself yields the same pal.';
+  } else if (r.rankMath) {
+    note = buildRankMathNote(r.rankMath);
+  }
+
+  return {
+    result: {
+      kind: r.kind,
+      parents: [a.pal.name, b.pal.name],
+      child: palSummary(child),
+      child2: r.child2 ? (data.byCodeLookup(r.child2) ? palSummary(data.byCodeLookup(r.child2)!) : undefined) : undefined,
+      rankMath: r.rankMath,
+      note,
+    },
+    error: undefined,
+  };
+}
+
+let data: PalworldData;
+try {
+  const ds = loadDataset();
+  data = new PalworldData(ds);
+  console.error(`[palworld-mcp] dataset v${ds.schemaVersion} (game ${ds.gameVersion}, built ${ds.generatedAt}): ${ds.pals.length} pals`);
+} catch (e) {
+  console.error(`[palworld-mcp] failed to load dataset: ${(e as Error).message}`);
+  console.error('[palworld-mcp] run "node scripts/build-dataset.mjs" first, or set PALWORLD_MCP_DATA');
+  process.exit(1);
+}
+
+const server = new McpServer({ name: 'palworld-mcp', version: '0.1.0' });
+
+server.registerTool(
+  'search_pals',
+  {
+    title: 'Search pals',
+    description:
+      'Search the Palworld pal roster by name, element, base stats (HP/ATK/DEF), capture rate, boss availability or breedability. All filters are optional and combined with AND.',
+    inputSchema: {
+      query: z.string().optional().describe('Name substring, e.g. "anub"'),
+      element: z.string().optional().describe('Element: Fire, Water, Leaf, Electricity, Ice, Earth, Dark, Dragon, Normal'),
+      minHp: z.number().int().nonnegative().optional(),
+      minAttack: z.number().int().nonnegative().optional(),
+      minDefense: z.number().int().nonnegative().optional(),
+      maxCaptureRate: z.number().positive().optional().describe('Lower capture rate = rarer catch'),
+      bossOnly: z.boolean().optional().describe('Only pals that have an alpha/boss variant'),
+      breedableOnly: z.boolean().optional().describe('Only pals obtainable via standard breeding'),
+      sortBy: z.enum(['name', 'rank', 'attack']).optional().describe('rank: lower = rarer'),
+      limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
+    },
+  },
+  async ({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, sortBy, limit }) => {
+    const pals = data.search({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, sortBy, limit });
+    return ok({ count: pals.length, pals: pals.map(palSummary) });
+  },
+);
+
+server.registerTool(
+  'get_pal',
+  {
+    title: 'Get pal details',
+    description: 'Full record for one pal: stats, element, capture rate, boss block, breeding rank, eligibility and unique combos it participates in. Accepts exact name, internal code, or a unique substring.',
+    inputSchema: { name: z.string().min(1) },
+  },
+  async ({ name }) => {
+    const r = data.resolve(name);
+    if (!r.pal) {
+      return r.matches.length
+        ? fail(`ambiguous "${name}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+        : fail(`unknown pal "${name}"`);
+    }
+    return ok({ found: true, pal: palDetail(r.pal, data) });
+  },
+);
+
+server.registerTool(
+  'get_breeding_result',
+  {
+    title: 'Get breeding result',
+    description:
+      'Compute the offspring of two pals using the offline breeding engine (unique combos, identity, rank math with eligible-pal exclusion and higher-rank tie-break). Returns the child with its stats and a short explanation.',
+    inputSchema: {
+      parent1: z.string().min(1).describe('Parent pal name or code'),
+      parent2: z.string().min(1).describe('Parent pal name or code'),
+    },
+  },
+  async ({ parent1, parent2 }) => {
+    const { result, error } = breedResultOf(data, parent1, parent2);
+    if (error) return fail(error);
+    return ok({ found: true, result });
+  },
+);
+
+const transport = new StdioServerTransport();
+await server.connect(transport);
+
+for (const sig of ['SIGINT', 'SIGTERM'] as const) {
+  process.on(sig, async () => {
+    await server.close();
+    process.exit(0);
+  });
+}

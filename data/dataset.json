@@ -1,0 +1,9777 @@
+{
+ "schemaVersion": 1,
+ "generatedAt": "2026-08-08T15:13:36.313Z",
+ "gameVersion": "1.0",
+ "sources": [
+  {
+   "name": "paldb.cc /json/iv_en.json",
+   "url": "https://paldb.cc/json/iv_en.json",
+   "license": "CC BY-NC-SA (paldb.cc)"
+  },
+  {
+   "name": "paldb.cc /Breeding_Farm",
+   "url": "https://paldb.cc/Breeding_Farm",
+   "license": "CC BY-NC-SA (paldb.cc)"
+  },
+  {
+   "name": "palcalc-tools/palworld-1.0-calculator",
+   "url": "https://github.com/palcalc-tools/palworld-1.0-calculator",
+   "license": "MIT"
+  }
+ ],
+ "pals": [
+  {
+   "code": "YakushimaMonster001",
+   "name": "Green Slime",
+   "slug": "Green_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster001_Blue",
+   "name": "Blue Slime",
+   "slug": "Blue_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster001_Red",
+   "name": "Red Slime",
+   "slug": "Red_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster001_Purple",
+   "name": "Purple Slime",
+   "slug": "Purple_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster001_Pink",
+   "name": "Illuminant Slime",
+   "slug": "Illuminant_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster001_Rainbow",
+   "name": "Rainbow Slime",
+   "slug": "Rainbow_Slime",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 95,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.7,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster002",
+   "name": "Enchanted Sword",
+   "slug": "Enchanted_Sword",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster003",
+   "name": "Cave Bat",
+   "slug": "Cave_Bat",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 75,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaMonster003_Purple",
+   "name": "Illuminant Bat",
+   "slug": "Illuminant_Bat",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.3,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaBoss001",
+   "name": "Eye of Cthulhu",
+   "slug": "Eye_of_Cthulhu",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 125,
+    "attack": 115,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "YakushimaBoss001_Small",
+   "name": "Demon Eye",
+   "slug": "Demon_Eye",
+   "deck": "",
+   "rank": 3100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.1,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 125,
+    "attack": 115,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ChickenPal",
+   "name": "Chikipi",
+   "slug": "Chikipi",
+   "deck": "3",
+   "rank": 3080,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 4.1,
+    "defense": 4.1
+   },
+   "captureRate": 1.5,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 60,
+    "defense": 60,
+    "captureRate": 1.05
+   }
+  },
+  {
+   "code": "Ganesha",
+   "name": "Teafant",
+   "slug": "Teafant",
+   "deck": "11",
+   "rank": 3070,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 60,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 4.1,
+    "defense": 3.7
+   },
+   "captureRate": 1.3,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 60,
+    "defense": 70,
+    "captureRate": 0.91
+   }
+  },
+  {
+   "code": "CuteFox",
+   "name": "Vixy",
+   "slug": "Vixy",
+   "deck": "6",
+   "rank": 3060,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1.3,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.91
+   }
+  },
+  {
+   "code": "SheepBall",
+   "name": "Lamball",
+   "slug": "Lamball",
+   "deck": "1",
+   "rank": 3050,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1.5,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 1.05
+   }
+  },
+  {
+   "code": "Bastet",
+   "name": "Mau",
+   "slug": "Mau",
+   "deck": "27",
+   "rank": 3040,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 60,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 4.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 60,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Hedgehog",
+   "name": "Jolthog",
+   "slug": "Jolthog",
+   "deck": "15",
+   "rank": 3030,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1.2,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.84
+   }
+  },
+  {
+   "code": "Carbunclo",
+   "name": "Lifmunk",
+   "slug": "Lifmunk",
+   "deck": "4",
+   "rank": 3020,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 0.9,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.63
+   }
+  },
+  {
+   "code": "ElecCat",
+   "name": "Sparkit",
+   "slug": "Sparkit",
+   "deck": "42",
+   "rank": 3010,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "NegativeKoala",
+   "name": "Depresso",
+   "slug": "Depresso",
+   "deck": "16",
+   "rank": 3000,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kitsunebi",
+   "name": "Foxparks",
+   "slug": "Foxparks",
+   "deck": "29",
+   "rank": 2990,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "BluePlatypus",
+   "name": "Fuack",
+   "slug": "Fuack",
+   "deck": "5",
+   "rank": 2980,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 80,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.3,
+    "defense": 4.1
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 80,
+    "defense": 60,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "CloverFairy",
+   "name": "Clovee",
+   "slug": "Clovee",
+   "deck": "14",
+   "rank": 2970,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Normal"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 65,
+    "defense": 65
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.9,
+    "defense": 3.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 65,
+    "defense": 65,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Penguin",
+   "name": "Pengullet",
+   "slug": "Pengullet",
+   "deck": "17",
+   "rank": 2960,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water",
+    "Ice"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PlantSlime",
+   "name": "Gumoss",
+   "slug": "Gumoss",
+   "deck": "12",
+   "rank": 2950,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1.3,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.91
+   }
+  },
+  {
+   "code": "WizardOwl",
+   "name": "Hoocrates",
+   "slug": "Hoocrates",
+   "deck": "19",
+   "rank": 2940,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SamuraiDog",
+   "name": "Pupperai",
+   "slug": "Pupperai",
+   "deck": "13",
+   "rank": 2930,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NightFox",
+   "name": "Nox",
+   "slug": "Nox",
+   "deck": "24",
+   "rank": 2920,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DreamDemon",
+   "name": "Daedream",
+   "slug": "Daedream",
+   "deck": "22",
+   "rank": 2910,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 4.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 60,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Monkey",
+   "name": "Tanzee",
+   "slug": "Tanzee",
+   "deck": "23",
+   "rank": 2900,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "WoolFox",
+   "name": "Cremis",
+   "slug": "Cremis",
+   "deck": "8",
+   "rank": 2890,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.5
+   },
+   "captureRate": 1.3,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 75,
+    "captureRate": 0.91
+   }
+  },
+  {
+   "code": "Boar",
+   "name": "Rushoar",
+   "slug": "Rushoar",
+   "deck": "28",
+   "rank": 2880,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlameBambi",
+   "name": "Rooby",
+   "slug": "Rooby",
+   "deck": "26",
+   "rank": 2870,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 70,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.7,
+    "defense": 3.5
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 70,
+    "defense": 75,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "PinkRabbit",
+   "name": "Ribbuny",
+   "slug": "Ribbuny",
+   "deck": "44",
+   "rank": 2860,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 65,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 65,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Hedgehog_Ice",
+   "name": "Jolthog Cryst",
+   "slug": "Jolthog_Cryst",
+   "deck": "15B",
+   "rank": 2850,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MopBaby",
+   "name": "Swee",
+   "slug": "Swee",
+   "deck": "35",
+   "rank": 2840,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 4.1,
+    "defense": 4.1
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 60,
+    "defense": 60,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "Monkey_Fire",
+   "name": "Tanzee Ignis",
+   "slug": "Tanzee_Ignis",
+   "deck": "23B",
+   "rank": 2830,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "SweetsSheep",
+   "name": "Woolipop",
+   "slug": "Woolipop",
+   "deck": "39",
+   "rank": 2820,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kelpie",
+   "name": "Kelpsea",
+   "slug": "Kelpsea",
+   "deck": "43",
+   "rank": 2810,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CowPal",
+   "name": "Mozzarina",
+   "slug": "Mozzarina",
+   "deck": "40",
+   "rank": 2800,
+   "maleRatio": 20,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 50,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 4.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 50,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CuteMole",
+   "name": "Fuddler",
+   "slug": "Fuddler",
+   "deck": "31",
+   "rank": 2790,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 80,
+    "defense": 50
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.3,
+    "defense": 4.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 80,
+    "defense": 50,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WindChimes",
+   "name": "Hangyu",
+   "slug": "Hangyu",
+   "deck": "38",
+   "rank": 2780,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NegativeOctopus",
+   "name": "Killamari",
+   "slug": "Killamari",
+   "deck": "30",
+   "rank": 2770,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Water"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 4.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 60,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PinkCat",
+   "name": "Cattiva",
+   "slug": "Cattiva",
+   "deck": "2",
+   "rank": 2760,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1.5,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 1.05
+   }
+  },
+  {
+   "code": "Bastet_Ice",
+   "name": "Mau Cryst",
+   "slug": "Mau_Cryst",
+   "deck": "27B",
+   "rank": 2750,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 65,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 65,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlyingManta",
+   "name": "Celaray",
+   "slug": "Celaray",
+   "deck": "7",
+   "rank": 2740,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 70,
+    "defense": 80,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "ColorfulBird",
+   "name": "Tocotoco",
+   "slug": "Tocotoco",
+   "deck": "53",
+   "rank": 2730,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Alpaca",
+   "name": "Melpaca",
+   "slug": "Melpaca",
+   "deck": "20",
+   "rank": 2720,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 75,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 3.5,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 75,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Deer",
+   "name": "Eikthyrdeer",
+   "slug": "Eikthyrdeer",
+   "deck": "32",
+   "rank": 2710,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LavaGirl",
+   "name": "Flambelle",
+   "slug": "Flambelle",
+   "deck": "25",
+   "rank": 2700,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 70,
+    "defense": 80,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "LittleBriarRose",
+   "name": "Bristla",
+   "slug": "Bristla",
+   "deck": "60",
+   "rank": 2690,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Garm",
+   "name": "Direhowl",
+   "slug": "Direhowl",
+   "deck": "33",
+   "rank": 2680,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 90,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.9,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 90,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LizardMan",
+   "name": "Leezpunk",
+   "slug": "Leezpunk",
+   "deck": "73",
+   "rank": 2670,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 50
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.3,
+    "defense": 4.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 80,
+    "defense": 50,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerRabbit",
+   "name": "Flopie",
+   "slug": "Flopie",
+   "deck": "77",
+   "rank": 2660,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 65,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 65,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "JellyfishFairy",
+   "name": "Jelliette",
+   "slug": "Jelliette",
+   "deck": "45",
+   "rank": 2650,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 90,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 2.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LizardMan_Fire",
+   "name": "Leezpunk Ignis",
+   "slug": "Leezpunk_Ignis",
+   "deck": "73B",
+   "rank": 2640,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 50
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.3,
+    "defense": 4.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 80,
+    "defense": 50,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LeafMomonga",
+   "name": "Herbil",
+   "slug": "Herbil",
+   "deck": "10",
+   "rank": 2630,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Normal"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 75,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CuteButterfly",
+   "name": "Cinnamoth",
+   "slug": "Cinnamoth",
+   "deck": "61",
+   "rank": 2620,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BerryGoat",
+   "name": "Caprity",
+   "slug": "Caprity",
+   "deck": "34",
+   "rank": 2610,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 70,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 3.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 70,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KendoFrog",
+   "name": "Croajiro",
+   "slug": "Croajiro",
+   "deck": "9",
+   "rank": 2600,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 100,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 100,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "JellyfishGhost",
+   "name": "Jellroy",
+   "slug": "Jellroy",
+   "deck": "46",
+   "rank": 2590,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 75,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 3.5,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 75,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Deer_Ground",
+   "name": "Eikthyrdeer Terra",
+   "slug": "Eikthyrdeer_Terra",
+   "deck": "32B",
+   "rank": 2580,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Eagle",
+   "name": "Galeclaw",
+   "slug": "Galeclaw",
+   "deck": "49",
+   "rank": 2570,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 4.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 60,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HawkBird",
+   "name": "Nitewing",
+   "slug": "Nitewing",
+   "deck": "51",
+   "rank": 2560,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 95,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SharkKid",
+   "name": "Gobfin",
+   "slug": "Gobfin",
+   "deck": "55",
+   "rank": 2550,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NegativeOctopus_Neutral",
+   "name": "Killamari Primo",
+   "slug": "Killamari_Primo",
+   "deck": "30B",
+   "rank": 2540,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal",
+    "Water"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 60,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 4.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 60,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "OctopusGirl",
+   "name": "Gloopie",
+   "slug": "Gloopie",
+   "deck": "48",
+   "rank": 2530,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 85,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 85,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ClioneTwins",
+   "name": "Amione",
+   "slug": "Amione",
+   "deck": "47",
+   "rank": 2520,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 70,
+    "defense": 65
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.7,
+    "defense": 3.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 70,
+    "defense": 65,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WindChimes_Ice",
+   "name": "Hangyu Cryst",
+   "slug": "Hangyu_Cryst",
+   "deck": "38B",
+   "rank": 2510,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kitsunebi_Ice",
+   "name": "Foxparks Cryst",
+   "slug": "Foxparks_Cryst",
+   "deck": "29B",
+   "rank": 2500,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "Penguin_Electric",
+   "name": "Pengullet Lux",
+   "slug": "Pengullet_Lux",
+   "deck": "17B",
+   "rank": 2490,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 0.9,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.63
+   }
+  },
+  {
+   "code": "FluffyBird",
+   "name": "Muffly",
+   "slug": "Muffly",
+   "deck": "59",
+   "rank": 2480,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 80,
+    "defense": 55
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.3,
+    "defense": 4.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 80,
+    "defense": 55,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kelpie_Fire",
+   "name": "Kelpsea Ignis",
+   "slug": "Kelpsea_Ignis",
+   "deck": "43B",
+   "rank": 2470,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PinkRabbit_Grass",
+   "name": "Ribbuny Botan",
+   "slug": "Ribbuny_Botan",
+   "deck": "44B",
+   "rank": 2460,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 65,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 65,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "StuffedShark",
+   "name": "Finsider",
+   "slug": "Finsider",
+   "deck": "88",
+   "rank": 2450,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Serpent",
+   "name": "Surfent",
+   "slug": "Surfent",
+   "deck": "75",
+   "rank": 2440,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SharkKid_Fire",
+   "name": "Gobfin Ignis",
+   "slug": "Gobfin_Ignis",
+   "deck": "55B",
+   "rank": 2430,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CactusDoll",
+   "name": "Needoll",
+   "slug": "Needoll",
+   "deck": "100",
+   "rank": 2420,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "TentacleTurtle",
+   "name": "Turtacle",
+   "slug": "Turtacle",
+   "deck": "37",
+   "rank": 2410,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 75,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.5,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 75,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RaijinDaughter",
+   "name": "Dazzi",
+   "slug": "Dazzi",
+   "deck": "92",
+   "rank": 2400,
+   "maleRatio": 20,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SmallYeti",
+   "name": "Snugloo",
+   "slug": "Snugloo",
+   "deck": "133",
+   "rank": 2390,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 75,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlyingManta_Thunder",
+   "name": "Celaray Lux",
+   "slug": "Celaray_Lux",
+   "deck": "7B",
+   "rank": 2380,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.3
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 75,
+    "defense": 80,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "DarkCrow",
+   "name": "Cawgnito",
+   "slug": "Cawgnito",
+   "deck": "57",
+   "rank": 2370,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 95,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 2.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 95,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ElecPomeranian",
+   "name": "Puffolt",
+   "slug": "Puffolt",
+   "deck": "62",
+   "rank": 2360,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SoldierBee",
+   "name": "Beegarde",
+   "slug": "Beegarde",
+   "deck": "67",
+   "rank": 2350,
+   "maleRatio": 10,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 90,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 90,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CatBat",
+   "name": "Tombat",
+   "slug": "Tombat",
+   "deck": "52",
+   "rank": 2340,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 95,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 95,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WeaselDragon",
+   "name": "Chillet",
+   "slug": "Chillet",
+   "deck": "103",
+   "rank": 2330,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlameBuffalo",
+   "name": "Arsox",
+   "slug": "Arsox",
+   "deck": "58",
+   "rank": 2320,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 95,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.7,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 95,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SmallArmadillo",
+   "name": "Kikit",
+   "slug": "Kikit",
+   "deck": "126",
+   "rank": 2310,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 70,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 70,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BluePlatypus_Fire",
+   "name": "Fuack Ignis",
+   "slug": "Fuack_Ignis",
+   "deck": "5B",
+   "rank": 2300,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 85,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 3.1,
+    "defense": 4.1
+   },
+   "captureRate": 1.1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 72,
+    "attack": 85,
+    "defense": 60,
+    "captureRate": 0.77
+   }
+  },
+  {
+   "code": "LazyCatfish",
+   "name": "Dumud",
+   "slug": "Dumud",
+   "deck": "109",
+   "rank": 2290,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth",
+    "Water"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 70,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 3.7,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 70,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FairyDragon",
+   "name": "Elphidran",
+   "slug": "Elphidran",
+   "deck": "63",
+   "rank": 2280,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 80,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 3.3,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 80,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kirin",
+   "name": "Univolt",
+   "slug": "Univolt",
+   "deck": "54",
+   "rank": 2270,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 0.9,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.63
+   }
+  },
+  {
+   "code": "RobinHood",
+   "name": "Robinquill",
+   "slug": "Robinquill",
+   "deck": "76",
+   "rank": 2260,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostBlackCat",
+   "name": "Wispaw",
+   "slug": "Wispaw",
+   "deck": "50",
+   "rank": 2250,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 95,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 95,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "StuffedShark_Fire",
+   "name": "Finsider Ignis",
+   "slug": "Finsider_Ignis",
+   "deck": "88B",
+   "rank": 2240,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 90,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 2.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GuardianDog",
+   "name": "Yakumo",
+   "slug": "Yakumo",
+   "deck": "127",
+   "rank": 2230,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 85,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 3.1,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 85,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingAlpaca",
+   "name": "Kingpaca",
+   "slug": "Kingpaca",
+   "deck": "21",
+   "rank": 2220,
+   "maleRatio": 90,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FeatherOstrich",
+   "name": "Dazemu",
+   "slug": "Dazemu",
+   "deck": "123",
+   "rank": 2210,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 90,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 90,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MopKing",
+   "name": "Sweepa",
+   "slug": "Sweepa",
+   "deck": "36",
+   "rank": 2150,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 90,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 90,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Gorilla",
+   "name": "Gorirat",
+   "slug": "Gorirat",
+   "deck": "74",
+   "rank": 2140,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 95,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 95,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceCrocodile",
+   "name": "Munchill",
+   "slug": "Munchill",
+   "deck": "86",
+   "rank": 2130,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice",
+    "Water"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 80,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.3,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 80,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NaughtyCat",
+   "name": "Grintale",
+   "slug": "Grintale",
+   "deck": "70",
+   "rank": 2120,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 80,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 3.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 80,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Werewolf",
+   "name": "Loupmoon",
+   "slug": "Loupmoon",
+   "deck": "56",
+   "rank": 2110,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 100,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 100,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerDinosaur",
+   "name": "Dinossom",
+   "slug": "Dinossom",
+   "deck": "84",
+   "rank": 2100,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PinkLizard",
+   "name": "Lovander",
+   "slug": "Lovander",
+   "deck": "69",
+   "rank": 2090,
+   "maleRatio": 30,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 70,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 3.7,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 70,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FoxMage",
+   "name": "Wixen",
+   "slug": "Wixen",
+   "deck": "78",
+   "rank": 2080,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 110,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 110,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CaptainPenguin",
+   "name": "Penking",
+   "slug": "Penking",
+   "deck": "18",
+   "rank": 2070,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water",
+    "Ice"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 95,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.7,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 95,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassPanda",
+   "name": "Mossanda",
+   "slug": "Mossanda",
+   "deck": "102",
+   "rank": 2060,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 90,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 90,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RobinHood_Ground",
+   "name": "Robinquill Terra",
+   "slug": "Robinquill_Terra",
+   "deck": "76B",
+   "rank": 2050,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CatMage",
+   "name": "Katress",
+   "slug": "Katress",
+   "deck": "79",
+   "rank": 2040,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.3,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 105,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SweetsSheep_Ground",
+   "name": "Woolipop Terra",
+   "slug": "Woolipop_Terra",
+   "deck": "39B",
+   "rank": 2030,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 70,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.7,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 70,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassMinotaur",
+   "name": "Elgrove",
+   "slug": "Elgrove",
+   "deck": "81",
+   "rank": 2020,
+   "maleRatio": 60,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Mutant",
+   "name": "Lunaris",
+   "slug": "Lunaris",
+   "deck": "82",
+   "rank": 2010,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 100,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.5,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 100,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DandelionGirl",
+   "name": "Souffline",
+   "slug": "Souffline",
+   "deck": "164",
+   "rank": 2000,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 4.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 60,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LeafPrincess",
+   "name": "Lullu",
+   "slug": "Lullu",
+   "deck": "125",
+   "rank": 1990,
+   "maleRatio": 30,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FireKirin",
+   "name": "Pyrin",
+   "slug": "Pyrin",
+   "deck": "93",
+   "rank": 1980,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 95,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceFox",
+   "name": "Foxcicle",
+   "slug": "Foxcicle",
+   "deck": "95",
+   "rank": 1970,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 95,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.7,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 95,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FengyunDeeper",
+   "name": "Fenglope",
+   "slug": "Fenglope",
+   "deck": "83",
+   "rank": 1960,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 110,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 110,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WeaselDragon_Fire",
+   "name": "Chillet Ignis",
+   "slug": "Chillet_Ignis",
+   "deck": "103B",
+   "rank": 1950,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 3.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 85,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BerryGoat_Dark",
+   "name": "Caprity Noct",
+   "slug": "Caprity_Noct",
+   "deck": "34B",
+   "rank": 1940,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 75,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 3.5,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 75,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceDeer",
+   "name": "Reindrix",
+   "slug": "Reindrix",
+   "deck": "101",
+   "rank": 1930,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 85,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 3.1,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 85,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderDog",
+   "name": "Rayhound",
+   "slug": "Rayhound",
+   "deck": "98",
+   "rank": 1920,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 100,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 100,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RaijinDaughter_Water",
+   "name": "Dazzi Noct",
+   "slug": "Dazzi_Noct",
+   "deck": "92B",
+   "rank": 1910,
+   "maleRatio": 20,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.3,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 80,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LongCat",
+   "name": "Valentail",
+   "slug": "Valentail",
+   "deck": "162",
+   "rank": 1900,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 80,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.3,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 80,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerDinosaur_Electric",
+   "name": "Dinossom Lux",
+   "slug": "Dinossom_Lux",
+   "deck": "84B",
+   "rank": 1890,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 90,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 90,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Gorilla_Ground",
+   "name": "Gorirat Terra",
+   "slug": "Gorirat_Terra",
+   "deck": "74B",
+   "rank": 1880,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 100,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.5,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 100,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FireKirin_Dark",
+   "name": "Pyrin Noct",
+   "slug": "Pyrin_Noct",
+   "deck": "93B",
+   "rank": 1870,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 95,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KendoFrog_Dark",
+   "name": "Croajiro Noct",
+   "slug": "Croajiro_Noct",
+   "deck": "9B",
+   "rank": 1860,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 110,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 110,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CaptainPenguin_Black",
+   "name": "Penking Lux",
+   "slug": "Penking_Lux",
+   "deck": "18B",
+   "rank": 1850,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Serpent_Ground",
+   "name": "Surfent Terra",
+   "slug": "Surfent_Terra",
+   "deck": "75B",
+   "rank": 1840,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlueDragon",
+   "name": "Azurobe",
+   "slug": "Azurobe",
+   "deck": "41",
+   "rank": 1830,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DarkAlien",
+   "name": "Xenovader",
+   "slug": "Xenovader",
+   "deck": "145",
+   "rank": 1820,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 125,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 108,
+    "attack": 125,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteMoth",
+   "name": "Sibelyx",
+   "slug": "Sibelyx",
+   "deck": "116",
+   "rank": 1810,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 90,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 90,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CatMage_Fire",
+   "name": "Katress Ignis",
+   "slug": "Katress_Ignis",
+   "deck": "79B",
+   "rank": 1800,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "QueenBee",
+   "name": "Elizabee",
+   "slug": "Elizabee",
+   "deck": "68",
+   "rank": 1790,
+   "maleRatio": 10,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 105,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ElecSnail",
+   "name": "Snock",
+   "slug": "Snock",
+   "deck": "163",
+   "rank": 1780,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 70,
+    "defense": 75
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.7,
+    "defense": 3.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 70,
+    "defense": 75,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HoodGhost",
+   "name": "Hoodle",
+   "slug": "Hoodle",
+   "deck": "166",
+   "rank": 1770,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 85,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 85,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlackPuppy",
+   "name": "Smokie",
+   "slug": "Smokie",
+   "deck": "149",
+   "rank": 1760,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 90,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.9,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 90,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ElecLizard",
+   "name": "Slowatt",
+   "slug": "Slowatt",
+   "deck": "167",
+   "rank": 1750,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 75,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.5,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 75,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MimicDog",
+   "name": "Mimog",
+   "slug": "Mimog",
+   "deck": "144",
+   "rank": 1740,
+   "maleRatio": 80,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 130
+   },
+   "friendship": {
+    "hp": 6,
+    "attack": 4.1,
+    "defense": 1.3
+   },
+   "captureRate": 0.8,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 72,
+    "attack": 60,
+    "defense": 130,
+    "captureRate": 0.56
+   }
+  },
+  {
+   "code": "PurpleSpider",
+   "name": "Tarantriss",
+   "slug": "Tarantriss",
+   "deck": "71",
+   "rank": 1730,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerDoll",
+   "name": "Petallia",
+   "slug": "Petallia",
+   "deck": "89",
+   "rank": 1720,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 95,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 95,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostBeast",
+   "name": "Maraith",
+   "slug": "Maraith",
+   "deck": "117",
+   "rank": 1710,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VenusFlytrap",
+   "name": "Carnibora",
+   "slug": "Carnibora",
+   "deck": "136",
+   "rank": 1700,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 90,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.9,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 90,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderBird",
+   "name": "Beakon",
+   "slug": "Beakon",
+   "deck": "96",
+   "rank": 1690,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 115,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BrownRabbit",
+   "name": "Lapiron",
+   "slug": "Lapiron",
+   "deck": "165",
+   "rank": 1680,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 75,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "AmaterasuWolf",
+   "name": "Kitsun",
+   "slug": "Kitsun",
+   "deck": "111",
+   "rank": 1670,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 115,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 115,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceSeal",
+   "name": "Polapup",
+   "slug": "Polapup",
+   "deck": "72",
+   "rank": 1660,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice",
+    "Water"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BirdDragon",
+   "name": "Vanwyrm",
+   "slug": "Vanwyrm",
+   "deck": "64",
+   "rank": 1650,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 115,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 115,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FairyDragon_Water",
+   "name": "Elphidran Aqua",
+   "slug": "Elphidran_Aqua",
+   "deck": "63B",
+   "rank": 1640,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Water"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 80,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 3.3,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 80,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "OctopusGirl_Neutral",
+   "name": "Gloopie Primo",
+   "slug": "Gloopie_Primo",
+   "deck": "48B",
+   "rank": 1630,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Normal"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LazyCatfish_Gold",
+   "name": "Dumud Gild",
+   "slug": "Dumud_Gild",
+   "deck": "109B",
+   "rank": 1620,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth",
+    "Water"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 75,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 3.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 75,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlackPuppy_Ice",
+   "name": "Smokie Cryst",
+   "slug": "Smokie_Cryst",
+   "deck": "149B",
+   "rank": 1610,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Ice"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 90,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 2.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 90,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderDog_Ice",
+   "name": "Rayhound Cryst",
+   "slug": "Rayhound_Cryst",
+   "deck": "98B",
+   "rank": 1600,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SwordCutlassfish_Fire",
+   "name": "Skutlass Ignis",
+   "slug": "Skutlass_Ignis",
+   "deck": "128B",
+   "rank": 1590,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CactusDoll_Dark",
+   "name": "Needoll Noct",
+   "slug": "Needoll_Noct",
+   "deck": "100B",
+   "rank": 1580,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 90,
+    "defense": 70
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 2.9,
+    "defense": 3.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 70,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CatVampire",
+   "name": "Felbat",
+   "slug": "Felbat",
+   "deck": "65",
+   "rank": 1570,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 105,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.3,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Ronin",
+   "name": "Bushi",
+   "slug": "Bushi",
+   "deck": "85",
+   "rank": 1560,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 125,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 1.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 125,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DrillGame",
+   "name": "Digtoise",
+   "slug": "Digtoise",
+   "deck": "107",
+   "rank": 1550,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 95,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.7,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 95,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "OniGhostGirl",
+   "name": "Bakemi",
+   "slug": "Bakemi",
+   "deck": "168",
+   "rank": 1540,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 85,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 3.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 85,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingAlpaca_Ice",
+   "name": "Kingpaca Cryst",
+   "slug": "Kingpaca_Cryst",
+   "deck": "21B",
+   "rank": 1530,
+   "maleRatio": 90,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MushroomDragon",
+   "name": "Shroomer",
+   "slug": "Shroomer",
+   "deck": "118",
+   "rank": 1520,
+   "maleRatio": 55,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 80,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 3.3,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 80,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ScorpionMan",
+   "name": "Prixter",
+   "slug": "Prixter",
+   "deck": "141",
+   "rank": 1510,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 110,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 110,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ElecSnail_Ground",
+   "name": "Snock Lux",
+   "slug": "Snock_Lux",
+   "deck": "163B",
+   "rank": 1500,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 65,
+    "attack": 70,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.8,
+    "attack": 3.7,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 78,
+    "attack": 70,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FoxMage_Dark",
+   "name": "Wixen Noct",
+   "slug": "Wixen_Noct",
+   "deck": "78B",
+   "rank": 1490,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 110,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.1,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 110,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VioletFairy",
+   "name": "Vaelet",
+   "slug": "Vaelet",
+   "deck": "66",
+   "rank": 1480,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.5,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Baphomet",
+   "name": "Incineram",
+   "slug": "Incineram",
+   "deck": "91",
+   "rank": 1470,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 100,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.5,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 100,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SifuDog",
+   "name": "Dogen",
+   "slug": "Dogen",
+   "deck": "155",
+   "rank": 1460,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MushroomDragon_Dark",
+   "name": "Shroomer Noct",
+   "slug": "Shroomer_Noct",
+   "deck": "118B",
+   "rank": 1450,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassPanda_Electric",
+   "name": "Mossanda Lux",
+   "slug": "Mossanda_Lux",
+   "deck": "102B",
+   "rank": 1440,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BirdDragon_Ice",
+   "name": "Vanwyrm Cryst",
+   "slug": "Vanwyrm_Cryst",
+   "deck": "64B",
+   "rank": 1430,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 120,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.7,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 120,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SwordCutlassfish",
+   "name": "Skutlass",
+   "slug": "Skutlass",
+   "deck": "128",
+   "rank": 1420,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 70,
+    "attack": 100,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.5,
+    "attack": 2.5,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 84,
+    "attack": 100,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PandaGirl",
+   "name": "Leafan",
+   "slug": "Leafan",
+   "deck": "90",
+   "rank": 1410,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 115,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.9,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 115,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderFluffyBird",
+   "name": "Dynamoff",
+   "slug": "Dynamoff",
+   "deck": "172",
+   "rank": 1400,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 75,
+    "attack": 85,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5.3,
+    "attack": 3.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 90,
+    "attack": 85,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlueberryFairy",
+   "name": "Prunelia",
+   "slug": "Prunelia",
+   "deck": "147",
+   "rank": 1390,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 95,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 95,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SakuraSaurus",
+   "name": "Broncherry",
+   "slug": "Broncherry",
+   "deck": "108",
+   "rank": 1380,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 90,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 90,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingSunfish",
+   "name": "Solmora",
+   "slug": "Solmora",
+   "deck": "169",
+   "rank": 1370,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 90,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.9,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 90,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Manticore",
+   "name": "Blazehowl",
+   "slug": "Blazehowl",
+   "deck": "112",
+   "rank": 1360,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.1,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 110,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RedFlowerBird",
+   "name": "Tropicaw",
+   "slug": "Tropicaw",
+   "deck": "173",
+   "rank": 1350,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassMammoth",
+   "name": "Mammorest",
+   "slug": "Mammorest",
+   "deck": "87",
+   "rank": 1340,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 150,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 1.5,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 180,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "TentacleTurtle_Ground",
+   "name": "Turtacle Terra",
+   "slug": "Turtacle_Terra",
+   "deck": "37B",
+   "rank": 1330,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 85,
+    "attack": 85,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 4.8,
+    "attack": 3.1,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 102,
+    "attack": 85,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostRabbit_Grass",
+   "name": "Nitemary Botan",
+   "slug": "Nitemary_Botan",
+   "deck": "148B",
+   "rank": 1320,
+   "maleRatio": 40,
+   "rankResult": false,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 95,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.7,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 95,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Baphomet_Dark",
+   "name": "Incineram Noct",
+   "slug": "Incineram_Noct",
+   "deck": "91B",
+   "rank": 1310,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SkyDragon_Grass",
+   "name": "Quivern Botan",
+   "slug": "Quivern_Botan",
+   "deck": "124B",
+   "rank": 1300,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 105,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 105,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Werewolf_Ice",
+   "name": "Loupmoon Cryst",
+   "slug": "Loupmoon_Cryst",
+   "deck": "56B",
+   "rank": 1290,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 105,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 105,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HerculesBeetle",
+   "name": "Warsect",
+   "slug": "Warsect",
+   "deck": "113",
+   "rank": 1280,
+   "maleRatio": 85,
+   "rankResult": true,
+   "element": [
+    "Earth",
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.5,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 100,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Manticore_Dark",
+   "name": "Blazehowl Noct",
+   "slug": "Blazehowl_Noct",
+   "deck": "112B",
+   "rank": 1270,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.9,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 115,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceWitch",
+   "name": "Icelyn",
+   "slug": "Icelyn",
+   "deck": "119",
+   "rank": 1260,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 115,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 1.9,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 115,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BadCatgirl",
+   "name": "Nyafia",
+   "slug": "Nyafia",
+   "deck": "143",
+   "rank": 1250,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "TropicalOstrich",
+   "name": "Palumba",
+   "slug": "Palumba",
+   "deck": "106",
+   "rank": 1240,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.1,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 110,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostRabbit",
+   "name": "Nitemary",
+   "slug": "Nitemary",
+   "deck": "148",
+   "rank": 1230,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 95,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.7,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 95,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlueDragon_Ice",
+   "name": "Azurobe Cryst",
+   "slug": "Azurobe_Cryst",
+   "deck": "41B",
+   "rank": 1220,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SkyDragon",
+   "name": "Quivern",
+   "slug": "Quivern",
+   "deck": "124",
+   "rank": 1210,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Suzaku",
+   "name": "Suzaku",
+   "slug": "Suzaku",
+   "deck": "122",
+   "rank": 1200,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SumoDog",
+   "name": "Bulldosu",
+   "slug": "Bulldosu",
+   "deck": "156",
+   "rank": 1190,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 95,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 2.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 95,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MoonChild",
+   "name": "Wistella",
+   "slug": "Wistella",
+   "deck": "181",
+   "rank": 1180,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 90,
+    "defense": 60
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.9,
+    "defense": 4.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 90,
+    "defense": 60,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MummyPal",
+   "name": "Gildra",
+   "slug": "Gildra",
+   "deck": "120",
+   "rank": 1170,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 120,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.7,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 120,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassRabbitMan",
+   "name": "Verdash",
+   "slug": "Verdash",
+   "deck": "152",
+   "rank": 1160,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 115,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 115,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NightBlueHorse",
+   "name": "Starryon",
+   "slug": "Starryon",
+   "deck": "130",
+   "rank": 1150,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MysteryMask",
+   "name": "Omascul",
+   "slug": "Omascul",
+   "deck": "150",
+   "rank": 1140,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HadesBird",
+   "name": "Helzephyr",
+   "slug": "Helzephyr",
+   "deck": "80",
+   "rank": 1130,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 125,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 125,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DarkScorpion",
+   "name": "Menasting",
+   "slug": "Menasting",
+   "deck": "99",
+   "rank": 1120,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 130
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.5,
+    "defense": 1.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 130,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RockBeast",
+   "name": "Pierdon",
+   "slug": "Pierdon",
+   "deck": "131",
+   "rank": 1110,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 105,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceSeal_Ground",
+   "name": "Polapup Terra",
+   "slug": "Polapup_Terra",
+   "deck": "72B",
+   "rank": 1100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LazyDragon",
+   "name": "Relaxaurus",
+   "slug": "Relaxaurus",
+   "deck": "94",
+   "rank": 1090,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon",
+    "Water"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 115,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.9,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 115,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SakuraSaurus_Water",
+   "name": "Broncherry Aqua",
+   "slug": "Broncherry_Aqua",
+   "deck": "108B",
+   "rank": 1080,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf",
+    "Water"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 95,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 95,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassMammoth_Ice",
+   "name": "Mammorest Cryst",
+   "slug": "Mammorest_Cryst",
+   "deck": "87B",
+   "rank": 1070,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 150,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 1.5,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 180,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VolcanicMonster",
+   "name": "Reptyro",
+   "slug": "Reptyro",
+   "deck": "129",
+   "rank": 1060,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 105,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RedArmorBird",
+   "name": "Ragnahawk",
+   "slug": "Ragnahawk",
+   "deck": "104",
+   "rank": 1050,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteTiger",
+   "name": "Cryolinx",
+   "slug": "Cryolinx",
+   "deck": "132",
+   "rank": 1040,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.5,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Plesiosaur",
+   "name": "Braloha",
+   "slug": "Braloha",
+   "deck": "110",
+   "rank": 1030,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 95,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 2.7,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 156,
+    "attack": 95,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ElecPanda",
+   "name": "Grizzbolt",
+   "slug": "Grizzbolt",
+   "deck": "185",
+   "rank": 1020,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DarkFlameFox",
+   "name": "Majex",
+   "slug": "Majex",
+   "deck": "115",
+   "rank": 1010,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 115,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 115,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingSunfish_Thunder",
+   "name": "Solmora Lux",
+   "slug": "Solmora_Lux",
+   "deck": "169B",
+   "rank": 1000,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 95,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.7,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 95,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteAlienDragon",
+   "name": "Xenogard",
+   "slug": "Xenogard",
+   "deck": "146",
+   "rank": 990,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 120,
+    "defense": 130
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.7,
+    "defense": 1.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 132,
+    "attack": 120,
+    "defense": 130,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CandleGhost",
+   "name": "Sootseer",
+   "slug": "Sootseer",
+   "deck": "135",
+   "rank": 980,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 125,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.5,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 125,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SnakeGirl",
+   "name": "Venusa",
+   "slug": "Venusa",
+   "deck": "178",
+   "rank": 970,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 85,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 3.1,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 85,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HadesBird_Electric",
+   "name": "Helzephyr Lux",
+   "slug": "Helzephyr_Lux",
+   "deck": "80B",
+   "rank": 960,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 125,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 125,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FengyunDeeper_Electric",
+   "name": "Fenglope Lux",
+   "slug": "Fenglope_Lux",
+   "deck": "83B",
+   "rank": 900,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 115,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 115,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LanternButler",
+   "name": "Loomen",
+   "slug": "Loomen",
+   "deck": "180",
+   "rank": 890,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 100,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 2.5,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 100,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostAnglerfish",
+   "name": "Ghangler",
+   "slug": "Ghangler",
+   "deck": "97",
+   "rank": 880,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Water"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 125,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.5,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 125,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Sekhmet",
+   "name": "Sekhmet",
+   "slug": "Sekhmet",
+   "deck": "140",
+   "rank": 870,
+   "maleRatio": 30,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 115,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 115,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SnowPeafowl",
+   "name": "Frostplume",
+   "slug": "Frostplume",
+   "deck": "114",
+   "rank": 860,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ScorpionMan_Electric",
+   "name": "Prixter Lux",
+   "slug": "Prixter_Lux",
+   "deck": "141B",
+   "rank": 850,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Electricity",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 115,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.9,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 115,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Ronin_Dark",
+   "name": "Bushi Noct",
+   "slug": "Bushi_Noct",
+   "deck": "85B",
+   "rank": 840,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 130,
+    "defense": 80
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 1.3,
+    "defense": 3.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 130,
+    "defense": 80,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Yeti",
+   "name": "Wumpo",
+   "slug": "Wumpo",
+   "deck": "134",
+   "rank": 830,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 80,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 3.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 168,
+    "attack": 80,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerDoll_Fire",
+   "name": "Petallia Ignis",
+   "slug": "Petallia_Ignis",
+   "deck": "89B",
+   "rank": 820,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 105,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 105,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SleeveRabbit",
+   "name": "Lapure",
+   "slug": "Lapure",
+   "deck": "170",
+   "rank": 810,
+   "maleRatio": 40,
+   "rankResult": true,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 100,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.5,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 100,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "AmaterasuWolf_Dark",
+   "name": "Kitsun Noct",
+   "slug": "Kitsun_Noct",
+   "deck": "111B",
+   "rank": 800,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 115,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.9,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 115,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CubeTurtle",
+   "name": "Tetroise",
+   "slug": "Tetroise",
+   "deck": "142",
+   "rank": 790,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 100,
+    "defense": 135
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.5,
+    "defense": 1.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 100,
+    "defense": 135,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrimGirl",
+   "name": "Splatterina",
+   "slug": "Splatterina",
+   "deck": "153",
+   "rank": 780,
+   "maleRatio": 38,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 115,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 1.9,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 115,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LazyDragon_Electric",
+   "name": "Relaxaurus Lux",
+   "slug": "Relaxaurus_Lux",
+   "deck": "94B",
+   "rank": 770,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 120,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.7,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 120,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MushroomLady",
+   "name": "Mycora",
+   "slug": "Mycora",
+   "deck": "179",
+   "rank": 760,
+   "maleRatio": 30,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 95,
+    "defense": 90
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.7,
+    "defense": 2.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 95,
+    "defense": 90,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VolcanoDragon",
+   "name": "Moldron",
+   "slug": "Moldron",
+   "deck": "105",
+   "rank": 750,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 125,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.5,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 125,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Suzaku_Water",
+   "name": "Suzaku Aqua",
+   "slug": "Suzaku_Aqua",
+   "deck": "122B",
+   "rank": 740,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 125,
+    "attack": 105,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 2.8,
+    "attack": 2.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 150,
+    "attack": 105,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GoldenHorse",
+   "name": "Gildane",
+   "slug": "Gildane",
+   "deck": "154",
+   "rank": 730,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 110,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.1,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 110,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostAnglerfish_Fire",
+   "name": "Ghangler Ignis",
+   "slug": "Ghangler_Ignis",
+   "deck": "97B",
+   "rank": 720,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire",
+    "Water"
+   ],
+   "stats": {
+    "hp": 90,
+    "attack": 130,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 4.5,
+    "attack": 1.3,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 108,
+    "attack": 130,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceNarwhal",
+   "name": "Whalaska",
+   "slug": "Whalaska",
+   "deck": "151",
+   "rank": 710,
+   "maleRatio": 58,
+   "rankResult": true,
+   "element": [
+    "Ice",
+    "Water"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.9,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 115,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteMoth_Neutral",
+   "name": "Sibelyx Primo",
+   "slug": "Sibelyx_Primo",
+   "deck": "116B",
+   "rank": 650,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 90,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 2.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 90,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DarkScorpion_Ground",
+   "name": "Menasting Terra",
+   "slug": "Menasting_Terra",
+   "deck": "99B",
+   "rank": 640,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 105,
+    "defense": 130
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.3,
+    "defense": 1.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 130,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "HerculesBeetle_Ground",
+   "name": "Warsect Terra",
+   "slug": "Warsect_Terra",
+   "deck": "113B",
+   "rank": 630,
+   "maleRatio": 85,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 105,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NightLady",
+   "name": "Bellanoir",
+   "slug": "Bellanoir",
+   "deck": "195",
+   "rank": 620,
+   "maleRatio": 10,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 150,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 150,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Yeti_Grass",
+   "name": "Wumpo Botan",
+   "slug": "Wumpo_Botan",
+   "deck": "134B",
+   "rank": 610,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 80,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 3.3,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 168,
+    "attack": 80,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VolcanicMonster_Ice",
+   "name": "Reptyro Cryst",
+   "slug": "Reptyro_Cryst",
+   "deck": "129B",
+   "rank": 600,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 130
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 1.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 105,
+    "defense": 130,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Umihebi",
+   "name": "Jormuntide",
+   "slug": "Jormuntide",
+   "deck": "121",
+   "rank": 590,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon",
+    "Water"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 120,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 156,
+    "attack": 120,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderBird_Ice",
+   "name": "Beakon Cryst",
+   "slug": "Beakon_Cryst",
+   "deck": "96B",
+   "rank": 580,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 85
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.9,
+    "defense": 3.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 115,
+    "defense": 85,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteDeer",
+   "name": "Celesdir",
+   "slug": "Celesdir",
+   "deck": "157",
+   "rank": 570,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 110,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.1,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 110,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteShieldDragon",
+   "name": "Silvegis",
+   "slug": "Silvegis",
+   "deck": "160",
+   "rank": 560,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 110,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.1,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 110,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlackGriffon",
+   "name": "Shadowbeak",
+   "slug": "Shadowbeak",
+   "deck": "189",
+   "rank": 550,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 120,
+    "defense": 140
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.7,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 120,
+    "defense": 140,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Kirin_Ice",
+   "name": "Univolt Cryst",
+   "slug": "Univolt_Cryst",
+   "deck": "54B",
+   "rank": 540,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 80,
+    "attack": 105,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 5,
+    "attack": 2.3,
+    "defense": 2.1
+   },
+   "captureRate": 0.9,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 96,
+    "attack": 105,
+    "defense": 110,
+    "captureRate": 0.63
+   }
+  },
+  {
+   "code": "ThiefBird",
+   "name": "Roujay",
+   "slug": "Roujay",
+   "deck": "177",
+   "rank": 530,
+   "maleRatio": 60,
+   "rankResult": true,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 115,
+    "defense": 95
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.9,
+    "defense": 2.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 115,
+    "defense": 95,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ClownRabbit",
+   "name": "Dupin",
+   "slug": "Dupin",
+   "deck": "176",
+   "rank": 520,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 110,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.1,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 110,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassGolem",
+   "name": "Dualith",
+   "slug": "Dualith",
+   "deck": "138",
+   "rank": 510,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth",
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 105,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Horus",
+   "name": "Faleris",
+   "slug": "Faleris",
+   "deck": "188",
+   "rank": 500,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.1,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 126,
+    "attack": 110,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlackMetalDragon",
+   "name": "Astegon",
+   "slug": "Astegon",
+   "deck": "158",
+   "rank": 490,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 125,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.5,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 125,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Anubis",
+   "name": "Anubis",
+   "slug": "Anubis",
+   "deck": "139",
+   "rank": 480,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 130,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 130,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteTiger_Ground",
+   "name": "Cryolinx Terra",
+   "slug": "Cryolinx_Terra",
+   "deck": "132B",
+   "rank": 470,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 105,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.3,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 105,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "RockBeast_Ice",
+   "name": "Pierdon Cryst",
+   "slug": "Pierdon_Cryst",
+   "deck": "131B",
+   "rank": 460,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 110,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 2.1,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 110,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Horus_Water",
+   "name": "Faleris Aqua",
+   "slug": "Faleris_Aqua",
+   "deck": "188B",
+   "rank": 450,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 110,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.1,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 132,
+    "attack": 110,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassMinotaur_Ice",
+   "name": "Elgrove Cryst",
+   "slug": "Elgrove_Cryst",
+   "deck": "81B",
+   "rank": 440,
+   "maleRatio": 60,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 100,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 2.5,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 100,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NightBlueHorse_Neutral",
+   "name": "Starryon Primo",
+   "slug": "Starryon_Primo",
+   "deck": "130B",
+   "rank": 430,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 105,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 105,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlueThunderHorse",
+   "name": "Azurmane",
+   "slug": "Azurmane",
+   "deck": "161",
+   "rank": 420,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 120,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.7,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 156,
+    "attack": 120,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingBahamut",
+   "name": "Blazamut",
+   "slug": "Blazamut",
+   "deck": "137",
+   "rank": 410,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 100,
+    "attack": 125,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 4,
+    "attack": 1.5,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 120,
+    "attack": 125,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DarkMechaDragon",
+   "name": "Xenolord",
+   "slug": "Xenolord",
+   "deck": "196",
+   "rank": 400,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 120,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.7,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 156,
+    "attack": 120,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FoxExorcist",
+   "name": "Flaracle",
+   "slug": "Flaracle",
+   "deck": "174",
+   "rank": 390,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 125,
+    "defense": 105
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.5,
+    "defense": 2.3
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 125,
+    "defense": 105,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "VolcanoDragon_Ice",
+   "name": "Moldron Cryst",
+   "slug": "Moldron_Cryst",
+   "deck": "105B",
+   "rank": 380,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 125,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.5,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 125,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceNarwhal_Fire",
+   "name": "Whalaska Ignis",
+   "slug": "Whalaska_Ignis",
+   "deck": "151B",
+   "rank": 370,
+   "maleRatio": 42,
+   "rankResult": false,
+   "element": [
+    "Ice",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 120,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.7,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 120,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MoonQueen",
+   "name": "Selyne",
+   "slug": "Selyne",
+   "deck": "190",
+   "rank": 360,
+   "maleRatio": 20,
+   "rankResult": false,
+   "element": [
+    "Dark",
+    "Normal"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 115,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.9,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 156,
+    "attack": 115,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostDragon",
+   "name": "Eidrolon",
+   "slug": "Eidrolon",
+   "deck": "171",
+   "rank": 300,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 125,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 1.5,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 125,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KabukiMan",
+   "name": "Renjishi",
+   "slug": "Renjishi",
+   "deck": "183",
+   "rank": 290,
+   "maleRatio": 60,
+   "rankResult": true,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 120,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.7,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 120,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "MonochromeQueen",
+   "name": "Solenne",
+   "slug": "Solenne",
+   "deck": "182",
+   "rank": 280,
+   "maleRatio": 30,
+   "rankResult": true,
+   "element": [
+    "Dark",
+    "Normal"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 115,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 1.9,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 115,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WhiteDeer_Dark",
+   "name": "Celesdir Noct",
+   "slug": "Celesdir_Noct",
+   "deck": "157B",
+   "rank": 270,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 115,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.9,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 144,
+    "attack": 115,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WingGolem",
+   "name": "Knocklem",
+   "slug": "Knocklem",
+   "deck": "159",
+   "rank": 260,
+   "maleRatio": 70,
+   "rankResult": true,
+   "element": [
+    "Earth"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 110,
+    "defense": 135
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 2.1,
+    "defense": 1.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 110,
+    "defense": 135,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GrassGolem_Dark",
+   "name": "Dualith Noct",
+   "slug": "Dualith_Noct",
+   "deck": "138B",
+   "rank": 250,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Earth",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 110,
+    "attack": 110,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 3.5,
+    "attack": 2.1,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 132,
+    "attack": 110,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LilyQueen",
+   "name": "Lyleen",
+   "slug": "Lyleen",
+   "deck": "186",
+   "rank": 240,
+   "maleRatio": 30,
+   "rankResult": false,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 120,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.7,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 120,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LotusDragon",
+   "name": "Ophydia",
+   "slug": "Ophydia",
+   "deck": "175",
+   "rank": 230,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Leaf",
+    "Water"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 115,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.9,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 156,
+    "attack": 115,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LilyQueen_Dark",
+   "name": "Lyleen Noct",
+   "slug": "Lyleen_Noct",
+   "deck": "186B",
+   "rank": 220,
+   "maleRatio": 30,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 120,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 1.7,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 138,
+    "attack": 120,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WingGolem_Fire",
+   "name": "Knocklem Ignis",
+   "slug": "Knocklem_Ignis",
+   "deck": "159B",
+   "rank": 210,
+   "maleRatio": 70,
+   "rankResult": false,
+   "element": [
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 115,
+    "defense": 135
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.9,
+    "defense": 1.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 115,
+    "defense": 135,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "CubeTurtle_Neutral",
+   "name": "Tetroise Primo",
+   "slug": "Tetroise_Primo",
+   "deck": "142B",
+   "rank": 200,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 95,
+    "attack": 100,
+    "defense": 140
+   },
+   "friendship": {
+    "hp": 4.3,
+    "attack": 2.5,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 114,
+    "attack": 100,
+    "defense": 140,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlackCentaur",
+   "name": "Necromus",
+   "slug": "Necromus",
+   "deck": "199",
+   "rank": 190,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 145,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 156,
+    "attack": 145,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SaintCentaur",
+   "name": "Paladius",
+   "slug": "Paladius",
+   "deck": "198",
+   "rank": 180,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 120,
+    "defense": 145
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.7,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 156,
+    "attack": 120,
+    "defense": 145,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Umihebi_Fire",
+   "name": "Jormuntide Ignis",
+   "slug": "Jormuntide_Ignis",
+   "deck": "121B",
+   "rank": 170,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 130,
+    "attack": 130,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 2.5,
+    "attack": 1.3,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 156,
+    "attack": 130,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "PoseidonOrca",
+   "name": "Neptilius",
+   "slug": "Neptilius",
+   "deck": "201",
+   "rank": 160,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 145,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 126,
+    "attack": 145,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceHorse",
+   "name": "Frostallion",
+   "slug": "Frostallion",
+   "deck": "200",
+   "rank": 150,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 140,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 1,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 168,
+    "attack": 140,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "GhostDragon_Fire",
+   "name": "Eidrolon Ignis",
+   "slug": "Eidrolon_Ignis",
+   "deck": "171B",
+   "rank": 140,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 130,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 1.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 138,
+    "attack": 130,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "NightLady_Dark",
+   "name": "Bellanoir Libero",
+   "slug": "Bellanoir_Libero",
+   "deck": "195B",
+   "rank": 130,
+   "maleRatio": 10,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 150,
+    "defense": 100
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1,
+    "defense": 2.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 150,
+    "defense": 100,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "ThunderDragonMan",
+   "name": "Orserk",
+   "slug": "Orserk",
+   "deck": "187",
+   "rank": 120,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Electricity"
+   ],
+   "stats": {
+    "hp": 120,
+    "attack": 130,
+    "defense": 115
+   },
+   "friendship": {
+    "hp": 3,
+    "attack": 1.3,
+    "defense": 1.9
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 144,
+    "attack": 130,
+    "defense": 115,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "IceHorse_Dark",
+   "name": "Frostallion Noct",
+   "slug": "Frostallion_Noct",
+   "deck": "200B",
+   "rank": 110,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dark"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 140,
+    "defense": 135
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 1,
+    "defense": 1.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 168,
+    "attack": 140,
+    "defense": 135,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingBahamut_Dragon",
+   "name": "Blazamut Ryu",
+   "slug": "Blazamut_Ryu",
+   "deck": "137B",
+   "rank": 100,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Fire"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 130,
+    "defense": 125
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.3,
+    "defense": 1.5
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 126,
+    "attack": 130,
+    "defense": 125,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "LegendDeer",
+   "name": "Hartalis",
+   "slug": "Hartalis",
+   "deck": "197",
+   "rank": 90,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Normal"
+   ],
+   "stats": {
+    "hp": 135,
+    "attack": 130,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2.3,
+    "attack": 1.3,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 162,
+    "attack": 130,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "Mothman",
+   "name": "Silvance",
+   "slug": "Silvance",
+   "deck": "193",
+   "rank": 80,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Leaf"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 120,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 1.7,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 168,
+    "attack": 120,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "JetDragon",
+   "name": "Jetragon",
+   "slug": "Jetragon",
+   "deck": "202",
+   "rank": 70,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon"
+   ],
+   "stats": {
+    "hp": 115,
+    "attack": 140,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 3.3,
+    "attack": 1,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 138,
+    "attack": 140,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "FlowerPrince",
+   "name": "Dandilord",
+   "slug": "Dandilord",
+   "deck": "194",
+   "rank": 60,
+   "maleRatio": 60,
+   "rankResult": false,
+   "element": [
+    "Leaf",
+    "Dark"
+   ],
+   "stats": {
+    "hp": 125,
+    "attack": 135,
+    "defense": 110
+   },
+   "friendship": {
+    "hp": 2.8,
+    "attack": 1.1,
+    "defense": 2.1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 150,
+    "attack": 135,
+    "defense": 110,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "SnowTigerBeastman",
+   "name": "Bastigor",
+   "slug": "Bastigor",
+   "deck": "191",
+   "rank": 50,
+   "maleRatio": 60,
+   "rankResult": false,
+   "element": [
+    "Ice"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 130,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 1.3,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 168,
+    "attack": 130,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "BlueSkyDragon",
+   "name": "Shaolong",
+   "slug": "Shaolong",
+   "deck": "192",
+   "rank": 40,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Dragon",
+    "Water"
+   ],
+   "stats": {
+    "hp": 140,
+    "attack": 135,
+    "defense": 120
+   },
+   "friendship": {
+    "hp": 2,
+    "attack": 1.1,
+    "defense": 1.7
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 168,
+    "attack": 135,
+    "defense": 120,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "DomeArmorDragon",
+   "name": "Aegidron",
+   "slug": "Aegidron",
+   "deck": "184",
+   "rank": 30,
+   "maleRatio": 50,
+   "rankResult": true,
+   "element": [
+    "Dragon",
+    "Earth"
+   ],
+   "stats": {
+    "hp": 105,
+    "attack": 125,
+    "defense": 140
+   },
+   "friendship": {
+    "hp": 3.8,
+    "attack": 1.5,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": false,
+   "boss": {
+    "hp": 126,
+    "attack": 125,
+    "defense": 140,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "KingWhale",
+   "name": "Panthalus",
+   "slug": "Panthalus",
+   "deck": "203",
+   "rank": 20,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "Water"
+   ],
+   "stats": {
+    "hp": 180,
+    "attack": 120,
+    "defense": 200
+   },
+   "friendship": {
+    "hp": 0.1,
+    "attack": 1.7,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 200,
+    "attack": 120,
+    "defense": 180,
+    "captureRate": 0.7
+   }
+  },
+  {
+   "code": "WorldTreeDragon",
+   "name": "Astralym",
+   "slug": "Astralym",
+   "deck": "204",
+   "rank": 10,
+   "maleRatio": 50,
+   "rankResult": false,
+   "element": [
+    "None"
+   ],
+   "stats": {
+    "hp": 200,
+    "attack": 200,
+    "defense": 200
+   },
+   "friendship": {
+    "hp": 0.1,
+    "attack": 1,
+    "defense": 1
+   },
+   "captureRate": 1,
+   "ignoreCombi": true,
+   "boss": {
+    "hp": 240,
+    "attack": 200,
+    "defense": 200,
+    "captureRate": 0.7
+   }
+  }
+ ],
+ "uniqueCombos": [
+  [
+   "LazyDragon",
+   "ElecCat",
+   "LazyDragon_Electric"
+  ],
+  [
+   "Baphomet",
+   "GhostBeast",
+   "Baphomet_Dark"
+  ],
+  [
+   "Bastet",
+   "Penguin",
+   "Bastet_Ice"
+  ],
+  [
+   "BirdDragon",
+   "IceFox",
+   "BirdDragon_Ice"
+  ],
+  [
+   "Deer",
+   "WindChimes",
+   "Deer_Ground"
+  ],
+  [
+   "FairyDragon",
+   "Serpent",
+   "FairyDragon_Water"
+  ],
+  [
+   "FireKirin",
+   "CatMage",
+   "FireKirin_Dark"
+  ],
+  [
+   "GrassMammoth",
+   "Yeti",
+   "GrassMammoth_Ice"
+  ],
+  [
+   "GrassPanda",
+   "ElecPanda",
+   "GrassPanda_Electric"
+  ],
+  [
+   "FlowerDinosaur",
+   "ThunderDog",
+   "FlowerDinosaur_Electric"
+  ],
+  [
+   "Hedgehog",
+   "Penguin",
+   "Hedgehog_Ice"
+  ],
+  [
+   "IceHorse",
+   "HadesBird",
+   "IceHorse_Dark"
+  ],
+  [
+   "KingAlpaca",
+   "IceDeer",
+   "KingAlpaca_Ice"
+  ],
+  [
+   "LilyQueen",
+   "DarkScorpion",
+   "LilyQueen_Dark"
+  ],
+  [
+   "LizardMan",
+   "LavaGirl",
+   "LizardMan_Fire"
+  ],
+  [
+   "Manticore",
+   "CatVampire",
+   "Manticore_Dark"
+  ],
+  [
+   "RobinHood",
+   "CuteMole",
+   "RobinHood_Ground"
+  ],
+  [
+   "SakuraSaurus",
+   "BluePlatypus",
+   "SakuraSaurus_Water"
+  ],
+  [
+   "Serpent",
+   "LazyCatfish",
+   "Serpent_Ground"
+  ],
+  [
+   "SharkKid",
+   "FlameBambi",
+   "SharkKid_Fire"
+  ],
+  [
+   "Suzaku",
+   "Umihebi",
+   "Suzaku_Water"
+  ],
+  [
+   "VolcanicMonster",
+   "IceFox",
+   "VolcanicMonster_Ice"
+  ],
+  [
+   "WindChimes",
+   "MopBaby",
+   "WindChimes_Ice"
+  ],
+  [
+   "Umihebi",
+   "Manticore",
+   "Umihebi_Fire"
+  ],
+  [
+   "NightLady",
+   "NightLady_Dark",
+   "NightLady"
+  ],
+  [
+   "CatMage",
+   "FoxMage",
+   "FoxMage_Dark"
+  ],
+  [
+   "CatMage",
+   "FoxMage",
+   "CatMage_Fire"
+  ],
+  [
+   "Gorilla",
+   "SmallArmadillo",
+   "Gorilla_Ground"
+  ],
+  [
+   "WeaselDragon",
+   "FlameBuffalo",
+   "WeaselDragon_Fire"
+  ],
+  [
+   "SkyDragon",
+   "LeafPrincess",
+   "SkyDragon_Grass"
+  ],
+  [
+   "HadesBird",
+   "ThunderBird",
+   "HadesBird_Electric"
+  ],
+  [
+   "Ronin",
+   "CandleGhost",
+   "Ronin_Dark"
+  ],
+  [
+   "DarkScorpion",
+   "WingGolem",
+   "DarkScorpion_Ground"
+  ],
+  [
+   "Kitsunebi",
+   "IceFox",
+   "Kitsunebi_Ice"
+  ],
+  [
+   "RaijinDaughter",
+   "MysteryMask",
+   "RaijinDaughter_Water"
+  ],
+  [
+   "WhiteTiger",
+   "FeatherOstrich",
+   "WhiteTiger_Ground"
+  ],
+  [
+   "FengyunDeeper",
+   "BlueThunderHorse",
+   "FengyunDeeper_Electric"
+  ],
+  [
+   "BerryGoat",
+   "PurpleSpider",
+   "BerryGoat_Dark"
+  ],
+  [
+   "Werewolf",
+   "MopKing",
+   "Werewolf_Ice"
+  ],
+  [
+   "Horus",
+   "Umihebi",
+   "Horus_Water"
+  ],
+  [
+   "PinkRabbit",
+   "LittleBriarRose",
+   "PinkRabbit_Grass"
+  ],
+  [
+   "HerculesBeetle",
+   "DrillGame",
+   "HerculesBeetle_Ground"
+  ],
+  [
+   "AmaterasuWolf",
+   "BadCatgirl",
+   "AmaterasuWolf_Dark"
+  ],
+  [
+   "GoldenHorse",
+   "Deer_Ground",
+   "WhiteDeer"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster001_Blue"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster001_Red",
+   "YakushimaMonster001_Red"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster001_Purple"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster001_Pink"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster002",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster003",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster001_Red",
+   "YakushimaMonster001_Purple"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster001_Purple"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster001_Pink"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster002",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster003",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001_Blue",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster001_Purple"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster001_Pink"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster002",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster003",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001_Red",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster001_Pink"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster002",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster003",
+   "YakushimaMonster003_Purple"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster003_Purple"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001_Purple",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster002",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster003",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001_Pink",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster002",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster003",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Rainbow",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster001_Rainbow"
+  ],
+  [
+   "YakushimaMonster001_Rainbow",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster001_Rainbow",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster002",
+   "YakushimaMonster003",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster002",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster002"
+  ],
+  [
+   "YakushimaMonster002",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster002",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster003",
+   "YakushimaMonster003_Purple",
+   "YakushimaMonster003_Purple"
+  ],
+  [
+   "YakushimaMonster003",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster003",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaMonster003_Purple",
+   "YakushimaBoss001",
+   "YakushimaBoss001"
+  ],
+  [
+   "YakushimaMonster003_Purple",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001_Small"
+  ],
+  [
+   "YakushimaBoss001",
+   "YakushimaBoss001_Small",
+   "YakushimaBoss001"
+  ],
+  [
+   "NegativeOctopus",
+   "PinkRabbit",
+   "NegativeOctopus_Neutral"
+  ],
+  [
+   "Penguin",
+   "ElecCat",
+   "Penguin_Electric"
+  ],
+  [
+   "CaptainPenguin",
+   "ThunderDog",
+   "CaptainPenguin_Black"
+  ],
+  [
+   "FlyingManta",
+   "Kirin",
+   "FlyingManta_Thunder"
+  ],
+  [
+   "BluePlatypus",
+   "LavaGirl",
+   "BluePlatypus_Fire"
+  ],
+  [
+   "LazyCatfish",
+   "Deer_Ground",
+   "LazyCatfish_Gold"
+  ],
+  [
+   "TentacleTurtle",
+   "DrillGame",
+   "TentacleTurtle_Ground"
+  ],
+  [
+   "KendoFrog",
+   "Ronin_Dark",
+   "KendoFrog_Dark"
+  ],
+  [
+   "BlueDragon",
+   "SnowPeafowl",
+   "BlueDragon_Ice"
+  ],
+  [
+   "IceNarwhal",
+   "WeaselDragon_Fire",
+   "IceNarwhal_Fire"
+  ],
+  [
+   "GhostAnglerfish",
+   "CandleGhost",
+   "GhostAnglerfish_Fire"
+  ],
+  [
+   "StuffedShark",
+   "SharkKid_Fire",
+   "StuffedShark_Fire"
+  ],
+  [
+   "Monkey",
+   "LavaGirl",
+   "Monkey_Fire"
+  ],
+  [
+   "Kirin",
+   "SnowPeafowl",
+   "Kirin_Ice"
+  ],
+  [
+   "ThunderDog",
+   "IceFox",
+   "ThunderDog_Ice"
+  ],
+  [
+   "ThunderBird",
+   "SnowPeafowl",
+   "ThunderBird_Ice"
+  ],
+  [
+   "SweetsSheep",
+   "SmallArmadillo",
+   "SweetsSheep_Ground"
+  ],
+  [
+   "ScorpionMan",
+   "HadesBird_Electric",
+   "ScorpionMan_Electric"
+  ],
+  [
+   "BlackPuppy",
+   "IceCrocodile",
+   "BlackPuppy_Ice"
+  ],
+  [
+   "GhostRabbit",
+   "FlowerDoll",
+   "GhostRabbit_Grass"
+  ],
+  [
+   "NightBlueHorse",
+   "WhiteDeer",
+   "NightBlueHorse_Neutral"
+  ],
+  [
+   "OctopusGirl",
+   "LongCat",
+   "OctopusGirl_Neutral"
+  ],
+  [
+   "WhiteMoth",
+   "SleeveRabbit",
+   "WhiteMoth_Neutral"
+  ],
+  [
+   "WingGolem",
+   "RedArmorBird",
+   "WingGolem_Fire"
+  ],
+  [
+   "FlowerDoll",
+   "Ronin",
+   "FlowerDoll_Fire"
+  ],
+  [
+   "WhiteDeer",
+   "AmaterasuWolf_Dark",
+   "WhiteDeer_Dark"
+  ],
+  [
+   "IceSeal",
+   "Serpent_Ground",
+   "IceSeal_Ground"
+  ],
+  [
+   "KingSunfish",
+   "ElecLizard",
+   "KingSunfish_Thunder"
+  ],
+  [
+   "GrassGolem",
+   "CandleGhost",
+   "GrassGolem_Dark"
+  ],
+  [
+   "CubeTurtle",
+   "WhiteDeer",
+   "CubeTurtle_Neutral"
+  ],
+  [
+   "GhostDragon",
+   "Suzaku",
+   "GhostDragon_Fire"
+  ],
+  [
+   "VolcanoDragon",
+   "VolcanicMonster_Ice",
+   "VolcanoDragon_Ice"
+  ],
+  [
+   "RockBeast",
+   "Yeti",
+   "RockBeast_Ice"
+  ],
+  [
+   "SwordCutlassfish",
+   "SharkKid_Fire",
+   "SwordCutlassfish_Fire"
+  ],
+  [
+   "ElecSnail",
+   "TentacleTurtle_Ground",
+   "ElecSnail_Ground"
+  ],
+  [
+   "CactusDoll",
+   "BlueberryFairy",
+   "CactusDoll_Dark"
+  ],
+  [
+   "GrassMinotaur",
+   "RockBeast_Ice",
+   "GrassMinotaur_Ice"
+  ]
+ ],
+ "directional": {
+  "CatMage|FoxMage": [
+   [
+    "CatMage",
+    "FoxMage",
+    "FoxMage_Dark"
+   ],
+   [
+    "FoxMage",
+    "CatMage",
+    "CatMage_Fire"
+   ]
+  ]
+ }
+}
