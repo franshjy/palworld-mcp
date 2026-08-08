@@ -90,3 +90,51 @@ test('search filters', () => {
   const query = data.search({ query: 'anub' });
   assert.ok(query.some((p) => p.name === 'Anubis'));
 });
+
+test('findParentPairs: reverse lookup for a generic-breedable pal', () => {
+  const anubis = data.resolve('Anubis').pal!;
+  const { total, pairs } = data.findParentPairs(anubis.code);
+  assert.ok(total > 100, `expected many pairs for Anubis, got ${total}`);
+  assert.ok(pairs.length > 0);
+  // self-check: every returned pair really produces Anubis, identity excluded
+  for (const p of pairs) {
+    assert.notEqual(p.parent1, p.parent2);
+    assert.equal(data.engine.breed(p.parent1, p.parent2).child, anubis.code);
+  }
+  assert.ok(!pairs.some((p) => p.parent1 === anubis.code && p.parent2 === anubis.code));
+});
+
+test('findParentPairs: unique-combo child has exactly its fixed pair', () => {
+  const ji = data.resolve('Jormuntide Ignis').pal!;
+  const { total, pairs } = data.findParentPairs(ji.code);
+  assert.equal(total, 1);
+  assert.equal(pairs[0]?.kind, 'unique');
+  assert.deepEqual(
+    [data.byCodeLookup(pairs[0]!.parent1)?.name, data.byCodeLookup(pairs[0]!.parent2)?.name].sort(),
+    ['Blazehowl', 'Jormuntide'],
+  );
+});
+
+test('findParentPairs: givenParent filters and can answer "no direct pair"', () => {
+  const anubis = data.resolve('Anubis').pal!;
+  const lamball = data.resolve('Lamball').pal!;
+  assert.equal(data.findParentPairs(anubis.code, lamball.code).total, 0); // rank 3050 can never land on 480
+  const ji = data.resolve('Jormuntide Ignis').pal!;
+  const blazehowl = data.resolve('Blazehowl').pal!;
+  const r = data.findParentPairs(ji.code, blazehowl.code);
+  assert.equal(r.total, 1);
+  assert.equal(r.pairs[0]?.kind, 'unique');
+});
+
+test('findParentPairs: directional pair is reachable from both children', () => {
+  for (const childName of ['Wixen Noct', 'Katress Ignis']) {
+    const child = data.resolve(childName).pal!;
+    const { total, pairs } = data.findParentPairs(child.code);
+    assert.equal(total, 1, `${childName}: expected exactly the directional pair`);
+    assert.equal(pairs[0]?.kind, 'directional');
+    assert.deepEqual(
+      [data.byCodeLookup(pairs[0]!.parent1)?.name, data.byCodeLookup(pairs[0]!.parent2)?.name].sort(),
+      ['Katress', 'Wixen'],
+    );
+  }
+});

@@ -8,7 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { dirname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BreedingEngine, type ComboTuple, type DirectionalMap } from './breeding.js';
+import { BreedingEngine, type BreedingKind, type ComboTuple, type DirectionalMap } from './breeding.js';
 
 export interface PalStats {
   hp: number;
@@ -123,5 +123,58 @@ export class PalworldData {
       return a.name.localeCompare(b.name);
     });
     return pals.slice(0, Math.min(opts.limit ?? 20, 50));
+  }
+
+  /** Lazy reverse index: child code -> producing parent pairs (identity pairs excluded). */
+  private producersCache: Map<string, { parent1: string; parent2: string; kind: BreedingKind }[]> | null = null;
+
+  private producers(): Map<string, { parent1: string; parent2: string; kind: BreedingKind }[]> {
+    if (this.producersCache) return this.producersCache;
+    const map = new Map<string, { parent1: string; parent2: string; kind: BreedingKind }[]>();
+    const pals = this.dataset.pals;
+    for (let i = 0; i < pals.length; i++) {
+      for (let j = i + 1; j < pals.length; j++) {
+        const a = pals[i]!.code;
+        const b = pals[j]!.code;
+        const r = this.engine.breed(a, b);
+        const entry = { parent1: a, parent2: b, kind: r.kind };
+        // Directional pairs produce TWO children — register the pair under both.
+        for (const child of r.child2 ? [r.child, r.child2] : [r.child]) {
+          const arr = map.get(child);
+          if (arr) arr.push(entry);
+          else map.set(child, [entry]);
+        }
+      }
+    }
+    this.producersCache = map;
+    return map;
+  }
+
+  /**
+   * Reverse breeding lookup: distinct parent pairs whose offspring is `targetCode`.
+   * Identity pairs (target + target) are excluded by construction — they always work.
+   * Optional `givenParent` restricts to pairs containing that parent.
+   * Sorted: fixed unique/directional combos first, then rank-math pairs by ease — the
+   * rarer parent of the pair is as common as possible (min(rank) descending, then rank
+   * sum descending), so pairs of common pals surface first.
+   */
+  findParentPairs(
+    targetCode: string,
+    givenParent?: string,
+    limit = 25,
+  ): { total: number; pairs: { parent1: string; parent2: string; kind: BreedingKind }[] } {
+    const rankOf = (c: string) => this.byCode.get(c)?.rank ?? Infinity;
+    const isFixed = (k: BreedingKind) => k === 'unique' || k === 'directional';
+    const filtered = (this.producers().get(targetCode) ?? []).filter(
+      (p) => !givenParent || p.parent1 === givenParent || p.parent2 === givenParent,
+    );
+    const sorted = [...filtered].sort((x, y) => {
+      if (isFixed(x.kind) !== isFixed(y.kind)) return isFixed(x.kind) ? -1 : 1;
+      const xMin = Math.min(rankOf(x.parent1), rankOf(x.parent2));
+      const yMin = Math.min(rankOf(y.parent1), rankOf(y.parent2));
+      if (xMin !== yMin) return yMin - xMin;
+      return rankOf(y.parent1) + rankOf(y.parent2) - (rankOf(x.parent1) + rankOf(x.parent2));
+    });
+    return { total: filtered.length, pairs: sorted.slice(0, limit) };
   }
 }

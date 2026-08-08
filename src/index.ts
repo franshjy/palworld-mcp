@@ -5,6 +5,7 @@
  *   - search_pals          text/stat/element filters over the full pal roster
  *   - get_pal              full record for one pal (stats, breeding data, combos)
  *   - get_breeding_result  breeding outcome for a parent pair (offline engine)
+ *   - find_breeding_pairs  reverse lookup: which parent pairs produce a child
  *
  * All data is served from the shipped dataset (data/dataset.json) — no network.
  * Override the dataset location with PALWORLD_MCP_DATA.
@@ -204,6 +205,58 @@ server.registerTool(
     const { result, error } = breedResultOf(data, parent1, parent2);
     if (error) return fail(error);
     return ok({ found: true, result });
+  },
+);
+
+server.registerTool(
+  'find_breeding_pairs',
+  {
+    title: 'Find breeding pairs',
+    description:
+      'Reverse lookup: which parent pairs produce a given child (the inverse of get_breeding_result). Optional givenParent filters to pairs containing that parent — answers "I have A, what do I breed it with to get X?". Identity (target + target) always works and is not listed. Fixed unique combos are listed first, then rank-math pairs by ease (common parents first); capped at 25 with the total count.',
+    inputSchema: {
+      target: z.string().min(1).describe('Desired child pal name or code'),
+      givenParent: z.string().min(1).optional().describe('If you already own one parent, find the other'),
+    },
+  },
+  async ({ target, givenParent }) => {
+    const rt = data.resolve(target);
+    if (!rt.pal) {
+      return rt.matches.length
+        ? fail(`ambiguous "${target}" — candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
+        : fail(`unknown pal "${target}"`);
+    }
+    let givenCode: string | undefined;
+    let givenName: string | null = null;
+    if (givenParent) {
+      const rg = data.resolve(givenParent);
+      if (!rg.pal) {
+        return rg.matches.length
+          ? fail(`ambiguous "${givenParent}" — candidates: ${rg.matches.map((p) => p.name).join(', ')}`)
+          : fail(`unknown pal "${givenParent}"`);
+      }
+      givenCode = rg.pal.code;
+      givenName = rg.pal.name;
+    }
+    const { total, pairs } = data.findParentPairs(rt.pal.code, givenCode);
+    return ok({
+      found: true,
+      target: {
+        name: rt.pal.name,
+        code: rt.pal.code,
+        rank: rt.pal.rank,
+        breedableAsResult: rt.pal.rankResult,
+        url: `https://paldb.cc/${rt.pal.slug}`,
+      },
+      givenParent: givenName,
+      totalPairs: total,
+      pairs: pairs.map((p) => ({
+        parent1: data.byCodeLookup(p.parent1)?.name ?? p.parent1,
+        parent2: data.byCodeLookup(p.parent2)?.name ?? p.parent2,
+        kind: p.kind,
+      })),
+      note: 'Identity (target + target = target) always works if you already own it. Pairs are sorted: fixed unique combos first, then rank-math pairs by ease (common parents first).',
+    });
   },
 );
 
