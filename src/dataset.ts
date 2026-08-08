@@ -32,6 +32,18 @@ export interface PalRecord {
   maleRatio: number;
 }
 
+/** A parent pair from the reverse breeding index, enriched for consumers. */
+export interface ParentPair {
+  parent1: string;
+  parent2: string;
+  kind: BreedingKind;
+  /** Breeding rank (CombiRank) of each parent — lower = rarer in the breeding pool. */
+  rank1: number;
+  rank2: number;
+  /** True when the target itself is one of the parents (circular for acquisition: you already need one). */
+  usesTarget: boolean;
+}
+
 export interface Dataset {
   schemaVersion: number;
   generatedAt: string;
@@ -154,15 +166,16 @@ export class PalworldData {
    * Reverse breeding lookup: distinct parent pairs whose offspring is `targetCode`.
    * Identity pairs (target + target) are excluded by construction — they always work.
    * Optional `givenParent` restricts to pairs containing that parent.
-   * Sorted: fixed unique/directional combos first, then rank-math pairs by ease — the
-   * rarer parent of the pair is as common as possible (min(rank) descending, then rank
-   * sum descending), so pairs of common pals surface first.
+   * Sorted: fixed unique/directional combos first, then rank-math pairs by rank-distance
+   * ease — the harder-to-get parent of the pair is as high-ranked as possible (min(rank)
+   * descending, then rank sum descending). Rank is the game's hidden breeding weight
+   * (lower = rarer); it reflects breeding rarity, not catch difficulty.
    */
   findParentPairs(
     targetCode: string,
     givenParent?: string,
     limit = 25,
-  ): { total: number; pairs: { parent1: string; parent2: string; kind: BreedingKind }[] } {
+  ): { total: number; pairs: ParentPair[] } {
     const rankOf = (c: string) => this.byCode.get(c)?.rank ?? Infinity;
     const isFixed = (k: BreedingKind) => k === 'unique' || k === 'directional';
     const filtered = (this.producers().get(targetCode) ?? []).filter(
@@ -175,6 +188,16 @@ export class PalworldData {
       if (xMin !== yMin) return yMin - xMin;
       return rankOf(y.parent1) + rankOf(y.parent2) - (rankOf(x.parent1) + rankOf(x.parent2));
     });
-    return { total: filtered.length, pairs: sorted.slice(0, limit) };
+    return {
+      total: filtered.length,
+      pairs: sorted.slice(0, limit).map((p) => ({
+        parent1: p.parent1,
+        parent2: p.parent2,
+        kind: p.kind,
+        rank1: rankOf(p.parent1),
+        rank2: rankOf(p.parent2),
+        usesTarget: p.parent1 === targetCode || p.parent2 === targetCode,
+      })),
+    };
   }
 }

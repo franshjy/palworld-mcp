@@ -100,8 +100,20 @@ test('findParentPairs: reverse lookup for a generic-breedable pal', () => {
   for (const p of pairs) {
     assert.notEqual(p.parent1, p.parent2);
     assert.equal(data.engine.breed(p.parent1, p.parent2).child, anubis.code);
+    // enriched fields
+    assert.ok(Number.isInteger(p.rank1) && Number.isInteger(p.rank2));
+    assert.equal(typeof p.usesTarget, 'boolean');
   }
   assert.ok(!pairs.some((p) => p.parent1 === anubis.code && p.parent2 === anubis.code));
+  // ordering: pairs sorted by min(parent rank) descending (fixed combos first)
+  for (let i = 1; i < pairs.length; i++) {
+    const prev = Math.min(pairs[i - 1]!.rank1, pairs[i - 1]!.rank2);
+    const cur = Math.min(pairs[i]!.rank1, pairs[i]!.rank2);
+    assert.ok(prev >= cur, `sort broken at ${i}: ${prev} < ${cur}`);
+  }
+  // acquisition noise exists and is flagged: some pairs use Anubis itself, some don't
+  assert.ok(pairs.some((p) => p.usesTarget));
+  assert.ok(pairs.some((p) => !p.usesTarget));
 });
 
 test('findParentPairs: unique-combo child has exactly its fixed pair', () => {
@@ -109,6 +121,7 @@ test('findParentPairs: unique-combo child has exactly its fixed pair', () => {
   const { total, pairs } = data.findParentPairs(ji.code);
   assert.equal(total, 1);
   assert.equal(pairs[0]?.kind, 'unique');
+  assert.equal(pairs[0]?.usesTarget, false);
   assert.deepEqual(
     [data.byCodeLookup(pairs[0]!.parent1)?.name, data.byCodeLookup(pairs[0]!.parent2)?.name].sort(),
     ['Blazehowl', 'Jormuntide'],

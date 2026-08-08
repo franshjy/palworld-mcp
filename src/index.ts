@@ -213,7 +213,7 @@ server.registerTool(
   {
     title: 'Find breeding pairs',
     description:
-      'Reverse lookup: which parent pairs produce a given child (the inverse of get_breeding_result). Optional givenParent filters to pairs containing that parent — answers "I have A, what do I breed it with to get X?". Identity (target + target) always works and is not listed. Fixed unique combos are listed first, then rank-math pairs by ease (common parents first); capped at 25 with the total count.',
+      'Reverse lookup: which parent pairs produce a given child (the inverse of get_breeding_result). Optional givenParent filters to pairs containing that parent — answers "I have A, what do I breed it with to get X?". Identity (target + target) always works and is not listed. Fixed unique combos first, then rank-math pairs by breeding-rank ease; pairs that already require owning the target are flagged usesTarget. Capped at 25 with the total count.',
     inputSchema: {
       target: z.string().min(1).describe('Desired child pal name or code'),
       givenParent: z.string().min(1).optional().describe('If you already own one parent, find the other'),
@@ -254,8 +254,11 @@ server.registerTool(
         parent1: data.byCodeLookup(p.parent1)?.name ?? p.parent1,
         parent2: data.byCodeLookup(p.parent2)?.name ?? p.parent2,
         kind: p.kind,
+        parent1Rank: p.rank1,
+        parent2Rank: p.rank2,
+        usesTarget: p.usesTarget,
       })),
-      note: 'Identity (target + target = target) always works if you already own it. Pairs are sorted: fixed unique combos first, then rank-math pairs by ease (common parents first).',
+      note: 'Identity (target + target = target) always works if you already own it. Fixed unique combos are listed first, then rank-math pairs by rank-distance ease (the harder-to-get parent\'s breeding rank, descending — lower rank = rarer in the breeding pool). Rank reflects breeding rarity, not catch difficulty. Pairs flagged usesTarget: true already require owning the target (circular for acquisition).',
     });
   },
 );

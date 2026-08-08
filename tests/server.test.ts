@@ -115,7 +115,14 @@ test('MCP server: listTools + four tools over stdio', async (t) => {
     assert.equal(fpOut.found, true);
     assert.ok(fpOut.totalPairs > 100);
     assert.ok(fpOut.pairs.length > 0);
-    assert.ok(fpOut.pairs.every((p: { parent1: string; parent2: string; kind: string }) => p.parent1 && p.parent2 && p.kind));
+    assert.ok(
+      fpOut.pairs.every(
+        (p: { parent1: string; parent2: string; kind: string; parent1Rank: number; parent2Rank: number; usesTarget: boolean }) =>
+          p.parent1 && p.parent2 && p.kind && Number.isInteger(p.parent1Rank) && Number.isInteger(p.parent2Rank) && typeof p.usesTarget === 'boolean',
+      ),
+    );
+    assert.ok(fpOut.pairs.some((p: { usesTarget: boolean }) => p.usesTarget));
+    assert.ok(fpOut.pairs.some((p: { usesTarget: boolean }) => !p.usesTarget));
 
     const fpJi = await withTimeout(
       client.callTool({ name: 'find_breeding_pairs', arguments: { target: 'Jormuntide Ignis' } }),
@@ -125,6 +132,7 @@ test('MCP server: listTools + four tools over stdio', async (t) => {
     const fpJiOut = JSON.parse(fpJi.content[0].text);
     assert.equal(fpJiOut.totalPairs, 1);
     assert.equal(fpJiOut.pairs[0].kind, 'unique');
+    assert.equal(fpJiOut.pairs[0].usesTarget, false);
     assert.deepEqual([fpJiOut.pairs[0].parent1, fpJiOut.pairs[0].parent2].sort(), ['Blazehowl', 'Jormuntide']);
 
     const fpGiven = await withTimeout(
