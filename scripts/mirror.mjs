@@ -11,6 +11,12 @@
  *   node scripts/mirror.mjs --only items    # item pages only
  *   node scripts/mirror.mjs --limit 50      # fetch at most N pages (test mode)
  *   node scripts/mirror.mjs --delay 2000    # base delay between requests (ms)
+ *   node scripts/mirror.mjs --fetch-index   # refresh the cached /Items index page
+ *
+ * Item universe: the UNION of the sitemap fixture (exp/recon/paldb_sitemap.xml)
+ * and paldb's own /Items index page (cached at data/raw/items_index.html via
+ * --fetch-index). The sitemap alone omits whole content eras (Feybreak items);
+ * the /Items page is the complete item index.
  *
  * Output: data/raw/pal/<slug>.html, data/raw/item/<slug>.html,
  *         data/raw/progress.json (fetched counts, for polling).
@@ -22,6 +28,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const RAW = join(ROOT, 'data', 'raw');
 const FAILED_FILE = join(RAW, 'failed.json');
+const ITEMS_INDEX_FILE = join(RAW, 'items_index.html');
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 
 /** Load the set of slugs that permanently fail (404 etc.) — skipped on resume. */
@@ -52,14 +59,28 @@ const ONLY = arg('--only', 'all');
 const LIMIT = parseInt(arg('--limit', '0'), 10) || Infinity;
 const DELAY = parseInt(arg('--delay', '1600'), 10);
 
+/** Slugs from the sitemap fixture (source A — historical, omits Feybreak-era content). */
+function sitemapSlugs() {
+  const xml = readFileSync(join(ROOT, 'exp', 'recon', 'paldb_sitemap.xml'), 'utf8');
+  return [
+    ...new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace('https://paldb.cc', '').replace(/^\//, ''))),
+  ];
+}
+
+/** Slugs from paldb's /Items index page (source B — the complete item universe). */
+function itemsIndexSlugs() {
+  if (!existsSync(ITEMS_INDEX_FILE)) {
+    throw new Error(`items index missing — run "node scripts/mirror.mjs --fetch-index" once to cache ${ITEMS_INDEX_FILE}`);
+  }
+  const h = readFileSync(ITEMS_INDEX_FILE, 'utf8');
+  return [...new Set([...h.matchAll(/href="([A-Za-z0-9_%\-]+)"/g)].map((m) => m[1]))];
+}
+
 function buildList() {
   const ds = JSON.parse(readFileSync(join(ROOT, 'data', 'dataset.json'), 'utf8'));
   const palSlugs = new Set(ds.pals.map((p) => p.slug));
   const palNames = new Set(ds.pals.map((p) => p.name.replace(/ /g, '_')));
-  const xml = readFileSync(join(ROOT, 'exp', 'recon', 'paldb_sitemap.xml'), 'utf8');
-  const slugs = [
-    ...new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace('https://paldb.cc', '').replace(/^\//, ''))),
-  ];
+  const slugs = [...new Set([...sitemapSlugs(), ...itemsIndexSlugs()])];
   const pals = ds.pals.map((p) => ({ url: `https://paldb.cc/${p.slug}`, name: p.slug, kind: 'pal' }));
   const items = slugs
     .filter((s) => s && !palSlugs.has(s) && !palNames.has(s))
@@ -119,6 +140,37 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/** Fetch paldb's /Items index page and cache it (throttle-aware, 4 attempts). */
+async function fetchIndex() {
+  console.error('[mirror] fetching items index from https://paldb.cc/Items ...');
+  for (let attempt = 0; attempt < 4; attempt++) {
+    let res;
+    try {
+      res = await fetch('https://paldb.cc/Items', {
+        headers: { 'User-Agent': UA, Accept: 'text/html' },
+        redirect: 'follow',
+      });
+    } catch (e) {
+      console.error(`[mirror] index fetch error: ${e.message}`);
+      await sleep(backoffMs);
+      if (backoffMs < 300000) backoffMs *= 2;
+      continue;
+    }
+    const body = await res.text();
+    const ctype = res.headers.get('content-type') ?? '';
+    const isThrottle = res.status === 200 && (body.length === 0 || (ctype.includes('text/html') && body.length < 500));
+    if (res.status === 200 && !isThrottle) {
+      writeFileSync(ITEMS_INDEX_FILE, body);
+      console.error(`[mirror] items index cached (${body.length} bytes)`);
+      return;
+    }
+    console.error(`[mirror] index attempt ${attempt + 1}/4 throttled (status ${res.status}, ${body.length}B) — backing off ${Math.round(backoffMs / 1000)}s`);
+    await sleep(backoffMs);
+    if (backoffMs < 300000) backoffMs *= 2;
+  }
+  throw new Error('could not fetch the items index after 4 attempts');
+}
+
 async function crawl(list, label) {
   let done = 0;
   let failed = 0;
@@ -150,6 +202,12 @@ function writeProgress() {
   } catch {
     /* progress is best-effort */
   }
+}
+
+if (process.argv.includes('--fetch-index')) {
+  await fetchIndex();
+  console.error('[mirror] index refreshed — run again without --fetch-index to crawl');
+  process.exit(0);
 }
 
 const { pals, items } = buildList();
