@@ -3,6 +3,9 @@ node_modules/
 dist/
 build/
 
+# Mirrored raw HTML (fetched owner-side; the parsed dataset is what ships)
+data/raw/
+
 # Logs & env
 *.log
 .env

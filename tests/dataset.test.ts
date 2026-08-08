@@ -11,11 +11,12 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ds = loadDataset(join(ROOT, 'data', 'dataset.json'));
 const data = new PalworldData(ds);
 
-test('dataset shape: 299 pals, 136 unique combos, 1 directional pair', () => {
-  assert.equal(ds.schemaVersion, 1);
+test('dataset shape: 299 pals, 136 unique combos, 1 directional pair, items present', () => {
+  assert.equal(ds.schemaVersion, 2);
   assert.equal(ds.pals.length, 299);
   assert.equal(ds.uniqueCombos.length, 136);
   assert.deepEqual(Object.keys(ds.directional), ['CatMage|FoxMage']);
+  assert.ok((ds.items?.length ?? 0) > 700, `expected 700+ items, got ${ds.items?.length}`);
 });
 
 test('every pal has code, name and an integer rank in range', () => {
@@ -150,4 +151,45 @@ test('findParentPairs: directional pair is reachable from both children', () => 
       ['Katress', 'Wixen'],
     );
   }
+});
+
+test('schema v2: pal enrichment from mirrored pages', () => {
+  const anubis = data.resolve('Anubis').pal!;
+  assert.equal(anubis.food, 540);
+  assert.equal(anubis.size, 'M');
+  assert.ok((anubis.workSuitability ?? []).some((w) => w.work === 'Mining'));
+  assert.ok((anubis.activeSkills ?? []).length > 0);
+  assert.ok((anubis.drops ?? []).length > 0);
+  // every pal that can rank-breed should have skills parsed (coverage sanity)
+  const noSkills = ds.pals.filter((p) => p.rankResult && !(p.activeSkills ?? []).length).length;
+  assert.ok(noSkills <= 3, `expected almost all breedable pals to have skills, ${noSkills} missing`);
+});
+
+test('schema v2: items — resolution, search, known values', () => {
+  const wool = data.resolveItem('Wool');
+  assert.equal(wool.item?.code, 'Wool');
+  assert.equal(wool.item?.rarity, 'Common');
+  assert.equal(wool.item?.type, 'Material');
+  assert.ok((wool.item?.droppedBy ?? []).some((d) => d.item === 'Melpaca'));
+  // substring resolution
+  const fuzzy = data.resolveItem('ancient civ');
+  assert.ok(fuzzy.matches.some((i) => i.name.includes('Ancient Civilization')));
+  // search filters
+  const weapons = data.searchItems({ type: 'Weapon', limit: 50 });
+  assert.ok(weapons.length > 0);
+  assert.ok(weapons.every((i) => (i.type ?? '').toLowerCase().includes('weapon')));
+  const legendary = data.searchItems({ rarity: 'Legendary', limit: 50 });
+  assert.ok(legendary.length > 0);
+  assert.ok(legendary.every((i) => (i.rarity ?? '').toLowerCase().includes('legendary')));
+  // items are unique by slug (some facility pages share an internal code, e.g. MonsterFarm)
+  const slugs = new Set(ds.items!.map((i) => i.slug));
+  assert.equal(slugs.size, ds.items!.length);
+});
+
+test('search: workSuitability filter', () => {
+  const miners = data.search({ workSuitability: 'Mining', limit: 50 });
+  assert.ok(miners.length > 0);
+  assert.ok(miners.every((p) => (p.workSuitability ?? []).some((w) => w.work === 'Mining')));
+  const none = data.search({ workSuitability: 'NotAWorkType', limit: 50 });
+  assert.equal(none.length, 0);
 });

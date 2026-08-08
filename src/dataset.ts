@@ -30,6 +30,37 @@ export interface PalRecord {
   rank: number;
   rankResult: boolean;
   maleRatio: number;
+  // schema v2 enrichment (from mirrored pal pages)
+  size?: string;
+  rarity?: string;
+  food?: number;
+  workSpeed?: number;
+  genus?: string;
+  summary?: string;
+  partnerSkill?: { name: string; description?: string | null };
+  activeSkills?: { level: number | null; name: string; element: string | null; power: number | null; cooldown: number | null }[];
+  passiveSkills?: { name: string; description?: string | null }[];
+  workSuitability?: { work: string; level: number }[];
+  drops?: { item: string; qty?: string | null; probability?: string | null }[];
+  spawns?: { level: string; location: string }[];
+}
+
+/** An item from the mirrored item pages (schema v2). */
+export interface ItemRecord {
+  code: string;
+  name: string;
+  slug: string;
+  rarity: string | null;
+  type: string | null;
+  rank: number | null;
+  price: number | null;
+  weight: number | null;
+  maxStackCount: number | null;
+  typeA: string | null;
+  typeB: string | null;
+  droppedBy?: { item: string; qty?: string | null; probability?: string | null }[];
+  soldBy?: string[];
+  usedInCrafting?: { materials: { item: string; qty: number | null }[]; product: string | null }[];
 }
 
 /** A parent pair from the reverse breeding index, enriched for consumers. */
@@ -52,6 +83,8 @@ export interface Dataset {
   pals: PalRecord[];
   uniqueCombos: ComboTuple[];
   directional: DirectionalMap;
+  items?: ItemRecord[];
+  coverage?: { pals: number; items: number; at: string };
 }
 
 const DEFAULT_DATA_PATH = join(dirname(fileURLToPath(import.meta.url)), '..', 'data', 'dataset.json');
@@ -61,7 +94,7 @@ export function loadDataset(path?: string): Dataset {
   const resolved = isAbsolute(p) ? p : resolve(p);
   const raw = readFileSync(resolved, 'utf8');
   const ds = JSON.parse(raw) as Dataset;
-  if (ds.schemaVersion !== 1 || !Array.isArray(ds.pals) || ds.pals.length === 0) {
+  if ((ds.schemaVersion < 1 || ds.schemaVersion > 2) || !Array.isArray(ds.pals) || ds.pals.length === 0) {
     throw new Error(`unrecognized dataset schema at ${resolved}`);
   }
   return ds;
@@ -72,12 +105,18 @@ export class PalworldData {
   readonly engine: BreedingEngine;
   private readonly byCode = new Map<string, PalRecord>();
   private readonly byNameLower = new Map<string, PalRecord>();
+  private readonly itemByCode = new Map<string, ItemRecord>();
+  private readonly itemByNameLower = new Map<string, ItemRecord>();
 
   constructor(dataset: Dataset) {
     this.dataset = dataset;
     for (const p of dataset.pals) {
       this.byCode.set(p.code, p);
       this.byNameLower.set(p.name.toLowerCase(), p);
+    }
+    for (const i of dataset.items ?? []) {
+      this.itemByCode.set(i.code, i);
+      this.itemByNameLower.set(i.name.toLowerCase(), i);
     }
     this.engine = new BreedingEngine(dataset.pals, dataset.uniqueCombos, dataset.directional);
   }
@@ -103,6 +142,34 @@ export class PalworldData {
     return { matches };
   }
 
+  /** Same resolution semantics for items. */
+  resolveItem(input: string): { item?: ItemRecord; matches: ItemRecord[] } {
+    const q = input.trim();
+    if (!q) return { matches: [] };
+    const exact = this.itemByCode.get(q) ?? this.itemByNameLower.get(q.toLowerCase());
+    if (exact) return { item: exact, matches: [] };
+    const ql = q.toLowerCase();
+    const matches = (this.dataset.items ?? [])
+      .filter((i) => i.name.toLowerCase().includes(ql))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return { matches };
+  }
+
+  /** Item search: name substring + type + rarity filters, sorted by name. */
+  searchItems(opts: { query?: string; type?: string; rarity?: string; limit?: number }): ItemRecord[] {
+    const ql = opts.query?.trim().toLowerCase();
+    const type = opts.type?.trim().toLowerCase();
+    const rarity = opts.rarity?.trim().toLowerCase();
+    let items = (this.dataset.items ?? []).filter((i) => {
+      if (ql && !i.name.toLowerCase().includes(ql)) return false;
+      if (type && !(i.type ?? '').toLowerCase().includes(type)) return false;
+      if (rarity && !(i.rarity ?? '').toLowerCase().includes(rarity)) return false;
+      return true;
+    });
+    items = [...items].sort((a, b) => a.name.localeCompare(b.name));
+    return items.slice(0, Math.min(opts.limit ?? 20, 50));
+  }
+
   search(opts: {
     query?: string;
     element?: string;
@@ -112,11 +179,13 @@ export class PalworldData {
     maxCaptureRate?: number;
     bossOnly?: boolean;
     breedableOnly?: boolean;
+    workSuitability?: string;
     sortBy?: 'name' | 'rank' | 'attack';
     limit?: number;
   }): PalRecord[] {
     const ql = opts.query?.trim().toLowerCase();
     const el = opts.element?.trim().toLowerCase();
+    const work = opts.workSuitability?.trim().toLowerCase();
     let pals = this.dataset.pals.filter((p) => {
       if (ql && !p.name.toLowerCase().includes(ql)) return false;
       if (el && !p.element.some((e) => e.toLowerCase() === el)) return false;
@@ -126,6 +195,7 @@ export class PalworldData {
       if (opts.maxCaptureRate !== undefined && (p.captureRate ?? Infinity) > opts.maxCaptureRate) return false;
       if (opts.bossOnly && !p.boss) return false;
       if (opts.breedableOnly && !p.rankResult) return false;
+      if (work && !(p.workSuitability ?? []).some((w) => w.work.toLowerCase() === work)) return false;
       return true;
     });
     const sort = opts.sortBy ?? 'name';

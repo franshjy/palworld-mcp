@@ -23,7 +23,7 @@ function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
   ]);
 }
 
-test('MCP server: listTools + four tools over stdio', async (t) => {
+test('MCP server: listTools + seven tools over stdio', async (t) => {
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [TSX_CLI, SERVER],
@@ -37,7 +37,7 @@ test('MCP server: listTools + four tools over stdio', async (t) => {
     const tools = await withTimeout(client.listTools(), 10000, 'listTools');
     assert.deepEqual(
       tools.tools.map((x) => x.name).sort(),
-      ['find_breeding_pairs', 'get_breeding_result', 'get_pal', 'search_pals'],
+      ['breeding_plan', 'find_breeding_pairs', 'get_breeding_result', 'get_item', 'get_pal', 'search_items', 'search_pals'],
     );
 
     const search = await withTimeout(client.callTool({ name: 'search_pals', arguments: { query: 'anub' } }), 10000, 'search_pals');
@@ -145,6 +145,78 @@ test('MCP server: listTools + four tools over stdio', async (t) => {
     const fpBad = await withTimeout(client.callTool({ name: 'find_breeding_pairs', arguments: { target: 'zzzz' } }), 10000, 'fp unknown');
     assert.equal(fpBad.isError, true);
     assert.match(fpBad.content[0].text, /unknown pal/);
+
+    // breeding_plan
+    const bp = await withTimeout(
+      client.callTool({ name: 'breeding_plan', arguments: { target: 'Jormuntide Ignis', owned: ['Jormuntide', 'Blazehowl'] } }),
+      20000,
+      'breeding_plan unique',
+    );
+    const bpOut = JSON.parse(bp.content[0].text);
+    assert.equal(bpOut.found, true);
+    assert.equal(bpOut.unbreedable, false);
+    assert.equal(bpOut.totalPlans, 1);
+    assert.equal(bpOut.plans[0].stepCount, 1);
+    assert.equal(bpOut.plans[0].steps[0].kind, 'unique');
+    assert.equal(bpOut.plans[0].newCatches, 0);
+
+    const bpJet = await withTimeout(
+      client.callTool({ name: 'breeding_plan', arguments: { target: 'Jetragon', owned: [] } }),
+      20000,
+      'breeding_plan unbreedable',
+    );
+    assert.equal(JSON.parse(bpJet.content[0].text).unbreedable, true);
+
+    const bpGreen = await withTimeout(
+      client.callTool({ name: 'breeding_plan', arguments: { target: 'Anubis', owned: [] } }),
+      20000,
+      'breeding_plan greenfield',
+    );
+    const bpGreenOut = JSON.parse(bpGreen.content[0].text);
+    assert.ok(bpGreenOut.totalPlans > 0);
+    assert.equal(bpGreenOut.plans[0].stepCount, 1);
+    assert.equal(bpGreenOut.plans[0].newCatches, 2);
+
+    const bpBad = await withTimeout(
+      client.callTool({ name: 'breeding_plan', arguments: { target: 'Anubis', owned: ['zzzz'] } }),
+      10000,
+      'breeding_plan unknown owned',
+    );
+    assert.equal(bpBad.isError, true);
+    assert.match(bpBad.content[0].text, /unknown pal/);
+
+    // items
+    const si = await withTimeout(client.callTool({ name: 'search_items', arguments: { query: 'sphere' } }), 10000, 'search_items');
+    const siOut = JSON.parse(si.content[0].text);
+    assert.ok(siOut.count >= 1);
+    assert.ok(siOut.items.some((i: { name: string }) => i.name.toLowerCase().includes('sphere')));
+
+    const gi = await withTimeout(client.callTool({ name: 'get_item', arguments: { name: 'Wool' } }), 10000, 'get_item');
+    const giOut = JSON.parse(gi.content[0].text);
+    assert.equal(giOut.found, true);
+    assert.equal(giOut.item.code, 'Wool');
+    assert.equal(giOut.item.rarity, 'Common');
+    assert.ok(giOut.item.droppedBy.some((d: { item: string }) => d.item === 'Melpaca'));
+
+    const giBad = await withTimeout(client.callTool({ name: 'get_item', arguments: { name: 'zzzz' } }), 10000, 'get_item unknown');
+    assert.equal(giBad.isError, true);
+    assert.match(giBad.content[0].text, /unknown item/);
+
+    // get_pal enrichment (schema v2 fields)
+    const enriched = await withTimeout(client.callTool({ name: 'get_pal', arguments: { name: 'Anubis' } }), 10000, 'get_pal enriched');
+    const enrichedOut = JSON.parse(enriched.content[0].text);
+    assert.equal(enrichedOut.pal.food, 540);
+    assert.ok(Array.isArray(enrichedOut.pal.activeSkills) && enrichedOut.pal.activeSkills.length > 0);
+    assert.ok(enrichedOut.pal.workSuitability.some((w: { work: string }) => w.work === 'Mining'));
+
+    // search_pals workSuitability filter
+    const ws = await withTimeout(
+      client.callTool({ name: 'search_pals', arguments: { workSuitability: 'Mining', limit: 5 } }),
+      10000,
+      'search_pals work',
+    );
+    const wsOut = JSON.parse(ws.content[0].text);
+    assert.ok(wsOut.count >= 1);
   } finally {
     await client.close().catch(() => {});
     // Hard-kill the server child if it is still alive (prevents stray tsx processes).

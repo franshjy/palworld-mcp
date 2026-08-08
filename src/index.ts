@@ -15,7 +15,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import { loadDataset, PalworldData, type PalRecord } from './dataset.js';
+import { loadDataset, PalworldData, type ItemRecord, type PalRecord } from './dataset.js';
+import { breedingPlan } from './planner.js';
 
 function fail(message: string) {
   return { content: [{ type: 'text' as const, text: message }], isError: true };
@@ -51,7 +52,7 @@ function palDetail(p: PalRecord, data: PalworldData) {
     .filter(([, , c]) => c === p.code)
     .map(([a, b]) => ({ parent1: nameOf(a), parent2: nameOf(b) }))
     .sort((x, y) => x.parent1.localeCompare(y.parent1) || x.parent2.localeCompare(y.parent2));
-  return {
+  const detail = {
     ...palSummary(p),
     friendship: p.friendship,
     maleRatio: p.maleRatio,
@@ -65,6 +66,25 @@ function palDetail(p: PalRecord, data: PalworldData) {
       uniqueCombos: uniqueCombos.sort((x, y) => x.parent.localeCompare(y.parent)),
       obtainedVia,
     },
+  };
+  // Schema-v2 enrichment (only when the mirrored page provided it).
+  for (const key of ['size', 'rarity', 'food', 'workSpeed', 'genus', 'summary', 'partnerSkill', 'activeSkills', 'passiveSkills', 'workSuitability', 'drops', 'spawns'] as const) {
+    if (p[key] !== undefined) (detail as Record<string, unknown>)[key] = p[key];
+  }
+  return detail;
+}
+
+function itemSummary(i: ItemRecord) {
+  return {
+    code: i.code,
+    name: i.name,
+    slug: i.slug,
+    rarity: i.rarity,
+    type: i.type,
+    rank: i.rank,
+    price: i.price,
+    weight: i.weight,
+    url: `https://paldb.cc/${i.slug}`,
   };
 }
 
@@ -161,12 +181,13 @@ server.registerTool(
       maxCaptureRate: z.number().positive().optional().describe('Lower capture rate = rarer catch'),
       bossOnly: z.boolean().optional().describe('Only pals that have an alpha/boss variant'),
       breedableOnly: z.boolean().optional().describe('Only pals obtainable via standard breeding'),
+      workSuitability: z.string().optional().describe('Only pals with this work suitability, e.g. "Mining" or "Kindling"'),
       sortBy: z.enum(['name', 'rank', 'attack']).optional().describe('rank: lower = rarer'),
       limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
     },
   },
-  async ({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, sortBy, limit }) => {
-    const pals = data.search({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, sortBy, limit });
+  async ({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, sortBy, limit }) => {
+    const pals = data.search({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, sortBy, limit });
     return ok({ count: pals.length, pals: pals.map(palSummary) });
   },
 );
@@ -260,6 +281,106 @@ server.registerTool(
       })),
       note: 'Identity (target + target = target) always works if you already own it. Fixed unique combos are listed first, then rank-math pairs by rank-distance ease (the harder-to-get parent\'s breeding rank, descending — lower rank = rarer in the breeding pool). Rank reflects breeding rarity, not catch difficulty. Pairs flagged usesTarget: true already require owning the target (circular for acquisition).',
     });
+  },
+);
+
+server.registerTool(
+  'breeding_plan',
+  {
+    title: 'Breeding plan',
+    description:
+      'Multi-step breeding path solver: given a target pal and the pals you own, returns ranked step-by-step plans (fewest steps, then fewest new catches). owned is required — pass [] for greenfield mode (direct pairs whose parents you only need to catch). Unbreedable targets (e.g. Jetragon) are reported as unbreedable. Depth capped at maxSteps (default 5).',
+    inputSchema: {
+      target: z.string().min(1).describe('Desired child pal name or code'),
+      owned: z.array(z.string().min(1)).describe('Pal names/codes you own (empty array = greenfield)'),
+      maxSteps: z.number().int().min(1).max(8).optional().describe('Max breeding steps per plan (default 5)'),
+    },
+  },
+  async ({ target, owned, maxSteps }) => {
+    const rt = data.resolve(target);
+    if (!rt.pal) {
+      return rt.matches.length
+        ? fail(`ambiguous "${target}" — candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
+        : fail(`unknown pal "${target}"`);
+    }
+    const codes: string[] = [];
+    const names: string[] = [];
+    for (const o of owned) {
+      const r = data.resolve(o);
+      if (!r.pal) {
+        return r.matches.length
+          ? fail(`ambiguous "${o}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+          : fail(`unknown pal "${o}"`);
+      }
+      codes.push(r.pal.code);
+      names.push(r.pal.name);
+    }
+    const result = breedingPlan(data, rt.pal.code, codes, maxSteps ?? 5);
+    const nameOf = (c: string) => data.byCodeLookup(c)?.name ?? c;
+    return ok({
+      found: result.found,
+      target: {
+        name: rt.pal.name,
+        code: rt.pal.code,
+        rank: rt.pal.rank,
+        breedableAsResult: rt.pal.rankResult,
+        url: `https://paldb.cc/${rt.pal.slug}`,
+      },
+      owned: names,
+      alreadyOwned: result.alreadyOwned ?? false,
+      unbreedable: result.unbreedable ?? false,
+      totalPlans: result.totalPlans,
+      plans: result.plans.map((p) => ({
+        stepCount: p.stepCount,
+        newCatches: p.newCatches,
+        steps: p.steps.map((s) => ({
+          parent1: nameOf(s.parent1),
+          parent2: nameOf(s.parent2),
+          child: nameOf(s.child),
+          kind: s.kind,
+          ...(s.note ? { note: s.note } : {}),
+        })),
+      })),
+      note: 'Plans are sorted by fewest steps, then fewest new catches. Each step breeds two owned (or already-produced) pals; newCatches counts parents the plan needs that you neither own nor produce earlier in the path.',
+    });
+  },
+);
+
+server.registerTool(
+  'search_items',
+  {
+    title: 'Search items',
+    description:
+      'Search the item database by name, type or rarity (e.g. "sphere", "weapon", "Legendary"). Returns compact summaries with price and weight; use get_item for full records (drops, shops, recipes).',
+    inputSchema: {
+      query: z.string().min(1).optional().describe('Name substring, e.g. "sphere"'),
+      type: z.string().min(1).optional().describe('Item type, e.g. "Weapon", "Material", "Food"'),
+      rarity: z.string().min(1).optional().describe('Rarity tier: Common, Uncommon, Rare, Epic, Legendary'),
+      limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
+    },
+  },
+  async ({ query, type, rarity, limit }) => {
+    const items = data.searchItems({ query, type, rarity, limit });
+    return ok({ count: items.length, items: items.map(itemSummary) });
+  },
+);
+
+server.registerTool(
+  'get_item',
+  {
+    title: 'Get item details',
+    description:
+      'Full record for one item: rarity, type, rank, price, weight, stack count, which pals drop it, which shops sell it, and every crafting recipe it appears in. Accepts exact name, internal code, or a unique substring.',
+    inputSchema: { name: z.string().min(1) },
+  },
+  async ({ name }) => {
+    const r = data.resolveItem(name);
+    if (!r.item) {
+      return r.matches.length
+        ? fail(`ambiguous "${name}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+        : fail(`unknown item "${name}"`);
+    }
+    return ok({ found: true, item: r.item });
   },
 );
 

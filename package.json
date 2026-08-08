@@ -18,7 +18,9 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "test": "tsx --test tests/*.test.ts",
-    "refresh": "node scripts/build-dataset.mjs --fetch"
+    "refresh": "node scripts/build-dataset.mjs --fetch",
+    "mirror": "node scripts/mirror.mjs",
+    "parse-pages": "node scripts/parse-pages.mjs"
   },
   "license": "MIT",
   "dependencies": {
