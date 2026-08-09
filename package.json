@@ -1,7 +1,7 @@
 {
   "name": "palworld-mcp",
   "version": "0.1.0",
-  "description": "MCP server for Palworld database queries — pals, stats, breeding. Data sourced from paldb.cc.",
+  "description": "MCP server for Palworld database queries - pals, stats, breeding. Data sourced from paldb.cc.",
   "type": "module",
   "bin": {
     "palworld-mcp": "./dist/index.js"

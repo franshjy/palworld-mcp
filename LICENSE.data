@@ -1,14 +1,14 @@
-Palworld MCP dataset — Creative Commons Attribution 4.0 International (CC BY 4.0)
+Palworld MCP dataset - Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 This license applies to the compiled dataset shipped as data/dataset.json:
 the compilation, its structure, and its factual content.
 
 It does NOT apply to:
-- the software code in this repository (src/, scripts/, tests/) — see
+- the software code in this repository (src/, scripts/, tests/) - see
   LICENSE (MIT);
 - the underlying Palworld game data (pal names, stats, skill effects,
   paldeck summaries), which remains (c) Pocketpair, Inc. and is declared,
-  not licensed — see NOTICE.
+  not licensed - see NOTICE.
 
 Attribution requirements for redistributing or adapting the dataset:
 see NOTICE.
