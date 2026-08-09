@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Melpaca - Palworld Database Wiki</title>
+    <meta name="color-scheme" content="dark">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" crossorigin="anonymous"/>
+    <!--<link rel="stylesheet" href="https://cdn.paldb.cc/css/dataTables.bootstrap5.min.css" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.16/sweetalert2.min.css" integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modal-video@2.4.6/css/modal-video.min.css" integrity="sha256-nd8IBqNn9uqwZKfZcLIXQcNxk5TjqrxiLx7PzN5PFW0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/stdtheme.css?1785561045
+"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js" integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.paldb.cc/js/dataTables.bootstrap5.js?3"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/tippy.js@6" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.16/sweetalert2.all.min.js" integrity="sha512-4tvE14sHIcdIHl/dUdMHp733PI6MpYA7BDnDfndQmx7aIovEkW+LfkonVO9+NPWP1jYzmrqXJMIT2tECv1TsEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://unpkg.com/mustache@latest" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/modal-video@2.4.6/js/modal-video.min.js" integrity="sha256-VqINwNxkS4VEDMq5O52YTckX+Mx84X6bafO8NxF21Xw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.3.1/tinymce.min.js" integrity="sha512-eV68QXP3t5Jbsf18jfqT8xclEJSGvSK5uClUuqayUbF5IRK8e2/VSXIFHzEoBnNcvLBkHngnnd3CY7AFpUhF7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/header.js?1785561045
+"></script>
+
+<meta property="og:title" content="Melpaca" />
+<meta property="og:description" content="Can be ridden.
+While in party, 
+increases Kingpaca's Defense and Movement Speed.
+
+Sometimes drops Wool when assigned to Ranch. Technology7" />
+<meta property="og:image" content="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" />
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z1WF1TB29"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2Z1WF1TB29');
+</script>
+
+<script data-cfasync="false">window.nitroAds=window.nitroAds||{createAd:function(){return new Promise(e=>{window.nitroAds.queue.push(["createAd",arguments,e])})},addUserToken:function(){window.nitroAds.queue.push(["addUserToken",arguments])},queue:[]};</script>
+<script data-cfasync="false" async src="https://s.nitropay.com/ads-1818.js"></script>
+  </head>
+  <body>
+
+    <div id="consent-box" style="display:none">
+      <button onclick="window.__cmp('showModal');">
+        Update cookie preferences
+      </button>
+    </div>
+    
+    <script>
+      if (window["nitroAds"] && window["nitroAds"].loaded) {
+        document.getElementById("consent-box").style.display = window["__tcfapi"]
+          ? ""
+          : "none";
+      } else {
+        document.addEventListener(
+          "nitroAds.loaded",
+          () =>
+            (document.getElementById("consent-box").style.display = window["__tcfapi"]
+              ? ""
+              : "none")
+        );
+      }
+    </script>
+
+    <div class="background-image"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/en/" data-i18n-tw="帕魯編年史">Paldb.cc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n-tw="工具">
+                Tools
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Palpagos_Islands"><span data-i18n="worldmap_name_mainmap">Palpagos Islands</span> Map</a></li>
+                <li><a class="dropdown-item" href="/en/The_World_Tree"><span data-i18n="worldmap_name_tree">The World Tree</span> Map</a></li>
+                <li><a class="dropdown-item" href="/en/Breed" data-i18n-tw="配種計算">Breeding Calculator</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Calc" data-i18n-tw="帕魯計算">Pal Calculator</a></li>
+                <li><a class="dropdown-item" href="/en/Capture_Rate" data-i18n="capture_reticle_capture_rate">Capture Rate</a></li>
+                <li><a class="dropdown-item" href="/en/Iv_Calc" data-i18n-tw="個體值計算">IV Calculator</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="category_type_a_pal">
+                Pal
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Pals" data-i18n="category_type_a_pal">Pal</a></li>
+                <li><a class="dropdown-item" href="/en/Alpha_Pals" data-i18n="pal_box_sorttype_boss_flag">Alpha Pals</a></li>
+                <li><a class="dropdown-item" href="/en/Rampaging" data-i18n="predator_name">Rampaging</a></li>
+                <li><a class="dropdown-item" href="/en/Tower" data-i18n="map_filter_bosstower">Tower</a></li>
+                <li><a class="dropdown-item" href="/en/Raid" data-i18n="warning_invader_start_title">Raid</a></li>
+                <li><a class="dropdown-item" href="/en/Humans" data-i18n-tw="人類">Humans</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Element_Swap" data-i18n-tw="攻擊賦予屬性">Element Swap</a></li>
+                <li><a class="dropdown-item" href="/en/Weight_Increase" data-i18n-tw="負重增加">Weight Increase</a></li>
+                <li><a class="dropdown-item" href="/en/Mounts" data-i18n-tw="坐騎">Mounts</a></li>
+                <li><a class="dropdown-item" href="/en/Glider" data-i18n="common_itemtype_a_glider">Glider</a></li>
+                <li><a class="dropdown-item" href="/en/Drop_Rate" data-i18n-tw="掉落倍率">Drop Rate</a></li>
+                <li><a class="dropdown-item" href="/en/Party_Buffs" data-i18n-tw="隊伍增益">Party Buffs</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Stats" data-i18n-tw="帕魯屬性">Pal Stats</a></li>
+                <li><a class="dropdown-item" href="/en/Spoiler">Spoiler</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="common_work_suitability">
+                Work Suitability
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Kindling"><img alt="T_icon_palwork_00" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_00.webp" height="24" /><span data-i18n="common_work_suitability_emitflame">Kindling</span></a></li>
+                <li><a class="dropdown-item" href="/en/Watering"><img alt="T_icon_palwork_01" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_01.webp" height="24" /><span data-i18n="common_work_suitability_watering">Watering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Planting"><img alt="T_icon_palwork_02" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_02.webp" height="24" /><span data-i18n="common_work_suitability_seeding">Planting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Generating_Electricity"><img alt="T_icon_palwork_03" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_03.webp" height="24"/><span data-i18n="common_work_suitability_generateelectricity">Generating Electricity</span></a></li>
+                <li><a class="dropdown-item" href="/en/Handiwork"><img alt="T_icon_palwork_04" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_04.webp" height="24" /><span data-i18n="common_work_suitability_handcraft">Handiwork</span></a></li>
+                <li><a class="dropdown-item" href="/en/Gathering"><img alt="T_icon_palwork_05" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_05.webp" height="24" /><span data-i18n="common_work_suitability_collection">Gathering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Lumbering"><img alt="T_icon_palwork_06" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_06.webp" height="24" /><span data-i18n="common_work_suitability_deforest">Lumbering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Mining"><img alt="T_icon_palwork_07" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_07.webp" height="24" /><span data-i18n="common_work_suitability_mining">Mining</span></a></li>
+                <li><a class="dropdown-item" href="/en/Medicine_Production"><img alt="T_icon_palwork_08" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_08.webp" height="24" /><span data-i18n="common_work_suitability_productmedicine">Medicine Production</span></a></li>
+                <li><a class="dropdown-item" href="/en/Cooling"><img alt="T_icon_palwork_10" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_10.webp" height="24"/><span data-i18n="common_work_suitability_cool">Cooling</span></a></li>
+                <li><a class="dropdown-item" href="/en/Transporting"><img alt="T_icon_palwork_11" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_11.webp" height="24" /><span data-i18n="common_work_suitability_transport">Transporting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Farming"><img alt="T_icon_palwork_12" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_12.webp" height="24" /><span data-i18n="common_work_suitability_monsterfarm">Farming</span></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Work_Priority" data-i18n="common_work_suitability">Work Priority</a></li>
+                <li><a class="dropdown-item" href="/en/SAN">SAN</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n-tw="技能">
+                Skills
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Partner_Skill" data-i18n="common_coop_action">Partner Skill</a></li>
+                <li><a class="dropdown-item" href="/en/Active_Skills" data-i18n="common_active_skill">Active Skills</a></li>
+                <li><a class="dropdown-item" href="/en/Passive_Skills" data-i18n="common_characteristic">Passive Skills</a></li>
+                <li><a class="dropdown-item" href="/en/Skill_Fruit" data-i18n-tw="技能果實">Skill Fruit</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Surgery_Table" data-i18n="mapobject_name_operatingtable">Pal Surgery Table</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="ingame_main_menu_inventory">
+                Inventory
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Weapon"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Weapon_MeatCutterKnife.webp"/><span data-i18n="common_itemtype_a_weapon">Weapon</span></a></li>
+                <li><a class="dropdown-item" href="/en/Sphere"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_PalSphere.webp"/><span data-i18n="common_itemtype_a_specialweapon">Sphere</span></a></li>
+                <li><a class="dropdown-item" href="/en/Sphere_Module"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_SphereModule_Heavy.webp"/><span data-i18n="common_itemtype_a_captureitemmodifier">Sphere Module</span></a></li>
+                <li><a class="dropdown-item" href="/en/Armor"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_ClothArmor.webp"/><span data-i18n="common_itemtype_a_armor">Armor</span></a></li>
+                <li><a class="dropdown-item" href="/en/Accessory"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Accessory_Nonkilling.webp"/><span data-i18n="common_itemtype_a_accessory">Accessory</span></a></li>
+                <li><a class="dropdown-item" href="/en/Material"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Stone.webp"/><span data-i18n="common_itemtype_a_material">Material</span></a></li>
+                <li><a class="dropdown-item" href="/en/Consumable"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Food_Herbs.webp"/><span data-i18n="common_itemtype_a_consume">Consumable</span></a></li>
+                <li><a class="dropdown-item" href="/en/Ammo"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Ammo_Arrow.webp"/><span data-i18n="common_itemtype_a_ammo">Ammo</span></a></li>
+                <li><a class="dropdown-item" href="/en/Ingredient"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Food_Berries.webp"/><span data-i18n="common_itemtype_a_food">Ingredient</span></a></li>
+                <li><a class="dropdown-item" href="/en/Key_Items"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Relic.webp"/><span data-i18n="common_itemtype_a_essential">Key Items</span></a></li>
+                <li><a class="dropdown-item" href="/en/Glider"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Glider_Glider_Old.webp"/><span data-i18n="common_itemtype_a_glider">Glider</span></a></li>
+                <li><a class="dropdown-item" href="/en/Schematic"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp"/><span data-i18n="common_itemtype_a_blueprint">Schematic</span></a></li>
+    
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Chest_filters" data-i18n-tw="箱子篩選">Chest filters</a></li>
+                <li><a class="dropdown-item" href="/en/Legendary" data-i18n="rarity_legendary">Legendary</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="common_work_type_architecture">
+                Construction
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Production"><img alt="T_icon_construction_tab_00" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_00.webp" height="24"/><span data-i18n="category_type_a_product">Production</span></a></li>
+                <li><a class="dropdown-item" href="/en/Pal"><img alt="T_icon_construction_tab_01" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_01.webp" height="24"/><span data-i18n="category_type_a_pal">Pal</span></a></li>
+                <li><a class="dropdown-item" href="/en/Storage"><img alt="T_icon_construction_tab_02" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_02.webp" height="24"/><span data-i18n="category_type_a_storage">Storage</span></a></li>
+                <li><a class="dropdown-item" href="/en/Food"><img alt="T_icon_construction_tab_03" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_03.webp" height="24"/><span data-i18n="category_type_a_food">Food</span></a></li>
+                <li><a class="dropdown-item" href="/en/Infrastructure"><img alt="T_icon_construction_tab_04" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_04.webp" height="24"/><span data-i18n="category_type_a_infrastructure">Infrastructure</span></a></li>
+                <li><a class="dropdown-item" href="/en/Lighting"><img alt="T_icon_construction_tab_05" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_05.webp" height="24"/><span data-i18n="category_type_a_light">Lighting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Foundations"><img alt="T_icon_construction_tab_06" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_06.webp" height="24"/><span data-i18n="category_type_a_foundation">Foundations</span></a></li>
+                <li><a class="dropdown-item" href="/en/Defenses"><img alt="T_icon_construction_tab_07" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_07.webp" height="24"/><span data-i18n="category_type_a_defense">Defenses</span></a></li>
+                <li><a class="dropdown-item" href="/en/Furniture"><img alt="T_icon_construction_tab_09" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_09.webp" height="24"/><span data-i18n="category_type_a_furniture">Furniture</span></a></li>
+                <li><a class="dropdown-item" href="/en/Other"><img alt="T_icon_construction_tab_08" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_08.webp" height="24"/><span data-i18n="category_type_a_other">Other</span></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Breeding_Farm" data-i18n="mapobject_name_breedfarm">Breeding Farm</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Expedition_Station" data-i18n="mapobject_name_expedition">Pal Expedition Station</a></li>
+                <li><a class="dropdown-item" href="/en/Fishing_Pond" data-i18n="mapobject_name_fishingpond1">Fishing Pond</a></li>
+              </ul>
+            </li>
+    
+    
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="category_type_a_other">
+                Other
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Arrogant_Pal_Critic" data-i18n="name_reward_paldisplay">Arrogant Pal Critic</a></li>
+                <li><a class="dropdown-item" href="/en/Arrogant_Foodie" data-i18n="name_reward_food">Arrogant Foodie</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Merchant"><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_PalDealer_icon_normal.webp"/><span data-i18n="name_pal_trader">Pal Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Black_Marketeer"><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Male_DarkTrader01_icon_normal.webp"/><span data-i18n="name_darktrader">Black Marketeer</span></a></li>
+                <li><a class="dropdown-item" href="/en/Wandering_Merchant" data-i18n="name_selesperson">Wandering_Merchant</a></li>
+                <li><a class="dropdown-item" href="/en/Caravan_Merchant" data-i18n-tw="旅行商隊">Caravan Merchant</a></li>
+                <li><a class="dropdown-item" href="/en/Medal_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_DogCoin.webp"/><span data-i18n="name_medaltrader">Medal Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Bounty_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_icon_item_Jewelry_BountyProof_1.webp"/><span data-i18n="name_medaltrader">Bounty Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Arena_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Jewelry_BattleTicket.webp"/><span data-i18n="arenashop">Arena Merchant</span></a></li>
+    
+                <li><a class="dropdown-item" href="/en/Technologies" data-i18n="ingame_main_menu_technology">Technologies</a></li>
+                <li><a class="dropdown-item" href="/en/Treasure_Box" data-i18n-tw="寶箱">Treasure Box</a></li>
+                <li><a class="dropdown-item" href="/en/Journals" data-i18n="note_title">Memo</a></li>
+                <li><a class="dropdown-item" href="/en/Tips" data-i18n="helpguide_title">Tips</a></li>
+                <li><a class="dropdown-item" href="/en/Base" data-i18n="map_filter_camp">Base</a></li>
+                <li><a class="dropdown-item" href="/en/Mission" data-i18n="ingame_mainmenu_quest">Mission</a></li>
+                <li><a class="dropdown-item" href="/en/Dungeons" data-i18n-tw="地下城">Dungeons</a></li>
+                <li><a class="dropdown-item" href="/en/Eggs" data-i18n-tw="帕魯蛋">Eggs</a></li>
+                <li><a class="dropdown-item" href="/en/Caged" data-i18n-tw="籠子">Caged</a></li>
+                <li><a class="dropdown-item" href="/en/Enemy_Camp" data-i18n-tw="敵人據點">Enemy Camp</a></li>
+                <li><a class="dropdown-item" href="/en/Fishing" data-i18n="common_work_type_fishpond">Fishing</a></li>
+                <li><a class="dropdown-item" href="/en/Salvage" data-i18n-tw="打撈">Salvage</a></li>
+                <li><a class="dropdown-item" href="/en/Incidents" data-i18n="">Incidents</a></li>
+                <li><a class="dropdown-item" href="/en/Ancient_Ruin" data-i18n-tw="古代遺跡">Ancient Ruin</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Mods" data-i18n-tw="模組安裝">Mods Install</a></li>
+              </ul>
+            </li>
+    
+            <!--
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mega Menu
+              </a>
+              <div class="dropdown-menu w-100 p-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 1</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item px-0" href="#">Link 2</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 2</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">Link 3</a></li>
+                        <li><a class="dropdown-item px-0" href="#">Link 4</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 3</h6>
+                      <p class="small text-muted">Add descriptions or banners here.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            -->
+    
+          </ul>
+    
+          <ul class="navbar-nav language-selector">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-language fa-lg"></i></a>
+              <ul class="dropdown-menu language-menu">
+                <li><a class='dropdown-item' href='/en/'>EN English</a></li>
+                <li><a class='dropdown-item' href='/tw/'>TW 繁體中文</a></li>
+                <li><a class='dropdown-item' href='/ko/'>KO 한국어</a></li>
+                <li><a class='dropdown-item' href='/cn/'>CN 简体中文</a></li>
+                <li><a class='dropdown-item' href='/ja/'>JA Japanese</a></li>
+                <li><a class='dropdown-item' href='/es/'>ES Spanish</a></li>
+                <li><a class='dropdown-item' href='/de/'>DE Deutsch</a></li>
+                <li><a class='dropdown-item' href='/fr/'>FR Français</a></li>
+                <li><a class='dropdown-item' href='/it/'>IT Italian</a></li>
+                <li><a class='dropdown-item' href='/pt/'>PT Português</a></li>
+                <li><a class='dropdown-item' href='/ru/'>RU Русский</a></li>
+                <li><a class="dropdown-item" href="/th/">TH ภาษาไทย</a></li>
+                <li><a class="dropdown-item" href="/id/">ID Indonesian</a></li>
+                <li><a class="dropdown-item" href="/pl/">PL Polish</a></li>
+                <li><a class="dropdown-item" href="/tr/">TR Turkish</a></li>
+                <li><a class="dropdown-item" href="/vi/">VI Vietnamese</a></li>
+                <li><a class="dropdown-item" href="/mx/">MX Spanish</a></li>
+              </ul>
+            </li>
+          </ul>
+    
+          <form class="d-flex" role="search" id="autocomplete">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="navautosearch">
+          </form>
+    
+        </div>
+      </div>
+    </nav>
+
+<script> sidebar160('leftside_banner', 'left'); </script>
+<script> sidebar160('rightside_banner', 'right'); </script>
+
+    <div class="page">
+    <div class="page-content container" role="main">
+        <div id="topbanner970"></div><script>topbanner970("topbanner970");</script>
+
+    
+<div class="row g-2">
+
+<div class="col-lg-4">
+    <div class="card itemPopup" data-tabname="Melpaca">
+    <div class="d-flex border-left mt-1" style="border-left: solid #6be7ff;">
+        <div class="flex-shrink-0 ms-2">
+            <a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size64 rounded-circle border"/></a>
+        </div>
+        <div class="flex-grow-1 ms-2">
+            <div class="d-flex h-50">
+                <div class="align-self-center" style="font-size: x-large">
+                    <a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca">Melpaca</a>
+                    <span class="text-white-50" style="font-size: initial">#20</span>
+                </div>
+            </div>
+            <div class="d-flex h-50">
+                <div class="align-self-center">
+                    <div style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+                    <!--
+                    -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 ps-2" style="background-color: #3d4b50; position: relative; height: 14px;">
+        <div style="position: absolute; top: -10px;">
+        <a href="Partner_Skill" class="itemname">
+        Partner Skill
+        </a>
+        </div>
+    </div>
+    <div style="border-left: solid white"><span class="ms-2">Pacapaca Wool</span> Lv.1</div>
+
+    <div class="d-flex">
+        <div class="flex-shrink-0 ps-1">
+            <img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/SkillIcon/T_icon_skill_pal_017.webp" class="size64 rounded-circle border"/>
+        </div>
+        <div class="flex-grow-1 ms-2">
+            Can be ridden.
+While in party, 
+increases <a href="Kingpaca">Kingpaca</a>'s Defense and Movement Speed.
+
+Sometimes drops <span class="Status_Keyword"><a class="itemname" data-hover="?s=Items%2FWool"  href="Wool">Wool</a></span> when assigned to <a class="itemname" data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch">Ranch</a>.<div><a data-hover="?s=Items%2FSkillUnlock_Alpaca" href="Melpaca_Saddle"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Essential_SkillUnlock_Saddle.webp" alt="TitemiconEssentialSkillUnlockSaddle" class="size32 border bg_rarity0"/></a> <span class="d-inline-block me-2 my-1"><span class="bg-dark bg-gradient p-1">Technology</span><span class="border p-1">7</span></span></div>
+        </div>
+    </div>
+
+    <div class="mt-4 ps-2" style="background-color: #3d4b50; position: relative; height: 14px;">
+        <div style="position: absolute; top: -10px;">
+        <a href="Work_Suitability" class="itemname">
+        Work Suitability
+        </a>
+        </div>
+    </div>
+    <div class="workArray">
+    <div class="border-bottom py-1 px-3">
+        <div class="d-flex justify-content-between">
+            <div><a href="Farming"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_12.webp" alt="Ticonpalwork12" class="size24"/> Farming</a></div><div><span style="font-size:x-small">Lv</span><span class="Status_Up">2</span></div>
+        </div>
+        <div class="row flex-nowrap gap-1">
+            <div class="work-bar flex-fill wInit"></div>
+            <div class="work-bar flex-fill wInit"></div>
+            <div class="work-bar flex-fill wStar"></div>
+            <div class="work-bar flex-fill wStar"></div>
+            <div class="work-bar flex-fill wStar"></div>
+            <div class="work-bar flex-fill wStar"></div>
+            <div class="work-bar flex-fill wEmpty"></div>
+            <div class="work-bar flex-fill wEmpty"></div>
+            <div class="work-bar flex-fill wEmpty"></div>
+            <div class="work-bar flex-fill wEmpty"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="mt-2 d-flex justify-content-between border-top border-bottom p-1 px-3">
+        <div>Food</div>
+        <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_on.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_on.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/></div>
+    </div>
+
+
+</div>
+
+
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">Stats</h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Size</div>
+                
+                <div>M</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Rarity</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="1 - 20">
+  <div class="progress-bar" style="width: 11%"></div>
+</div>
+                <div>3</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_00.webp"/>Health</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="60 - 180">
+  <div class="progress-bar" style="width: 25%"></div>
+</div>
+                <div>90</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_foodamount_off.webp"/>Food</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="100 - 730">
+  <div class="progress-bar" style="width: 8%"></div>
+</div>
+                <div>150</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>MeleeAttack</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="50 - 150">
+  <div class="progress-bar" style="width: 40%"></div>
+</div>
+                <div>90</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_02.webp"/>Attack</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="50 - 150">
+  <div class="progress-bar" style="width: 25%"></div>
+</div>
+                <div>75</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_03.webp"/>Defense</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="50 - 200">
+  <div class="progress-bar" style="width: 27%"></div>
+</div>
+                <div>90</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp"/>Work Speed</div>
+                
+                <div>100</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Support</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="30 - 150">
+  <div class="progress-bar" style="width: 58%"></div>
+</div>
+                <div>100</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>CaptureRateCorrect</div>
+                
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>MaleProbability</div>
+                
+                <div>50</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><a href="Breeding_Farm">CombiRank</a></div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="20 - 3100">
+  <div class="progress-bar" style="width: 88%"></div>
+</div>
+                <div>2720</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><a class="itemname" data-hover="/cache/en/Game_Items_hover/fe08131a3a57968570818825e532f9a685c0e9530058a4cbd3d582f0c59e8999" href="Gold_Coin"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Money.webp" alt="TitemiconMaterialMoney" class="size32 border bg_rarity0"/>Gold Coin</a></div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="313 - 19900">
+  <div class="progress-bar" style="width: 2%"></div>
+</div>
+                <div>791</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Egg</div>
+                
+                <div><a class="itemname" data-hover="?s=Items%2FPalEgg_Normal_01" href="Common_Egg"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_PalEgg.webp" alt="TitemiconMaterialPalEgg" class="size32 border bg_rarity0"/>Common Egg</a></div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Code</div>
+                
+                <div>Alpaca</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">Movement</h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>SlowWalkSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="15 - 3000">
+  <div class="progress-bar" style="width: 2%"></div>
+</div>
+                <div>62</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>WalkSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="20 - 3000">
+  <div class="progress-bar" style="width: 1%"></div>
+</div>
+                <div>62</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>RunSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="200 - 3000">
+  <div class="progress-bar" style="width: 11%"></div>
+</div>
+                <div>500</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>RideSprintSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="350 - 3300">
+  <div class="progress-bar" style="width: 19%"></div>
+</div>
+                <div>900</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>TransportSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="40 - 3000">
+  <div class="progress-bar" style="width: 7%"></div>
+</div>
+                <div>261</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>GravityScale</div>
+                
+                <div>2</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>JumpZVelocity</div>
+                
+                <div>700</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>SwimSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="46 - 3000">
+  <div class="progress-bar" style="width: 4%"></div>
+</div>
+                <div>150</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>SwimDashSpeed</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="46 - 3000">
+  <div class="progress-bar" style="width: 8%"></div>
+</div>
+                <div>270</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Stamina</div>
+                <div class="progress pal-stats" role="progressbar" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-title="70 - 410">
+  <div class="progress-bar" style="width: 9%"></div>
+</div>
+                <div>100</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">Level 80</h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Health</div>
+                <div>4500 &ndash; 5580</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Attack</div>
+                <div>550 &ndash; 685</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Defense</div>
+                <div>590 &ndash; 752</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info"> Others </h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>IsPal</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Tribe</div>
+                <div>Alpaca</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>BPClass</div>
+                <div>Alpaca</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>ZukanIndex</div>
+                <div>20</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>ElementType1</div>
+                <div>Normal</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>GenusCategory</div>
+                <div>FourLegged</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Friendship_HP</div>
+                <div>4.5</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Friendship_ShotAttack</div>
+                <div>3.5</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Friendship_Defense</div>
+                <div>2.9</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Friendship_CraftSpeed</div>
+                <div>0</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>EnemyMaxHPRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>EnemyReceiveDamageRate</div>
+                <div>1.1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>EnemyInflictDamageRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>EnemyWazaCoolTimeRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>ExpRatio</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>StatusResistUpRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>AIResponse</div>
+                <div>Escape_to_Battle</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>BattleBGM</div>
+                <div>Cute</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>FullStomachDecreaseRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>FoodAmount</div>
+                <div>2</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>ViewingDistance</div>
+                <div>25</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>ViewingAngle</div>
+                <div>90</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>HearingRate</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Edible</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>CombiDuplicatePriority</div>
+                <div>272000</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>MeshCapsuleHalfHeight</div>
+                <div>100</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>MeshCapsuleRadius</div>
+                <div>36</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>BestWorkSuitability</div>
+                <div>MonsterFarm</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-lg-8">
+
+    <div class="row row-cols-1 row-cols-lg-2 g-3">
+
+    <div class="col">
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="mapobject_name_breedfarm">Breeding Farm</h5>
+            <a href="Breed?parent2a=Alpaca" class="btn btn-info" data-i18n-tw="子代配種">Breed 2 Pals</a>
+            <a href="Breed?child=Alpaca" class="btn btn-info" data-i18n-tw="親代配種">Parent Calculator</a>
+            
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="input_action_paldextodistribution">Map</h5>
+            <div class="d-flex flex-wrap gap-2">
+            <a href="Palpagos_Islands?pal=Alpaca&t=dayTimeLocations" class="btn bg-day "><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_timezone_daytime.webp" class="size24"/><span data-i18n-tw="白天">Day</span> (271)</a>
+
+            <a href="Palpagos_Islands?pal=Alpaca&t=nightTimeLocations" class="btn bg-night "><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_timezone_night.webp" class="size24"/><span data-i18n-tw="晚上">Night</span> (271)</a>
+
+            <a href="The_World_Tree?pal=Alpaca&t=dayTimeLocations" class="btn bg-day "><i class="fa-solid fa-tree"></i><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_timezone_daytime.webp" class="size24"/><span data-i18n-tw="白天">Day</span> (0)</a>
+
+            <a href="The_World_Tree?pal=Alpaca&t=nightTimeLocations" class="btn bg-night "><i class="fa-solid fa-tree"></i><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_timezone_night.webp" class="size24"/><span data-i18n-tw="晚上">Night</span> (0)</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n-tw="簡介">Summary</h5>
+            <div>Don't be fooled by this Pal's fluffy appearance. 
+A hypersonic kick from one of its long legs may 
+send you flying to the other side of the world.</div>
+            <a href='#' class="js-modal-btn" data-video-id="tm1nuUpeXLM"></a>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info"><span data-i18n="common_coop_action">Partner Skill</span>: Pacapaca Wool</h5>
+            <div class="d-flex d-none">
+                <div class="flex-shrink-0">
+                    <img src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/SkillIcon/T_icon_skill_pal_017.webp" class="size64 border rounded-circle">
+                </div>
+                <div class="flex-grow-1">
+                    Can be ridden.<br />
+While in party, <br />
+increases <a href="Kingpaca">Kingpaca</a>'s Defense and Movement Speed.<br />
+<br />
+Sometimes drops <span class="Status_Keyword"><a class="itemname" data-hover="?s=Items%2FWool"  href="Wool">Wool</a></span> when assigned to <a class="itemname" data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch">Ranch</a>.<div><a data-hover="?s=Items%2FSkillUnlock_Alpaca" href="Melpaca_Saddle"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Essential_SkillUnlock_Saddle.webp" alt="TitemiconEssentialSkillUnlockSaddle" class="size32 border bg_rarity0"/></a> <span class="d-inline-block me-2 my-1"><span class="bg-dark bg-gradient p-1">Technology</span><span class="border p-1">7</span></span></div>
+                </div>
+            </div>
+            <table class="table"><thead><tr><th>Lv.<th data-i18n-tw="物品">Item</thead><tbody><tr><td>1</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2</small> <span class="float-end">100%</span></div></td></tr><tr><td>2</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;3</small> <span class="float-end">100%</span></div></td></tr><tr><td>3</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;4</small> <span class="float-end">100%</span></div></td></tr><tr><td>4</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;5</small> <span class="float-end">100%</span></div></td></tr><tr><td>5</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;6</small> <span class="float-end">100%</span></div></td></tr><tr><td>6</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;7</small> <span class="float-end">100%</span></div></td></tr><tr><td>7</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;8</small> <span class="float-end">100%</span></div></td></tr><tr><td>8</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2&ndash;9</small> <span class="float-end">100%</span></div></td></tr><tr><td>9</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">3&ndash;10</small> <span class="float-end">100%</span></div></td></tr><tr><td>10</td><td><div><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">4&ndash;11</small> <span class="float-end">100%</span></div></td></tr></tbody></table>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="common_active_skill">Active Skills</h5>
+            <div class="row row-cols-1 row-cols-lg-2 g-2"><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 1 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AAirCanon" href="Air_Cannon" class="element_color_00">Air Cannon</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_AirCanon" href="Skill_Fruit%3A_Air_Cannon"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Neutral.webp" alt="TitemiconConsumeSkillCardNeutral" class="size32 border bg_rarity1"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 500&ndash;4000"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">2</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">40</span></div>
+    </div>
+    <div class="card-body">
+        Quickly fires a burst of highly pressurized air.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 7 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AUnique_Alpaca_Tackle" href="Fluffy_Tackle" class="element_color_00">Fluffy Tackle</a></div>
+        <div>
+            
+                <img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_prt_pal_skill_lock.webp" data-bs-toggle="tooltip" data-bs-title="Will not inherit" class="size32"/>
+                <i class="fa-regular fa-hand-back-fist fa-xl" data-bs-toggle="tooltip" data-bs-title="Melee Attack Range 300&ndash;1500"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">2</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">50</span></div>
+    </div>
+    <div class="card-body">
+        <a href="Melpaca">Melpaca</a>'s exclusive skill.
+Charges forward while surrounded by an adorable aura.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 15 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AMudShot" href="Bog_Blast" class="element_color_07">Bog Blast</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_MudShot" href="Ground_Skill_Fruit%3A_Bog_Blast"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Earth.webp" alt="TitemiconConsumeSkillCardEarth" class="size32 border bg_rarity1"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 500&ndash;5000"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_07.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Ground</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">2</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">40</span></div>
+    </div>
+    <div class="d-flex py-1 px-3 Aggregate"><span>Aggregate:</span> <span class="ps-1" style="color: #e5fbff;">Muddy</span> <div class="ms-auto">50</div></div>
+    <div class="card-body">
+        Hurls sticky mud
+at an enemy.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 22 <a data-hover="?s=Waza%2FEPalWazaID%3A%3APowerShot" href="Power_Shot" class="element_color_00">Power Shot</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_PowerShot" href="Skill_Fruit%3A_Power_Shot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Neutral.webp" alt="TitemiconConsumeSkillCardNeutral" class="size32 border bg_rarity1"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 600&ndash;3000"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">4</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">80</span></div>
+    </div>
+    <div class="card-body">
+        Charges energy
+into a focused blast.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 30 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AElecWave" href="Shockwave" class="element_color_03">Shockwave</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_ElecWave" href="Electric_Skill_Fruit%3A_Shockwave"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Electric.webp" alt="TitemiconConsumeSkillCardElectric" class="size32 border bg_rarity1"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 0&ndash;300"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_03.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Electric</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">4</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">80</span></div>
+    </div>
+    <div class="d-flex py-1 px-3 Aggregate"><span>Aggregate:</span> <span class="ps-1" style="color: #e5fbff;">Electrify</span> <div class="ms-auto">103</div></div>
+    <div class="card-body">
+        Quickly discharges electricity,
+shocking those around it.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 40 <a data-hover="?s=Waza%2FEPalWazaID%3A%3APowerBall" href="Power_Bomb" class="element_color_00">Power Bomb</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_PowerBall" href="Skill_Fruit%3A_Power_Bomb"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Neutral.webp" alt="TitemiconConsumeSkillCardNeutral" class="size32 border bg_rarity2"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 1000&ndash;5000"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">8</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">120</span></div>
+    </div>
+    <div class="card-body">
+        Charges a massive amount of energy
+before firing a large destructive ball.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 50 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AHyperBeam" href="Pal_Blast" class="element_color_00">Pal Blast</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_HyperBeam" href="Skill_Fruit%3A_Pal_Blast"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Neutral.webp" alt="TitemiconConsumeSkillCardNeutral" class="size32 border bg_rarity3"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 500&ndash;1800"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">20</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">450</span></div>
+    </div>
+    <div class="card-body">
+        Charges destructive energy before firing
+a high-powered beam forward across a wide area.
+    </div>
+</div>
+</div><div class="col"><div class="card itemPopup activeSkill">
+    <div class="px-3 py-1 d-flex justify-content-between itemHead">
+        <div class="align-self-center">Lv. 70 <a data-hover="?s=Waza%2FEPalWazaID%3A%3AHolyBlast" href="Holy_Burst" class="element_color_00">Holy Burst</a></div>
+        <div>
+            <a data-hover="?s=Items%2FSkillCard_HolyBlast" href="Skill_Fruit%3A_Holy_Burst"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Consume_SkillCard_Neutral.webp" alt="TitemiconConsumeSkillCardNeutral" class="size32 border bg_rarity3"/></a>
+                <i class="fa-solid fa-wand-sparkles fa-xl" data-bs-toggle="tooltip" data-bs-title="Shot Attack Range 0&ndash;5000"></i>
+        </div>
+    </div>
+    <div class="d-flex pt-1 px-3" style="background-color: #5a7073;">
+        <div class="me-auto" style="background-image: url(https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_prt_palstatus_element_00.webp); width: 104px; height: 30px; background-repeat: no-repeat; display: inline-block"><span style="padding-left: 35px">Neutral</span></div>
+        <div class="ps-3"><img data-bs-toggle="tooltip" data-bs-title="CoolTime" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_Icon_PalSkillCoolTime.webp" class="size24"/>: <span style="color: #73ffff">30</span></div>
+        <div class="ps-3">Power: <span style="color: #73ffff">700</span></div>
+    </div>
+    <div class="card-body">
+        Creates a wide explosion of light
+at the enemy's location and around it.
+    </div>
+</div>
+</div></div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="common_characteristic">Passive Skills</h5>
+            <div class="row row-cols-1 row-cols-lg-2 g-2"></div>
+        </div>
+    </div>
+
+    
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="paldex_drop_item_title">Possible Drops</h5>
+            <table class="table table-sm mb-0">
+                <thead>
+                    <tr>
+                        <th data-i18n-tw="物品">Item
+                        <th>Qty
+                        <th>
+                        <th data-i18n-tw="機率">Probability
+                    </tr>
+                <tbody>
+                    <tr>
+                        <td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a>
+                        <td><small class="itemQuantity">2&ndash;5</small>
+                        <td> 
+                            
+                        <td>100%
+                    </tr>
+                    <tr>
+                        <td><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a>
+                        <td><small class="itemQuantity">1</small>
+                        <td> 
+                            
+                        <td>100%
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+
+     <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">Spawner</h5>
+            <table class="table mb-0">
+                <thead>
+                <tr>
+                    <td>
+                    <td>Level
+                    <td>Map
+                    <td>
+                    <td>
+                <tbody>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td>
+                    <td><a href="Palpagos_Islands?zone=grass_grade_01">Map</a>
+                    <td><a class="itemname" data-hover="?s=Items%2FPalEgg_Normal_01" href="Common_Egg"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_PalEgg.webp" alt="TitemiconMaterialPalEgg" class="size32 border bg_rarity0"/>Common Egg</a> <a href="grass_grade_01">grass_grade_01</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">5&ndash;7</span>
+                    <td><a href="Palpagos_Islands?spawner=81_1_grass_FBOSS_2">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_enemy_strong.webp" class="size32"/><a href="Palpagos_Islands?pos=50%2C-460"><i class="fa-solid fa-map-location-dot"></i>Small Settlement 50,-460</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">6&ndash;9</span>
+                    <td>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_compass_dungeon.webp" class="size32"/><a href="Hillside_Cavern">Hillside Cavern</a><br/><a href="Isolated_Island_Cavern">Isolated Island Cavern</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">7&ndash;9</span>
+                    <td><a href="Palpagos_Islands?spawner=green_D">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=green_D">green_D</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">10&ndash;11</span>
+                    <td><a href="Palpagos_Islands?spawner=blue_B">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=blue_B">blue_B</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="BOSS_Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/c24ab33a4bea610de27075eff4e3c0c5c901e86f196bf7edcd2f85e6a0768ea2" href="Pompous_Shanks_Melpaca"><span class="size32 palAlpha"></span><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border border-danger"/></a>
+                    <td><span class="level">10&ndash;13</span>
+                    <td>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_compass_dungeon.webp" class="size32"/><a href="Hillside_Cavern">Hillside Cavern</a><br/><a href="Isolated_Island_Cavern">Isolated Island Cavern</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">14&ndash;17</span>
+                    <td><a href="Palpagos_Islands?spawner=green_G">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=green_G">green_G</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">14&ndash;17</span>
+                    <td><a href="Palpagos_Islands?spawner=green_I">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=green_I">green_I</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">14&ndash;17</span>
+                    <td><a href="Palpagos_Islands?spawner=green_K">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=green_K">green_K</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">14&ndash;17</span>
+                    <td><a href="Palpagos_Islands?spawner=green_M">Map</a>
+                    <td><i class="fa-solid fa-map-location-dot size32"></i><a href="Palpagos_Islands?spawner=green_M">green_M</a>
+                    <td>
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">15&ndash;25</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: Grass</a>
+                    <td>1.3%
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">30&ndash;35</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: Forest_Volcano</a>
+                    <td>0.65%
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">40&ndash;45</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: Desert_Snow</a>
+                    <td>0.26%
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">50&ndash;55</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: Sakurajima</a>
+                    <td>0.13%
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">60&ndash;65</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: DarkIsland</a>
+                    <td>0.06%
+                <tr>
+                    <td><a data-pal-id="Alpaca" class="" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/></a>
+                    <td><span class="level">65&ndash;70</span>
+                    <td>
+                    <td><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Visitor_Recruiter_icon_normal.webp" class="size32"/><a href="Pal_Recruiter">Pal Recruiter: SkyIsland</a>
+                    <td>0.03%
+            </table>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">Tribes</h5>
+            <table class="table mb-0">
+            <tr><td><a data-pal-id="BOSS_Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/c24ab33a4bea610de27075eff4e3c0c5c901e86f196bf7edcd2f85e6a0768ea2" href="Pompous_Shanks_Melpaca"><span class="size32 palAlpha"></span><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border border-danger"/>Pompous Shanks Melpaca</a><td>Tribe Boss<tr><td><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a><td>Tribe Normal
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+    </div>
+    </div>
+
+    <footer class="text-center text-lg-left container mt-2">
+      <div class="card p-4">
+        <div class="row">
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Sites</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a target="_blank" href="https://poedb.tw/">poedb.tw</a> </li>
+              <li> <a target="_blank" href="https://tlidb.com/">tlidb.com</a> </li>
+              <!--<li> <a target="_blank" href="https://diablo4.cc/">diablo4.cc</a> </li>-->
+              <li> <a target="_blank" href="https://poe2db.tw/">poe2db.tw</a> </li>
+              <li> <a target="_blank" href="https://paldb.cc/">paldb.cc</a> </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">About Site</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="privacy">Privacy</a> </li>
+              <li> <a target="_blank" href="https://www.reddit.com/user/chuanhsing">About US</a> </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Version</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="version">v1.0.2</a> 2026/7/29</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Community</h5>
+            <ul class="list-unstyled mb-0">
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="p-3">
+        <span>This site is fan-made and not affiliated with <a href="https://www.pocketpair.jp/" target="_blank">Pocketpair</a> in any way.</span>
+      </div>
+    </footer>
+
+    <a href="#top" id="toTop"><span class="fas fa-arrow-circle-up fa-3x"></span></a>
+
+    <script src="/js/footer.js?1785561045
+"></script>
+<script>
+$(document).ready(function()
+ {
+    if (window.location.hostname != "paldb.cc") {
+        window.location.href="https://paldb.cc/";
+    }
+ });
+</script>
+
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"ad52ef62a25e4a188cfdb0e6f473e83b","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>

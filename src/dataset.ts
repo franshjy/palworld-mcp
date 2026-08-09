@@ -63,6 +63,12 @@ export interface ItemRecord {
   usedInCrafting?: { materials: { item: string; qty: number | null }[]; product: string | null }[];
 }
 
+/** A crafting recipe as seen from the product side (reverse of usedInCrafting). */
+export interface CraftRecipe {
+  product: string | null;
+  materials: { item: string; qty: number | null }[];
+}
+
 /** A parent pair from the reverse breeding index, enriched for consumers. */
 export interface ParentPair {
   parent1: string;
@@ -107,6 +113,7 @@ export class PalworldData {
   private readonly byNameLower = new Map<string, PalRecord>();
   private readonly itemByCode = new Map<string, ItemRecord>();
   private readonly itemByNameLower = new Map<string, ItemRecord>();
+  private readonly recipesByProduct = new Map<string, CraftRecipe[]>();
 
   constructor(dataset: Dataset) {
     this.dataset = dataset;
@@ -117,6 +124,24 @@ export class PalworldData {
     for (const i of dataset.items ?? []) {
       this.itemByCode.set(i.code, i);
       this.itemByNameLower.set(i.name.toLowerCase(), i);
+    }
+    // Reverse recipe index: every usedInCrafting entry, indexed under the item it PRODUCES.
+    // The same recipe row appears on every material's page — dedupe by product + materials.
+    for (const i of dataset.items ?? []) {
+      for (const r of i.usedInCrafting ?? []) {
+        if (!r.product) continue;
+        const target = this.itemByProductName(r.product);
+        if (!target) continue;
+        const key = target.name.toLowerCase();
+        const seen = this.recipesByProduct.get(key);
+        const dedupeKey = `${r.product}\u0000${JSON.stringify(r.materials)}`;
+        if (seen) {
+          if (seen.some((x) => `${x.product}\u0000${JSON.stringify(x.materials)}` === dedupeKey)) continue;
+        }
+        const arr = seen ?? [];
+        arr.push(r);
+        this.recipesByProduct.set(key, arr);
+      }
     }
     this.engine = new BreedingEngine(dataset.pals, dataset.uniqueCombos, dataset.directional);
   }
@@ -155,6 +180,24 @@ export class PalworldData {
     return { matches };
   }
 
+  /**
+   * Resolve a recipe product string ("Laser Gatling Gun 1", "Rocket Ammo 10",
+   * "Coralum Ore x1") to the canonical item it produces: exact name match first,
+   * then a trailing tier/count suffix stripped.
+   */
+  private itemByProductName(product: string): ItemRecord | undefined {
+    const exact = this.itemByNameLower.get(product.toLowerCase());
+    if (exact) return exact;
+    const stripped = product.replace(/ x?\d+$/, '').trim();
+    if (stripped && stripped !== product) return this.itemByNameLower.get(stripped.toLowerCase());
+    return undefined;
+  }
+
+  /** Recipes that produce the given item (exact name), the reverse of usedInCrafting. */
+  itemRecipes(itemName: string): CraftRecipe[] {
+    return this.recipesByProduct.get(itemName.toLowerCase()) ?? [];
+  }
+
   /** Item search: name substring + type + rarity filters, sorted by name. */
   searchItems(opts: { query?: string; type?: string; rarity?: string; limit?: number }): ItemRecord[] {
     const ql = opts.query?.trim().toLowerCase();
@@ -180,12 +223,15 @@ export class PalworldData {
     bossOnly?: boolean;
     breedableOnly?: boolean;
     workSuitability?: string;
+    dropItem?: string;
+    minWorkLevel?: number;
     sortBy?: 'name' | 'rank' | 'attack';
     limit?: number;
   }): PalRecord[] {
     const ql = opts.query?.trim().toLowerCase();
     const el = opts.element?.trim().toLowerCase();
     const work = opts.workSuitability?.trim().toLowerCase();
+    const drop = opts.dropItem?.trim().toLowerCase();
     let pals = this.dataset.pals.filter((p) => {
       if (ql && !p.name.toLowerCase().includes(ql)) return false;
       if (el && !p.element.some((e) => e.toLowerCase() === el)) return false;
@@ -195,7 +241,8 @@ export class PalworldData {
       if (opts.maxCaptureRate !== undefined && (p.captureRate ?? Infinity) > opts.maxCaptureRate) return false;
       if (opts.bossOnly && !p.boss) return false;
       if (opts.breedableOnly && !p.rankResult) return false;
-      if (work && !(p.workSuitability ?? []).some((w) => w.work.toLowerCase() === work)) return false;
+      if (work && !(p.workSuitability ?? []).some((w) => w.work.toLowerCase() === work && (opts.minWorkLevel === undefined || w.level >= opts.minWorkLevel))) return false;
+      if (drop && !(p.drops ?? []).some((d) => d.item.toLowerCase().includes(drop))) return false;
       return true;
     });
     const sort = opts.sortBy ?? 'name';

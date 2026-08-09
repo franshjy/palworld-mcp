@@ -182,12 +182,17 @@ server.registerTool(
       bossOnly: z.boolean().optional().describe('Only pals that have an alpha/boss variant'),
       breedableOnly: z.boolean().optional().describe('Only pals obtainable via standard breeding'),
       workSuitability: z.string().optional().describe('Only pals with this work suitability, e.g. "Mining" or "Kindling"'),
+      dropItem: z.string().optional().describe('Only pals that drop this item (substring match on drop name)'),
+      minWorkLevel: z.number().int().min(1).optional().describe('Require at least this work level — only applies together with workSuitability'),
       sortBy: z.enum(['name', 'rank', 'attack']).optional().describe('rank: lower = rarer'),
       limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
     },
   },
-  async ({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, sortBy, limit }) => {
-    const pals = data.search({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, sortBy, limit });
+  async ({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, dropItem, minWorkLevel, sortBy, limit }) => {
+    if (minWorkLevel !== undefined && !workSuitability) {
+      return fail('minWorkLevel requires workSuitability');
+    }
+    const pals = data.search({ query, element, minHp, minAttack, minDefense, maxCaptureRate, bossOnly, breedableOnly, workSuitability, dropItem, minWorkLevel, sortBy, limit });
     return ok({ count: pals.length, pals: pals.map(palSummary) });
   },
 );
@@ -370,7 +375,7 @@ server.registerTool(
   {
     title: 'Get item details',
     description:
-      'Full record for one item: rarity, type, rank, price, weight, stack count, which pals drop it, which shops sell it, and every crafting recipe it appears in. Accepts exact name, internal code, or a unique substring.',
+      'Full record for one item: rarity, type, rank, price, weight, stack count, which pals drop it, which shops sell it, every crafting recipe it appears in, and the recipes that produce it. Accepts exact name, internal code, or a unique substring.',
     inputSchema: { name: z.string().min(1) },
   },
   async ({ name }) => {
@@ -380,7 +385,7 @@ server.registerTool(
         ? fail(`ambiguous "${name}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
         : fail(`unknown item "${name}"`);
     }
-    return ok({ found: true, item: r.item });
+    return ok({ found: true, item: { ...r.item, recipes: data.itemRecipes(r.item.name) } });
   },
 );
 

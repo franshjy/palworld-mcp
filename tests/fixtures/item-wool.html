@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Wool - Palworld Database Wiki</title>
+    <meta name="color-scheme" content="dark">
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" crossorigin="anonymous"/>
+    <!--<link rel="stylesheet" href="https://cdn.paldb.cc/css/dataTables.bootstrap5.min.css" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.16/sweetalert2.min.css" integrity="sha512-NvuRGlPf6cHpxQqBGnPe7fPoACpyrjhlSNeXVUY7BZAj1nNhuNpRBq3osC4yr2vswUEuHq2HtCsY2vfLNCndYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modal-video@2.4.6/css/modal-video.min.css" integrity="sha256-nd8IBqNn9uqwZKfZcLIXQcNxk5TjqrxiLx7PzN5PFW0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/stdtheme.css?1785561045
+"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js" integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.paldb.cc/js/dataTables.bootstrap5.js?3"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/tippy.js@6" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.16/sweetalert2.all.min.js" integrity="sha512-4tvE14sHIcdIHl/dUdMHp733PI6MpYA7BDnDfndQmx7aIovEkW+LfkonVO9+NPWP1jYzmrqXJMIT2tECv1TsEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://unpkg.com/mustache@latest" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/modal-video@2.4.6/js/modal-video.min.js" integrity="sha256-VqINwNxkS4VEDMq5O52YTckX+Mx84X6bafO8NxF21Xw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.3.1/tinymce.min.js" integrity="sha512-eV68QXP3t5Jbsf18jfqT8xclEJSGvSK5uClUuqayUbF5IRK8e2/VSXIFHzEoBnNcvLBkHngnnd3CY7AFpUhF7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/header.js?1785561045
+"></script>
+
+<meta property="og:title" content="Wool" />
+<meta property="og:description" content="Material sheared from sheep Pals.
+A necessity for creating bedding, Cloth and more." />
+<meta property="og:image" content="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" />
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Z1WF1TB29"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2Z1WF1TB29');
+</script>
+
+<script data-cfasync="false">window.nitroAds=window.nitroAds||{createAd:function(){return new Promise(e=>{window.nitroAds.queue.push(["createAd",arguments,e])})},addUserToken:function(){window.nitroAds.queue.push(["addUserToken",arguments])},queue:[]};</script>
+<script data-cfasync="false" async src="https://s.nitropay.com/ads-1818.js"></script>
+  </head>
+  <body>
+
+    <div id="consent-box" style="display:none">
+      <button onclick="window.__cmp('showModal');">
+        Update cookie preferences
+      </button>
+    </div>
+    
+    <script>
+      if (window["nitroAds"] && window["nitroAds"].loaded) {
+        document.getElementById("consent-box").style.display = window["__tcfapi"]
+          ? ""
+          : "none";
+      } else {
+        document.addEventListener(
+          "nitroAds.loaded",
+          () =>
+            (document.getElementById("consent-box").style.display = window["__tcfapi"]
+              ? ""
+              : "none")
+        );
+      }
+    </script>
+
+    <div class="background-image"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/en/" data-i18n-tw="帕魯編年史">Paldb.cc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n-tw="工具">
+                Tools
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Palpagos_Islands"><span data-i18n="worldmap_name_mainmap">Palpagos Islands</span> Map</a></li>
+                <li><a class="dropdown-item" href="/en/The_World_Tree"><span data-i18n="worldmap_name_tree">The World Tree</span> Map</a></li>
+                <li><a class="dropdown-item" href="/en/Breed" data-i18n-tw="配種計算">Breeding Calculator</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Calc" data-i18n-tw="帕魯計算">Pal Calculator</a></li>
+                <li><a class="dropdown-item" href="/en/Capture_Rate" data-i18n="capture_reticle_capture_rate">Capture Rate</a></li>
+                <li><a class="dropdown-item" href="/en/Iv_Calc" data-i18n-tw="個體值計算">IV Calculator</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="category_type_a_pal">
+                Pal
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Pals" data-i18n="category_type_a_pal">Pal</a></li>
+                <li><a class="dropdown-item" href="/en/Alpha_Pals" data-i18n="pal_box_sorttype_boss_flag">Alpha Pals</a></li>
+                <li><a class="dropdown-item" href="/en/Rampaging" data-i18n="predator_name">Rampaging</a></li>
+                <li><a class="dropdown-item" href="/en/Tower" data-i18n="map_filter_bosstower">Tower</a></li>
+                <li><a class="dropdown-item" href="/en/Raid" data-i18n="warning_invader_start_title">Raid</a></li>
+                <li><a class="dropdown-item" href="/en/Humans" data-i18n-tw="人類">Humans</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Element_Swap" data-i18n-tw="攻擊賦予屬性">Element Swap</a></li>
+                <li><a class="dropdown-item" href="/en/Weight_Increase" data-i18n-tw="負重增加">Weight Increase</a></li>
+                <li><a class="dropdown-item" href="/en/Mounts" data-i18n-tw="坐騎">Mounts</a></li>
+                <li><a class="dropdown-item" href="/en/Glider" data-i18n="common_itemtype_a_glider">Glider</a></li>
+                <li><a class="dropdown-item" href="/en/Drop_Rate" data-i18n-tw="掉落倍率">Drop Rate</a></li>
+                <li><a class="dropdown-item" href="/en/Party_Buffs" data-i18n-tw="隊伍增益">Party Buffs</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Stats" data-i18n-tw="帕魯屬性">Pal Stats</a></li>
+                <li><a class="dropdown-item" href="/en/Spoiler">Spoiler</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="common_work_suitability">
+                Work Suitability
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Kindling"><img alt="T_icon_palwork_00" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_00.webp" height="24" /><span data-i18n="common_work_suitability_emitflame">Kindling</span></a></li>
+                <li><a class="dropdown-item" href="/en/Watering"><img alt="T_icon_palwork_01" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_01.webp" height="24" /><span data-i18n="common_work_suitability_watering">Watering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Planting"><img alt="T_icon_palwork_02" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_02.webp" height="24" /><span data-i18n="common_work_suitability_seeding">Planting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Generating_Electricity"><img alt="T_icon_palwork_03" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_03.webp" height="24"/><span data-i18n="common_work_suitability_generateelectricity">Generating Electricity</span></a></li>
+                <li><a class="dropdown-item" href="/en/Handiwork"><img alt="T_icon_palwork_04" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_04.webp" height="24" /><span data-i18n="common_work_suitability_handcraft">Handiwork</span></a></li>
+                <li><a class="dropdown-item" href="/en/Gathering"><img alt="T_icon_palwork_05" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_05.webp" height="24" /><span data-i18n="common_work_suitability_collection">Gathering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Lumbering"><img alt="T_icon_palwork_06" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_06.webp" height="24" /><span data-i18n="common_work_suitability_deforest">Lumbering</span></a></li>
+                <li><a class="dropdown-item" href="/en/Mining"><img alt="T_icon_palwork_07" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_07.webp" height="24" /><span data-i18n="common_work_suitability_mining">Mining</span></a></li>
+                <li><a class="dropdown-item" href="/en/Medicine_Production"><img alt="T_icon_palwork_08" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_08.webp" height="24" /><span data-i18n="common_work_suitability_productmedicine">Medicine Production</span></a></li>
+                <li><a class="dropdown-item" href="/en/Cooling"><img alt="T_icon_palwork_10" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_10.webp" height="24"/><span data-i18n="common_work_suitability_cool">Cooling</span></a></li>
+                <li><a class="dropdown-item" href="/en/Transporting"><img alt="T_icon_palwork_11" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_11.webp" height="24" /><span data-i18n="common_work_suitability_transport">Transporting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Farming"><img alt="T_icon_palwork_12" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_palwork_12.webp" height="24" /><span data-i18n="common_work_suitability_monsterfarm">Farming</span></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Work_Priority" data-i18n="common_work_suitability">Work Priority</a></li>
+                <li><a class="dropdown-item" href="/en/SAN">SAN</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n-tw="技能">
+                Skills
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Partner_Skill" data-i18n="common_coop_action">Partner Skill</a></li>
+                <li><a class="dropdown-item" href="/en/Active_Skills" data-i18n="common_active_skill">Active Skills</a></li>
+                <li><a class="dropdown-item" href="/en/Passive_Skills" data-i18n="common_characteristic">Passive Skills</a></li>
+                <li><a class="dropdown-item" href="/en/Skill_Fruit" data-i18n-tw="技能果實">Skill Fruit</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Surgery_Table" data-i18n="mapobject_name_operatingtable">Pal Surgery Table</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="ingame_main_menu_inventory">
+                Inventory
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Weapon"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Weapon_MeatCutterKnife.webp"/><span data-i18n="common_itemtype_a_weapon">Weapon</span></a></li>
+                <li><a class="dropdown-item" href="/en/Sphere"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_PalSphere.webp"/><span data-i18n="common_itemtype_a_specialweapon">Sphere</span></a></li>
+                <li><a class="dropdown-item" href="/en/Sphere_Module"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_SphereModule_Heavy.webp"/><span data-i18n="common_itemtype_a_captureitemmodifier">Sphere Module</span></a></li>
+                <li><a class="dropdown-item" href="/en/Armor"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_ClothArmor.webp"/><span data-i18n="common_itemtype_a_armor">Armor</span></a></li>
+                <li><a class="dropdown-item" href="/en/Accessory"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Accessory_Nonkilling.webp"/><span data-i18n="common_itemtype_a_accessory">Accessory</span></a></li>
+                <li><a class="dropdown-item" href="/en/Material"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Stone.webp"/><span data-i18n="common_itemtype_a_material">Material</span></a></li>
+                <li><a class="dropdown-item" href="/en/Consumable"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Food_Herbs.webp"/><span data-i18n="common_itemtype_a_consume">Consumable</span></a></li>
+                <li><a class="dropdown-item" href="/en/Ammo"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Ammo_Arrow.webp"/><span data-i18n="common_itemtype_a_ammo">Ammo</span></a></li>
+                <li><a class="dropdown-item" href="/en/Ingredient"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Food_Berries.webp"/><span data-i18n="common_itemtype_a_food">Ingredient</span></a></li>
+                <li><a class="dropdown-item" href="/en/Key_Items"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Relic.webp"/><span data-i18n="common_itemtype_a_essential">Key Items</span></a></li>
+                <li><a class="dropdown-item" href="/en/Glider"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Glider_Glider_Old.webp"/><span data-i18n="common_itemtype_a_glider">Glider</span></a></li>
+                <li><a class="dropdown-item" href="/en/Schematic"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp"/><span data-i18n="common_itemtype_a_blueprint">Schematic</span></a></li>
+    
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Chest_filters" data-i18n-tw="箱子篩選">Chest filters</a></li>
+                <li><a class="dropdown-item" href="/en/Legendary" data-i18n="rarity_legendary">Legendary</a></li>
+              </ul>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="common_work_type_architecture">
+                Construction
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Production"><img alt="T_icon_construction_tab_00" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_00.webp" height="24"/><span data-i18n="category_type_a_product">Production</span></a></li>
+                <li><a class="dropdown-item" href="/en/Pal"><img alt="T_icon_construction_tab_01" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_01.webp" height="24"/><span data-i18n="category_type_a_pal">Pal</span></a></li>
+                <li><a class="dropdown-item" href="/en/Storage"><img alt="T_icon_construction_tab_02" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_02.webp" height="24"/><span data-i18n="category_type_a_storage">Storage</span></a></li>
+                <li><a class="dropdown-item" href="/en/Food"><img alt="T_icon_construction_tab_03" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_03.webp" height="24"/><span data-i18n="category_type_a_food">Food</span></a></li>
+                <li><a class="dropdown-item" href="/en/Infrastructure"><img alt="T_icon_construction_tab_04" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_04.webp" height="24"/><span data-i18n="category_type_a_infrastructure">Infrastructure</span></a></li>
+                <li><a class="dropdown-item" href="/en/Lighting"><img alt="T_icon_construction_tab_05" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_05.webp" height="24"/><span data-i18n="category_type_a_light">Lighting</span></a></li>
+                <li><a class="dropdown-item" href="/en/Foundations"><img alt="T_icon_construction_tab_06" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_06.webp" height="24"/><span data-i18n="category_type_a_foundation">Foundations</span></a></li>
+                <li><a class="dropdown-item" href="/en/Defenses"><img alt="T_icon_construction_tab_07" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_07.webp" height="24"/><span data-i18n="category_type_a_defense">Defenses</span></a></li>
+                <li><a class="dropdown-item" href="/en/Furniture"><img alt="T_icon_construction_tab_09" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_09.webp" height="24"/><span data-i18n="category_type_a_furniture">Furniture</span></a></li>
+                <li><a class="dropdown-item" href="/en/Other"><img alt="T_icon_construction_tab_08" src="https://cdn.paldb.cc/image/Pal/Texture/UI/InGame/T_icon_construction_tab_08.webp" height="24"/><span data-i18n="category_type_a_other">Other</span></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Breeding_Farm" data-i18n="mapobject_name_breedfarm">Breeding Farm</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Expedition_Station" data-i18n="mapobject_name_expedition">Pal Expedition Station</a></li>
+                <li><a class="dropdown-item" href="/en/Fishing_Pond" data-i18n="mapobject_name_fishingpond1">Fishing Pond</a></li>
+              </ul>
+            </li>
+    
+    
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="category_type_a_other">
+                Other
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/en/Arrogant_Pal_Critic" data-i18n="name_reward_paldisplay">Arrogant Pal Critic</a></li>
+                <li><a class="dropdown-item" href="/en/Arrogant_Foodie" data-i18n="name_reward_food">Arrogant Foodie</a></li>
+                <li><a class="dropdown-item" href="/en/Pal_Merchant"><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_PalDealer_icon_normal.webp"/><span data-i18n="name_pal_trader">Pal Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Black_Marketeer"><img src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Male_DarkTrader01_icon_normal.webp"/><span data-i18n="name_darktrader">Black Marketeer</span></a></li>
+                <li><a class="dropdown-item" href="/en/Wandering_Merchant" data-i18n="name_selesperson">Wandering_Merchant</a></li>
+                <li><a class="dropdown-item" href="/en/Caravan_Merchant" data-i18n-tw="旅行商隊">Caravan Merchant</a></li>
+                <li><a class="dropdown-item" href="/en/Medal_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_DogCoin.webp"/><span data-i18n="name_medaltrader">Medal Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Bounty_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_icon_item_Jewelry_BountyProof_1.webp"/><span data-i18n="name_medaltrader">Bounty Merchant</span></a></li>
+                <li><a class="dropdown-item" href="/en/Arena_Merchant"><img src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Jewelry_BattleTicket.webp"/><span data-i18n="arenashop">Arena Merchant</span></a></li>
+    
+                <li><a class="dropdown-item" href="/en/Technologies" data-i18n="ingame_main_menu_technology">Technologies</a></li>
+                <li><a class="dropdown-item" href="/en/Treasure_Box" data-i18n-tw="寶箱">Treasure Box</a></li>
+                <li><a class="dropdown-item" href="/en/Journals" data-i18n="note_title">Memo</a></li>
+                <li><a class="dropdown-item" href="/en/Tips" data-i18n="helpguide_title">Tips</a></li>
+                <li><a class="dropdown-item" href="/en/Base" data-i18n="map_filter_camp">Base</a></li>
+                <li><a class="dropdown-item" href="/en/Mission" data-i18n="ingame_mainmenu_quest">Mission</a></li>
+                <li><a class="dropdown-item" href="/en/Dungeons" data-i18n-tw="地下城">Dungeons</a></li>
+                <li><a class="dropdown-item" href="/en/Eggs" data-i18n-tw="帕魯蛋">Eggs</a></li>
+                <li><a class="dropdown-item" href="/en/Caged" data-i18n-tw="籠子">Caged</a></li>
+                <li><a class="dropdown-item" href="/en/Enemy_Camp" data-i18n-tw="敵人據點">Enemy Camp</a></li>
+                <li><a class="dropdown-item" href="/en/Fishing" data-i18n="common_work_type_fishpond">Fishing</a></li>
+                <li><a class="dropdown-item" href="/en/Salvage" data-i18n-tw="打撈">Salvage</a></li>
+                <li><a class="dropdown-item" href="/en/Incidents" data-i18n="">Incidents</a></li>
+                <li><a class="dropdown-item" href="/en/Ancient_Ruin" data-i18n-tw="古代遺跡">Ancient Ruin</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/en/Mods" data-i18n-tw="模組安裝">Mods Install</a></li>
+              </ul>
+            </li>
+    
+            <!--
+            <li class="nav-item dropdown position-static">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mega Menu
+              </a>
+              <div class="dropdown-menu w-100 p-4">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 1</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item px-0" href="#">Link 2</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 2</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">Link 3</a></li>
+                        <li><a class="dropdown-item px-0" href="#">Link 4</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <h6 class="text-primary fw-bold">Category 3</h6>
+                      <p class="small text-muted">Add descriptions or banners here.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            -->
+    
+          </ul>
+    
+          <ul class="navbar-nav language-selector">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-language fa-lg"></i></a>
+              <ul class="dropdown-menu language-menu">
+                <li><a class='dropdown-item' href='/en/'>EN English</a></li>
+                <li><a class='dropdown-item' href='/tw/'>TW 繁體中文</a></li>
+                <li><a class='dropdown-item' href='/ko/'>KO 한국어</a></li>
+                <li><a class='dropdown-item' href='/cn/'>CN 简体中文</a></li>
+                <li><a class='dropdown-item' href='/ja/'>JA Japanese</a></li>
+                <li><a class='dropdown-item' href='/es/'>ES Spanish</a></li>
+                <li><a class='dropdown-item' href='/de/'>DE Deutsch</a></li>
+                <li><a class='dropdown-item' href='/fr/'>FR Français</a></li>
+                <li><a class='dropdown-item' href='/it/'>IT Italian</a></li>
+                <li><a class='dropdown-item' href='/pt/'>PT Português</a></li>
+                <li><a class='dropdown-item' href='/ru/'>RU Русский</a></li>
+                <li><a class="dropdown-item" href="/th/">TH ภาษาไทย</a></li>
+                <li><a class="dropdown-item" href="/id/">ID Indonesian</a></li>
+                <li><a class="dropdown-item" href="/pl/">PL Polish</a></li>
+                <li><a class="dropdown-item" href="/tr/">TR Turkish</a></li>
+                <li><a class="dropdown-item" href="/vi/">VI Vietnamese</a></li>
+                <li><a class="dropdown-item" href="/mx/">MX Spanish</a></li>
+              </ul>
+            </li>
+          </ul>
+    
+          <form class="d-flex" role="search" id="autocomplete">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="navautosearch">
+          </form>
+    
+        </div>
+      </div>
+    </nav>
+
+<script> sidebar160('leftside_banner', 'left'); </script>
+<script> sidebar160('rightside_banner', 'right'); </script>
+
+    <div class="page">
+    <div class="page-content container" role="main">
+        <div id="topbanner970"></div><script>topbanner970("topbanner970");</script>
+
+    <div class="row g-2" data-tabname="Wool">
+
+<div class="col-lg-4">
+    <div class="card itemPopup">
+    <div class="hover_banner banner_rarity0">
+        <div style="height: 36px;" class="ps-2 d-flex">
+            <div class="align-self-center" style="font-size: x-large; text-shadow: 1px 1px 5px black;"><a class="itemname" data-hover="?s=Items%2FWool" href="Wool">Wool</a> </div>
+        </div>
+        <div style="height: 24px" class="px-2 d-flex">
+            <span class="me-auto" style="color: #959ea9; text-shadow: 1px 1px 5px black;">Material</span>
+            <span class="text-center hover_text_rarity0" style="background-color: rgba(0,0,0,.3); width: 120px;">Common</span>
+        </div>
+    </div>
+    <div class="hover_bg_rarity0" style="height: 2px;">
+    </div>
+    <div class="hover_icon_bg d-flex justify-content-between">
+        <div class="d-flex h-100" style="padding-left: 1rem;">
+            <a href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" class="align-self-center size128"></a>
+        </div>
+        <div class="d-flex flex-column small"></div>
+    </div>
+    <div class="card-body py-2">
+        <div>Material sheared from sheep Pals.
+A necessity for creating bedding, <a class="itemname" data-hover="/cache/en/Game_Items_hover/8c375bf8d6057de0f88f8dadf5efb981b6953d15168f33d1119d8af0b79b9164"  href="Cloth">Cloth</a> and more.</div>
+    </div>
+    <div class="recipes">
+    </div>
+</div>
+
+
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info"> Stats </h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Rarity</div>
+                <div>Common</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Type</div>
+                <div><a href="Material">Material</a></div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Rank</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><a class="itemname" data-hover="/cache/en/Game_Items_hover/fe08131a3a57968570818825e532f9a685c0e9530058a4cbd3d582f0c59e8999" href="Gold_Coin"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Money.webp" alt="TitemiconMaterialMoney" class="size32 border bg_rarity0"/>Gold Coin</a></div>
+                <div><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="Buy: 200, with Noble and Fine Furs: 120<br/>Sell: 20, with Noble and Fine Furs: 28">200</span></div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div><img src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_04.webp"/>Weight</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>MaxStackCount</div>
+                <div>9999</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>Code</div>
+                <div>Wool</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info"> Others </h5>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>IconName</div>
+                <div>Wool</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>TypeA</div>
+                <div>Material</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>TypeB</div>
+                <div>MaterialMonster</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>SortId</div>
+                <div>5050</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>bLegalInGame</div>
+                <div>1</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>VisualBlueprintClassName</div>
+                <div>BP_Item_LeatherWool</div>
+            </div>
+            <div class="d-flex justify-content-between p-2 align-items-center border-bottom">
+                <div>SneakAttackRate</div>
+                <div>1</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-lg-8">
+
+
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info">
+                Dropped By
+            </h5>
+            <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr><th data-i18n="category_type_a_pal">Pal<th data-i18n-tw="數量">Qty.<th data-i18n-tw="機率">Probability
+                <tbody>
+                    <tr><td><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a>  <td><small class="itemQuantity">2&ndash;5</small> <td>100%</tr><tr><td><a data-pal-id="KingAlpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/12599ac7d099b122cebff727621d864b834f5bcf3c1b34bfe1d5647b5ff82f2e" href="Kingpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_KingAlpaca_icon_normal.webp" alt="TKingAlpacaiconnormal" class="size32 rounded-circle border"/>Kingpaca</a>  <td><small class="itemQuantity">5</small> <td>100%</tr><tr><td><a data-pal-id="KingAlpaca_Ice" class="itemname" data-hover="/cache/en/Game_Pals_hover/cf1f437090c54539a216094524a2a8c82d0eb9ae1aa2848b4cfaab519dbdde60" href="Kingpaca_Cryst"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_KingAlpaca_Ice_icon_normal.webp" alt="TKingAlpacaIceiconnormal" class="size32 rounded-circle border"/>Kingpaca Cryst</a>  <td><small class="itemQuantity">5</small> <td>100%</tr><tr><td><a data-pal-id="MopBaby" class="itemname" data-hover="/cache/en/Game_Pals_hover/54c570634d6f6324ca8b33be57e047957c4843b48a443a83ab43d804f422f78e" href="Swee"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_MopBaby_icon_normal.webp" alt="TMopBabyiconnormal" class="size32 rounded-circle border"/>Swee</a>  <td><small class="itemQuantity">1</small> <td>100%</tr><tr><td><a data-pal-id="MopKing" class="itemname" data-hover="/cache/en/Game_Pals_hover/b6954bfad9c0aa9fa57ddb80bc3c697b84f7f0bd1cd6d1d257e65eda01cc018a" href="Sweepa"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_MopKing_icon_normal.webp" alt="TMopKingiconnormal" class="size32 rounded-circle border"/>Sweepa</a>  <td><small class="itemQuantity">3&ndash;5</small> <td>100%</tr><tr><td><a data-pal-id="SheepBall" class="itemname" data-hover="/cache/en/Game_Pals_hover/994dc512733b0b4c7effeeac04aa7e1df2c1e49cbe73dc2f774f994dcd77b0e8" href="Lamball"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SheepBall_icon_normal.webp" alt="TSheepBalliconnormal" class="size32 rounded-circle border"/>Lamball</a>  <td><small class="itemQuantity">1&ndash;3</small> <td>100%</tr><tr><td><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a>  <td><small class="itemQuantity">1&ndash;2</small> <td>100%</tr><tr><td><a data-pal-id="Quest_Farmer03_SheepBall" class="itemname" data-hover="/cache/en/Game_Pals_hover/f9c9b1a5368869bdc4a2badf2289591abe5c98c0751046d90a7e1f758e2c7f12" href="Lamball"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SheepBall_icon_normal.webp" alt="TSheepBalliconnormal" class="size32 rounded-circle border"/>Lamball</a>  <td><small class="itemQuantity">1&ndash;3</small> <td>100%</tr><tr><td><a data-pal-id="SweetsSheep_Ground" class="itemname" data-hover="/cache/en/Game_Pals_hover/ec461317af9d56859b5dfac837b0247cd6aacad75737c2f34a292e45abefe876" href="Woolipop_Terra"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SweetsSheep_Ground_icon_normal.webp" alt="TSweetsSheepGroundiconnormal" class="size32 rounded-circle border"/>Woolipop Terra</a>  <td><small class="itemQuantity">1</small> <td>100%</tr><tr><td><a data-pal-id="SmallYeti" class="itemname" data-hover="/cache/en/Game_Pals_hover/e982b1ac7ba83566683951f367268f6cebd25fa92bf668dd8b5482506fa2b392" href="Snugloo"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SmallYeti_icon_normal.webp" alt="TSmallYetiiconnormal" class="size32 rounded-circle border"/>Snugloo</a>  <td><small class="itemQuantity">2</small> <td>100%</tr><tr><td><a data-pal-id="SmallYeti" class="itemname" data-hover="/cache/en/Game_Pals_hover/e982b1ac7ba83566683951f367268f6cebd25fa92bf668dd8b5482506fa2b392" href="Snugloo"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_SmallYeti_icon_normal.webp" alt="TSmallYetiiconnormal" class="size32 rounded-circle border"/>Snugloo</a> Lv.70 <td><small class="itemQuantity">2</small> <td>100%</tr><tr><td><a data-pal-id="KingAlpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/12599ac7d099b122cebff727621d864b834f5bcf3c1b34bfe1d5647b5ff82f2e" href="Kingpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_KingAlpaca_icon_normal.webp" alt="TKingAlpacaiconnormal" class="size32 pal-awakened rounded-circle border"/>Kingpaca</a> Lv.80 <a href="Awakening"><img src="https://cdn.paldb.cc/image/ui/T_icon_enemy_awakening.webp" height="24"/></a><td><small class="itemQuantity">5</small> <td>100%</tr>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n="name_selesperson">
+                Wandering Merchant
+            </h5>
+            <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr><th data-i18n-tw="物品">Item<th data-i18n-tw="來源">Source
+                <tbody>
+                    <tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Village_Shop_1">Village_Shop_1</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Wander_Shop_1">Wander_Shop_1</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Caravan_Shop_1">Caravan Leader</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Caravan_Shop_22">Foraging Merchant</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Caravan_Shop_23">Authorized Materials Merchant</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Caravan_Shop_24">Element Merchant</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Caravan_Shop_25">Legendary Materials Merchant</a><tr><td><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a><td><a href="Dungeon_Shop_01">Dungeon_Shop_01</a>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n-tw="掉落表">
+                Treasure Box
+            </h5>
+            <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr><th data-i18n-tw="來源">Source<th>Map<th>Qty<th>Drop Rate
+                <tbody>
+                    <tr><td><a href="CharacterSpawnItem_Wool_1"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>1</a><td><td><span class="itemQuantity">1</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_2"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>2</a><td><td><span class="itemQuantity">1&ndash;2</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_3"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>3</a><td><td><span class="itemQuantity">1&ndash;3</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_4"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>4</a><td><td><span class="itemQuantity">1&ndash;4</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_5"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>5</a><td><td><span class="itemQuantity">1&ndash;5</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_6"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>6</a><td><td><span class="itemQuantity">1&ndash;6</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_7"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>7</a><td><td><span class="itemQuantity">1&ndash;7</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_8"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>8</a><td><td><span class="itemQuantity">1&ndash;8</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_9"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>9</a><td><td><span class="itemQuantity">2&ndash;9</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Wool_10"><a data-pal-id="WoolFox" class="itemname" data-hover="/cache/en/Game_Pals_hover/c87c2112c867f45f672aff82cac6a7960f316ee9aeaba944a4cda23429b54fda" href="Cremis"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_WoolFox_icon_normal.webp" alt="TWoolFoxiconnormal" class="size32 rounded-circle border"/>Cremis</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>10</a><td><td><span class="itemQuantity">3&ndash;10</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_1"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>1</a><td><td><span class="itemQuantity">2</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_2"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>2</a><td><td><span class="itemQuantity">2&ndash;3</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_3"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>3</a><td><td><span class="itemQuantity">2&ndash;4</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_4"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>4</a><td><td><span class="itemQuantity">2&ndash;5</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_5"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>5</a><td><td><span class="itemQuantity">2&ndash;6</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_6"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>6</a><td><td><span class="itemQuantity">2&ndash;7</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_7"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>7</a><td><td><span class="itemQuantity">2&ndash;8</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_8"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>8</a><td><td><span class="itemQuantity">2&ndash;9</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_9"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>9</a><td><td><span class="itemQuantity">3&ndash;10</span><td>100%
+                    <tr><td><a href="CharacterSpawnItem_Alpaca_10"><a data-pal-id="Alpaca" class="itemname" data-hover="/cache/en/Game_Pals_hover/7bf89de5c3f5564e0fd0ba92686ad78143d27089138f5e3f846a65d1dfb9ae0c" href="Melpaca"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/PalIcon/Normal/T_Alpaca_icon_normal.webp" alt="TAlpacaiconnormal" class="size32 rounded-circle border"/>Melpaca</a> <a class="itemname " data-hover="/cache/en/Game_MapObjects_hover/3cf80a8c64eaa4f73ef52b1e2b31a5e44f066f708ee97bdf4470f358d2c67fec" href="Ranch"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_MonsterFarm.webp" alt="TiconbuildObjectMonsterFarm" class="size32"/>Ranch</a>10</a><td><td><span class="itemQuantity">4&ndash;11</span><td>100%
+                    <tr><td><a href="Mission">Mission: The Weakest Pal</a><td><td><span class="itemQuantity">10</span><td>100%
+                    <tr><td><a href="Grass01_Drop">Grass01_Drop</a><td><a href="Palpagos_Islands?zone=Grass01_Drop">Map</a><td><span class="itemQuantity">1</span><td>6.414%
+            </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title text-info" data-i18n-tw="生產材料">
+                Crafting Materials
+            </h5>
+            <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr><th data-i18n-tw="材料">Materials<th data-i18n-tw="產品">Product<th data-i18n-tw="設計圖">Schematic
+                <tbody>
+                            <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">20</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">5</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 5m0s</div><div>Lv.2: 3m7s</div><div>Lv.3: 1m47s</div><div>Lv.4: 1m2s</div><div>Lv.5: 38s</div><div>Lv.6: 23s</div><div>Lv.7: 14s</div><div>Lv.8: 8s</div><div>Lv.9: 5s</div><div>Lv.10: 3s</div>">150</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FHead006" href="Helmet"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_Head006.webp" alt="TitemiconArmorHead006" class="size32 border bg_rarity0"/>Helmet</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Head006_1" href="Helmet_Schematic_1"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity0"/>Helmet Schematic 1</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">30</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">7</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 10m0s</div><div>Lv.2: 6m15s</div><div>Lv.3: 3m34s</div><div>Lv.4: 2m5s</div><div>Lv.5: 1m15s</div><div>Lv.6: 45s</div><div>Lv.7: 28s</div><div>Lv.8: 16s</div><div>Lv.9: 10s</div><div>Lv.10: 6s</div>">300</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FHead006_2" href="Helmet"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_Head006.webp" alt="TitemiconArmorHead006" class="size32 border bg_rarity1"/>Helmet</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Head006_2" href="Helmet_Schematic_2"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity1"/>Helmet Schematic 2</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">45</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">10</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 20m0s</div><div>Lv.2: 12m30s</div><div>Lv.3: 7m8s</div><div>Lv.4: 4m10s</div><div>Lv.5: 2m30s</div><div>Lv.6: 1m28s</div><div>Lv.7: 55s</div><div>Lv.8: 32s</div><div>Lv.9: 19s</div><div>Lv.10: 12s</div>">600</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FHead006_3" href="Helmet"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_Head006.webp" alt="TitemiconArmorHead006" class="size32 border bg_rarity2"/>Helmet</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Head006_3" href="Helmet_Schematic_3"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity2"/>Helmet Schematic 3</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">67</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">15</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 40m0s</div><div>Lv.2: 25m0s</div><div>Lv.3: 14m17s</div><div>Lv.4: 8m20s</div><div>Lv.5: 5m0s</div><div>Lv.6: 2m56s</div><div>Lv.7: 1m49s</div><div>Lv.8: 1m3s</div><div>Lv.9: 38s</div><div>Lv.10: 23s</div>">1200</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FHead006_4" href="Helmet"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_Head006.webp" alt="TitemiconArmorHead006" class="size32 border bg_rarity3"/>Helmet</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Head006_4" href="Helmet_Schematic_4"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity3"/>Helmet Schematic 4</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">100</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">22</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 1h20m0s</div><div>Lv.2: 50m0s</div><div>Lv.3: 28m34s</div><div>Lv.4: 16m40s</div><div>Lv.5: 10m0s</div><div>Lv.6: 5m52s</div><div>Lv.7: 3m38s</div><div>Lv.8: 2m6s</div><div>Lv.9: 1m15s</div><div>Lv.10: 45s</div>">2400</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FHead006_5" href="Helmet"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Armor_Head006.webp" alt="TitemiconArmorHead006" class="size32 border bg_rarity4"/>Helmet</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Head006_5" href="Blueprint_of_Helmet_5"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity4"/>Blueprint of Helmet 5</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">20</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/07a8ab084cba680bf24dd27aae6664b9838d80cc1735814560d80e8b6b7e00d4" href="Flame_Organ"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_FireOrgan.webp" alt="TitemiconMaterialFireOrgan" class="size32 border bg_rarity0"/>Flame Organ</a> <small class="itemQuantity">15</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">25</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/815e02e08da6bbbb5038ab3343cca18e85c747487ef673ab03b5d0d0f65f3f75" href="Fiber"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Fiber.webp" alt="TitemiconMaterialFiber" class="size32 border bg_rarity0"/>Fiber</a> <small class="itemQuantity">35</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 10m0s</div><div>Lv.2: 6m15s</div><div>Lv.3: 3m34s</div><div>Lv.4: 2m5s</div><div>Lv.5: 1m15s</div><div>Lv.6: 45s</div><div>Lv.7: 28s</div><div>Lv.8: 16s</div><div>Lv.9: 10s</div><div>Lv.10: 6s</div>">300</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FAccessory_HeatResist_1" href="Heat_Resistant_Undershirt"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Accessory_CoolResist_1.webp" alt="TitemiconAccessoryCoolResist1" class="size32 border bg_rarity2"/>Heat Resistant Undershirt</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Accessory_HeatResist_1_2" href="Heat-Resistant_Undershirt_Schematic"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity2"/>Heat-Resistant Undershirt Schematic</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">20</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/512dec28df03a13ca6528cfd6827def9965d98c46a4981cee8a17e0170ac67a2" href="Ice_Organ"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_IceOrgan.webp" alt="TitemiconMaterialIceOrgan" class="size32 border bg_rarity0"/>Ice Organ</a> <small class="itemQuantity">15</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">25</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/8c375bf8d6057de0f88f8dadf5efb981b6953d15168f33d1119d8af0b79b9164" href="Cloth"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Cloth.webp" alt="TitemiconMaterialCloth" class="size32 border bg_rarity0"/>Cloth</a> <small class="itemQuantity">10</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 10m0s</div><div>Lv.2: 6m15s</div><div>Lv.3: 3m34s</div><div>Lv.4: 2m5s</div><div>Lv.5: 1m15s</div><div>Lv.6: 45s</div><div>Lv.7: 28s</div><div>Lv.8: 16s</div><div>Lv.9: 10s</div><div>Lv.10: 6s</div>">300</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FAccessory_CoolResist_1" href="Thermal_Undershirt"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Accessory_HeatResist_1.webp" alt="TitemiconAccessoryHeatResist1" class="size32 border bg_rarity2"/>Thermal Undershirt</a> <small class="itemQuantity">1</small>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FBlueprint_Accessory_CoolResist_1_2" href="Thermal_Undershirt_Schematic"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Blueprint.webp" alt="TitemiconMaterialBlueprint" class="size32 border bg_rarity2"/>Thermal Undershirt Schematic</a>
+        <tr><td>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">2</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 10s</div><div>Lv.2: 7s</div><div>Lv.3: 4s</div><div>Lv.4: 3s</div><div>Lv.5: 2s</div><div>Lv.6: 0.74s</div><div>Lv.7: 0.45s</div><div>Lv.8: 0.26s</div><div>Lv.9: 0.16s</div><div>Lv.10: 0.09s</div>">5</span></small></span>
+        <td>
+            <a class="itemname" data-hover="/cache/en/Game_Items_hover/8c375bf8d6057de0f88f8dadf5efb981b6953d15168f33d1119d8af0b79b9164" href="Cloth"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Cloth.webp" alt="TitemiconMaterialCloth" class="size32 border bg_rarity0"/>Cloth</a> <small class="itemQuantity">1</small>
+        <td>
+            Technology Lv. 4
+        <tr><td>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">10</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">1</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 50s</div><div>Lv.2: 32s</div><div>Lv.3: 18s</div><div>Lv.4: 11s</div><div>Lv.5: 7s</div><div>Lv.6: 4s</div><div>Lv.7: 3s</div><div>Lv.8: 2s</div><div>Lv.9: 0.78s</div><div>Lv.10: 0.46s</div>">25</span></small></span>
+        <td>
+            <a class="itemname" data-hover="/cache/en/Game_Items_hover/9c95c09f2e5e9eb9693651ab992da10ce6cdbac11eb460becf46935672666adf" href="High_Quality_Cloth"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Cloth.webp" alt="TitemiconMaterialCloth" class="size32 border bg_rarity1"/>High Quality Cloth</a> <small class="itemQuantity">1</small>
+        <td>
+            Technology Lv. 36
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">3</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">5</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/62d9d05fa136d81da9aaf525288ca80655ad2db2a5d5eeb92f85a03fc1386be4" href="Paldium_Fragment"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Pal_crystal_S.webp" alt="TitemiconMaterialPalcrystalS" class="size32 border bg_rarity0"/>Paldium Fragment</a> <small class="itemQuantity">5</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 2m0s</div><div>Lv.2: 1m15s</div><div>Lv.3: 43s</div><div>Lv.4: 25s</div><div>Lv.5: 15s</div><div>Lv.6: 9s</div><div>Lv.7: 6s</div><div>Lv.8: 4s</div><div>Lv.9: 2s</div><div>Lv.10: 2s</div>">60</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FSkillUnlock_Alpaca" href="Melpaca_Saddle"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Essential_SkillUnlock_Saddle.webp" alt="TitemiconEssentialSkillUnlockSaddle" class="size32 border bg_rarity0"/>Melpaca Saddle</a> <small class="itemQuantity">1</small>
+        <td>
+            Technology Lv. 7
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">20</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/815e02e08da6bbbb5038ab3343cca18e85c747487ef673ab03b5d0d0f65f3f75" href="Fiber"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Fiber.webp" alt="TitemiconMaterialFiber" class="size32 border bg_rarity0"/>Fiber</a> <small class="itemQuantity">20</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">15</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">30</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/62d9d05fa136d81da9aaf525288ca80655ad2db2a5d5eeb92f85a03fc1386be4" href="Paldium_Fragment"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Pal_crystal_S.webp" alt="TitemiconMaterialPalcrystalS" class="size32 border bg_rarity0"/>Paldium Fragment</a> <small class="itemQuantity">20</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 5m0s</div><div>Lv.2: 3m7s</div><div>Lv.3: 1m47s</div><div>Lv.4: 1m2s</div><div>Lv.5: 38s</div><div>Lv.6: 23s</div><div>Lv.7: 14s</div><div>Lv.8: 8s</div><div>Lv.9: 5s</div><div>Lv.10: 3s</div>">150</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FSkillUnlock_KingAlpaca" href="Kingpaca_Saddle"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Essential_SkillUnlock_Saddle.webp" alt="TitemiconEssentialSkillUnlockSaddle" class="size32 border bg_rarity1"/>Kingpaca Saddle</a> <small class="itemQuantity">1</small>
+        <td>
+            Technology Lv. 23
+        <tr><td>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/76a20446fb31954b1ed0aa894a76891723b8bf0f482062a1b9f92af31f25d7c8" href="Leather"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Leather.webp" alt="TitemiconMaterialLeather" class="size32 border bg_rarity0"/>Leather</a> <small class="itemQuantity">24</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/815e02e08da6bbbb5038ab3343cca18e85c747487ef673ab03b5d0d0f65f3f75" href="Fiber"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Fiber.webp" alt="TitemiconMaterialFiber" class="size32 border bg_rarity0"/>Fiber</a> <small class="itemQuantity">24</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/caa7c727f2b48fe01990b1ba5be92583c4a9a316a225f980ddadba308d879831" href="Ingot"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_CopperIngot.webp" alt="TitemiconMaterialCopperIngot" class="size32 border bg_rarity0"/>Ingot</a> <small class="itemQuantity">18</small></span>
+    <span><a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">36</small></span>
+    <span><a class="itemname" data-hover="/cache/en/Game_Items_hover/62d9d05fa136d81da9aaf525288ca80655ad2db2a5d5eeb92f85a03fc1386be4" href="Paldium_Fragment"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Pal_crystal_S.webp" alt="TitemiconMaterialPalcrystalS" class="size32 border bg_rarity0"/>Paldium Fragment</a> <small class="itemQuantity">24</small></span>
+    <span><img class="border" src="https://cdn.paldb.cc/image/Pal/Texture/UI/Main_Menu/T_icon_status_05.webp" class="size32"> <small class="itemQuantity"><span data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<div>Lv.1: 6m0s</div><div>Lv.2: 3m45s</div><div>Lv.3: 2m8s</div><div>Lv.4: 1m15s</div><div>Lv.5: 45s</div><div>Lv.6: 27s</div><div>Lv.7: 17s</div><div>Lv.8: 10s</div><div>Lv.9: 6s</div><div>Lv.10: 4s</div>">180</span></small></span>
+        <td>
+            <a class="itemname" data-hover="?s=Items%2FSkillUnlock_KingAlpaca_Ice" href="Kingpaca_Cryst_Saddle"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Essential_SkillUnlock_Saddle.webp" alt="TitemiconEssentialSkillUnlockSaddle" class="size32 border bg_rarity1"/>Kingpaca Cryst Saddle</a> <small class="itemQuantity">1</small>
+        <td>
+            Technology Lv. 46
+<tr><td><a class="itemname" data-hover="/cache/en/Game_Items_hover/ae77e6e9bd0808e351a19af34b40811f1413f85d530645e5643b7126b1ce27ed" href="Wood"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wood.webp" alt="TitemiconMaterialWood" class="size32 border bg_rarity0"/>Wood</a> <small class="itemQuantity">20</small> <a class="itemname" data-hover="/cache/en/Game_Items_hover/815e02e08da6bbbb5038ab3343cca18e85c747487ef673ab03b5d0d0f65f3f75" href="Fiber"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Fiber.webp" alt="TitemiconMaterialFiber" class="size32 border bg_rarity0"/>Fiber</a> <small class="itemQuantity">5</small> <a class="itemname" data-hover="?s=Items%2FWool" href="Wool"><img loading="lazy" src="https://cdn.paldb.cc/image/Others/InventoryItemIcon/Texture/T_itemicon_Material_Wool.webp" alt="TitemiconMaterialWool" class="size32 border bg_rarity0"/>Wool</a> <small class="itemQuantity">1</small><td><a class="itemname " data-hover="?s=MapObjects%2FPlayerBed_02" href="Shoddy_Bed"><img loading="lazy" src="https://cdn.paldb.cc/image/Pal/Texture/BuildObject/PNG/T_icon_buildObject_PlayerBed_02.webp" alt="TiconbuildObjectPlayerBed02" class="size32"/>Shoddy Bed</a><td><div>Technology Lv. 3</div>
+            </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</div>
+
+    </div>
+    </div>
+
+    <footer class="text-center text-lg-left container mt-2">
+      <div class="card p-4">
+        <div class="row">
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Sites</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a target="_blank" href="https://poedb.tw/">poedb.tw</a> </li>
+              <li> <a target="_blank" href="https://tlidb.com/">tlidb.com</a> </li>
+              <!--<li> <a target="_blank" href="https://diablo4.cc/">diablo4.cc</a> </li>-->
+              <li> <a target="_blank" href="https://poe2db.tw/">poe2db.tw</a> </li>
+              <li> <a target="_blank" href="https://paldb.cc/">paldb.cc</a> </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">About Site</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="privacy">Privacy</a> </li>
+              <li> <a target="_blank" href="https://www.reddit.com/user/chuanhsing">About US</a> </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Version</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="version">v1.0.2</a> 2026/7/29</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Community</h5>
+            <ul class="list-unstyled mb-0">
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="p-3">
+        <span>This site is fan-made and not affiliated with <a href="https://www.pocketpair.jp/" target="_blank">Pocketpair</a> in any way.</span>
+      </div>
+    </footer>
+
+    <a href="#top" id="toTop"><span class="fas fa-arrow-circle-up fa-3x"></span></a>
+
+    <script src="/js/footer.js?1785561045
+"></script>
+<script>
+$(document).ready(function()
+ {
+    if (window.location.hostname != "paldb.cc") {
+        window.location.href="https://paldb.cc/";
+    }
+ });
+</script>
+
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"ad52ef62a25e4a188cfdb0e6f473e83b","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -202,6 +202,15 @@ test('MCP server: listTools + seven tools over stdio', async (t) => {
     assert.equal(giBad.isError, true);
     assert.match(giBad.content[0].text, /unknown item/);
 
+    // get_item product-side recipes (reverse of usedInCrafting)
+    const giProduct = await withTimeout(client.callTool({ name: 'get_item', arguments: { name: 'Laser Gatling Gun' } }), 10000, 'get_item product recipes');
+    const giProductOut = JSON.parse(giProduct.content[0].text);
+    assert.ok(Array.isArray(giProductOut.item.recipes) && giProductOut.item.recipes.length > 0, 'expected producing recipes');
+    const base = giProductOut.item.recipes.find((r: { materials: { item: string; qty: number | null }[] }) =>
+      r.materials.some((m) => m.item === 'Hexolite' && m.qty === 100),
+    );
+    assert.ok(base, 'expected a 100-Hexolite craft tier for Laser Gatling Gun');
+
     // get_pal enrichment (schema v2 fields)
     const enriched = await withTimeout(client.callTool({ name: 'get_pal', arguments: { name: 'Anubis' } }), 10000, 'get_pal enriched');
     const enrichedOut = JSON.parse(enriched.content[0].text);
@@ -217,6 +226,31 @@ test('MCP server: listTools + seven tools over stdio', async (t) => {
     );
     const wsOut = JSON.parse(ws.content[0].text);
     assert.ok(wsOut.count >= 1);
+
+    // search_pals dropItem + minWorkLevel filters
+    const drop = await withTimeout(
+      client.callTool({ name: 'search_pals', arguments: { dropItem: 'wool', limit: 5 } }),
+      10000,
+      'search_pals dropItem',
+    );
+    const dropOut = JSON.parse(drop.content[0].text);
+    assert.ok(dropOut.pals.some((p: { name: string }) => p.name === 'Melpaca'), 'Melpaca drops Wool');
+
+    const lvl = await withTimeout(
+      client.callTool({ name: 'search_pals', arguments: { workSuitability: 'Mining', minWorkLevel: 7, limit: 10 } }),
+      10000,
+      'search_pals minWorkLevel',
+    );
+    const lvlOut = JSON.parse(lvl.content[0].text);
+    assert.ok(!lvlOut.pals.some((p: { name: string }) => p.name === 'Anubis'), 'Anubis is Mining 6, must not match >= 7');
+
+    const lvlBad = await withTimeout(
+      client.callTool({ name: 'search_pals', arguments: { minWorkLevel: 3 } }),
+      10000,
+      'search_pals minWorkLevel without work',
+    );
+    assert.equal(lvlBad.isError, true);
+    assert.match(lvlBad.content[0].text, /minWorkLevel requires workSuitability/);
   } finally {
     await client.close().catch(() => {});
     // Hard-kill the server child if it is still alive (prevents stray tsx processes).

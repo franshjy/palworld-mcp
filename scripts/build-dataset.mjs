@@ -269,7 +269,7 @@ function buildDataset(iv, palcalc, farm) {
   return {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
-    gameVersion: '1.0',
+    gameVersion: '1.0.2',
     sources: [
       { name: 'paldb.cc /json/iv_en.json', url: 'https://paldb.cc/json/iv_en.json', license: 'no license published by paldb.cc; compilation CC BY 4.0 (see LICENSE.data)' },
       { name: 'paldb.cc /Breeding_Farm', url: 'https://paldb.cc/Breeding_Farm', license: 'no license published by paldb.cc; compilation CC BY 4.0 (see LICENSE.data)' },
