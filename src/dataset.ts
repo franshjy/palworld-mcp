@@ -1,7 +1,7 @@
 /**
  * Dataset loading + indexing for palworld-mcp.
  *
- * The dataset (data/dataset.json) ships with the repo — users never contact
+ * The dataset (data/dataset.json) ships with the repo - users never contact
  * paldb.cc. Build it with `npm run refresh` (owner-side, throttled fetch) or
  * `node scripts/build-dataset.mjs`.
  */
@@ -74,7 +74,7 @@ export interface ParentPair {
   parent1: string;
   parent2: string;
   kind: BreedingKind;
-  /** Breeding rank (CombiRank) of each parent — lower = rarer in the breeding pool. */
+  /** Breeding rank (CombiRank) of each parent - lower = rarer in the breeding pool. */
   rank1: number;
   rank2: number;
   /** True when the target itself is one of the parents (circular for acquisition: you already need one). */
@@ -126,7 +126,7 @@ export class PalworldData {
       this.itemByNameLower.set(i.name.toLowerCase(), i);
     }
     // Reverse recipe index: every usedInCrafting entry, indexed under the item it PRODUCES.
-    // The same recipe row appears on every material's page — dedupe by product + materials.
+    // The same recipe row appears on every material's page - dedupe by product + materials.
     for (const i of dataset.items ?? []) {
       for (const r of i.usedInCrafting ?? []) {
         if (!r.product) continue;
@@ -267,7 +267,7 @@ export class PalworldData {
         const b = pals[j]!.code;
         const r = this.engine.breed(a, b);
         const entry = { parent1: a, parent2: b, kind: r.kind };
-        // Directional pairs produce TWO children — register the pair under both.
+        // Directional pairs produce TWO children - register the pair under both.
         for (const child of r.child2 ? [r.child, r.child2] : [r.child]) {
           const arr = map.get(child);
           if (arr) arr.push(entry);
@@ -281,10 +281,10 @@ export class PalworldData {
 
   /**
    * Reverse breeding lookup: distinct parent pairs whose offspring is `targetCode`.
-   * Identity pairs (target + target) are excluded by construction — they always work.
+   * Identity pairs (target + target) are excluded by construction - they always work.
    * Optional `givenParent` restricts to pairs containing that parent.
    * Sorted: fixed unique/directional combos first, then rank-math pairs by rank-distance
-   * ease — the harder-to-get parent of the pair is as high-ranked as possible (min(rank)
+   * ease - the harder-to-get parent of the pair is as high-ranked as possible (min(rank)
    * descending, then rank sum descending). Rank is the game's hidden breeding weight
    * (lower = rarer); it reflects breeding rarity, not catch difficulty.
    */

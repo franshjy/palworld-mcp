@@ -1,5 +1,5 @@
 /**
- * palworld-mcp — MCP server for Palworld database queries.
+ * palworld-mcp - MCP server for Palworld database queries.
  *
  * Tools:
  *   - search_pals          text/stat/element filters over the full pal roster
@@ -7,7 +7,7 @@
  *   - get_breeding_result  breeding outcome for a parent pair (offline engine)
  *   - find_breeding_pairs  reverse lookup: which parent pairs produce a child
  *
- * All data is served from the shipped dataset (data/dataset.json) — no network.
+ * All data is served from the shipped dataset (data/dataset.json) - no network.
  * Override the dataset location with PALWORLD_MCP_DATA.
  *
  * Logs go to stderr only: stdout is reserved for the MCP stdio protocol.
@@ -61,7 +61,7 @@ function palDetail(p: PalRecord, data: PalworldData) {
       rank: p.rank,
       // Producible by generic rank-math breeding (false = unique-combo/legendary/raid only).
       breedableAsResult: p.rankResult,
-      // Every pal can be used as a parent — eligibility only restricts who can be a result.
+      // Every pal can be used as a parent - eligibility only restricts who can be a result.
       canActAsParent: true,
       uniqueCombos: uniqueCombos.sort((x, y) => x.parent.localeCompare(y.parent)),
       obtainedVia,
@@ -120,7 +120,7 @@ function breedResultOf(data: PalworldData, name1: string, name2: string): Breedi
   if (!a.pal || !b.pal) {
     const missing = !a.pal ? name1 : name2;
     const matches = (!a.pal ? a : b).matches.map((p) => p.name);
-    return { error: `unknown pal "${missing}"` + (matches.length ? ` — did you mean: ${matches.join(', ')}?` : '') };
+    return { error: `unknown pal "${missing}"` + (matches.length ? ` - did you mean: ${matches.join(', ')}?` : '') };
   }
   const r = data.engine.breed(a.pal.code, b.pal.code);
   const child = data.byCodeLookup(r.child);
@@ -131,7 +131,7 @@ function breedResultOf(data: PalworldData, name1: string, name2: string): Breedi
     const entries = data.dataset.directional[`${a.pal.code < b.pal.code ? a.pal.code + '|' + b.pal.code : b.pal.code + '|' + a.pal.code}`] ?? [];
     note = entries
       .map(([m, f, c]) => `${data.byCodeLookup(m)?.name ?? m} (male) + ${data.byCodeLookup(f)?.name ?? f} (female) -> ${data.byCodeLookup(c)?.name ?? c}`)
-      .join('; ') + ' — child depends on which parent is male.';
+      .join('; ') + ' - child depends on which parent is male.';
   } else if (r.kind === 'unique') {
     note = 'fixed unique combination (overrides rank math).';
   } else if (r.kind === 'identity') {
@@ -183,7 +183,7 @@ server.registerTool(
       breedableOnly: z.boolean().optional().describe('Only pals obtainable via standard breeding'),
       workSuitability: z.string().optional().describe('Only pals with this work suitability, e.g. "Mining" or "Kindling"'),
       dropItem: z.string().optional().describe('Only pals that drop this item (substring match on drop name)'),
-      minWorkLevel: z.number().int().min(1).optional().describe('Require at least this work level — only applies together with workSuitability'),
+      minWorkLevel: z.number().int().min(1).optional().describe('Require at least this work level - only applies together with workSuitability'),
       sortBy: z.enum(['name', 'rank', 'attack']).optional().describe('rank: lower = rarer'),
       limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
     },
@@ -209,7 +209,7 @@ server.registerTool(
     const r = data.resolve(name);
     if (!r.pal) {
       return r.matches.length
-        ? fail(`ambiguous "${name}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+        ? fail(`ambiguous "${name}" - candidates: ${r.matches.map((p) => p.name).join(', ')}`)
         : fail(`unknown pal "${name}"`);
     }
     return ok({ found: true, pal: palDetail(r.pal, data) });
@@ -239,7 +239,7 @@ server.registerTool(
   {
     title: 'Find breeding pairs',
     description:
-      'Reverse lookup: which parent pairs produce a given child (the inverse of get_breeding_result). Optional givenParent filters to pairs containing that parent — answers "I have A, what do I breed it with to get X?". Identity (target + target) always works and is not listed. Fixed unique combos first, then rank-math pairs by breeding-rank ease; pairs that already require owning the target are flagged usesTarget. Capped at 25 with the total count.',
+      'Reverse lookup: which parent pairs produce a given child (the inverse of get_breeding_result). Optional givenParent filters to pairs containing that parent - answers "I have A, what do I breed it with to get X?". Identity (target + target) always works and is not listed. Fixed unique combos first, then rank-math pairs by breeding-rank ease; pairs that already require owning the target are flagged usesTarget. Capped at 25 with the total count.',
     inputSchema: {
       target: z.string().min(1).describe('Desired child pal name or code'),
       givenParent: z.string().min(1).optional().describe('If you already own one parent, find the other'),
@@ -249,7 +249,7 @@ server.registerTool(
     const rt = data.resolve(target);
     if (!rt.pal) {
       return rt.matches.length
-        ? fail(`ambiguous "${target}" — candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
+        ? fail(`ambiguous "${target}" - candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
         : fail(`unknown pal "${target}"`);
     }
     let givenCode: string | undefined;
@@ -258,7 +258,7 @@ server.registerTool(
       const rg = data.resolve(givenParent);
       if (!rg.pal) {
         return rg.matches.length
-          ? fail(`ambiguous "${givenParent}" — candidates: ${rg.matches.map((p) => p.name).join(', ')}`)
+          ? fail(`ambiguous "${givenParent}" - candidates: ${rg.matches.map((p) => p.name).join(', ')}`)
           : fail(`unknown pal "${givenParent}"`);
       }
       givenCode = rg.pal.code;
@@ -284,7 +284,7 @@ server.registerTool(
         parent2Rank: p.rank2,
         usesTarget: p.usesTarget,
       })),
-      note: 'Identity (target + target = target) always works if you already own it. Fixed unique combos are listed first, then rank-math pairs by rank-distance ease (the harder-to-get parent\'s breeding rank, descending — lower rank = rarer in the breeding pool). Rank reflects breeding rarity, not catch difficulty. Pairs flagged usesTarget: true already require owning the target (circular for acquisition).',
+      note: 'Identity (target + target = target) always works if you already own it. Fixed unique combos are listed first, then rank-math pairs by rank-distance ease (the harder-to-get parent\'s breeding rank, descending - lower rank = rarer in the breeding pool). Rank reflects breeding rarity, not catch difficulty. Pairs flagged usesTarget: true already require owning the target (circular for acquisition).',
     });
   },
 );
@@ -294,7 +294,7 @@ server.registerTool(
   {
     title: 'Breeding plan',
     description:
-      'Multi-step breeding path solver: given a target pal and the pals you own, returns ranked step-by-step plans (fewest steps, then fewest new catches). owned is required — pass [] for greenfield mode (direct pairs whose parents you only need to catch). Unbreedable targets (e.g. Jetragon) are reported as unbreedable. Depth capped at maxSteps (default 5).',
+      'Multi-step breeding path solver: given a target pal and the pals you own, returns ranked step-by-step plans (fewest steps, then fewest new catches). owned is required - pass [] for greenfield mode (direct pairs whose parents you only need to catch). Unbreedable targets (e.g. Jetragon) are reported as unbreedable. Depth capped at maxSteps (default 5).',
     inputSchema: {
       target: z.string().min(1).describe('Desired child pal name or code'),
       owned: z.array(z.string().min(1)).describe('Pal names/codes you own (empty array = greenfield)'),
@@ -305,7 +305,7 @@ server.registerTool(
     const rt = data.resolve(target);
     if (!rt.pal) {
       return rt.matches.length
-        ? fail(`ambiguous "${target}" — candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
+        ? fail(`ambiguous "${target}" - candidates: ${rt.matches.map((p) => p.name).join(', ')}`)
         : fail(`unknown pal "${target}"`);
     }
     const codes: string[] = [];
@@ -314,7 +314,7 @@ server.registerTool(
       const r = data.resolve(o);
       if (!r.pal) {
         return r.matches.length
-          ? fail(`ambiguous "${o}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+          ? fail(`ambiguous "${o}" - candidates: ${r.matches.map((p) => p.name).join(', ')}`)
           : fail(`unknown pal "${o}"`);
       }
       codes.push(r.pal.code);
@@ -382,7 +382,7 @@ server.registerTool(
     const r = data.resolveItem(name);
     if (!r.item) {
       return r.matches.length
-        ? fail(`ambiguous "${name}" — candidates: ${r.matches.map((p) => p.name).join(', ')}`)
+        ? fail(`ambiguous "${name}" - candidates: ${r.matches.map((p) => p.name).join(', ')}`)
         : fail(`unknown item "${name}"`);
     }
     return ok({ found: true, item: { ...r.item, recipes: data.itemRecipes(r.item.name) } });

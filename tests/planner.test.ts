@@ -34,7 +34,7 @@ function assertPlanValid(targetName: string, ownedNames: string[], plan: { steps
   assert.equal(produced.has(codeOf(targetName)), true, 'final step must produce the target');
 }
 
-test('planner: unique combo target with both parents owned — one step', () => {
+test('planner: unique combo target with both parents owned - one step', () => {
   const r = breedingPlan(data, codeOf('Jormuntide Ignis'), [codeOf('Jormuntide'), codeOf('Blazehowl')]);
   assert.equal(r.found, true);
   assert.equal(r.totalPlans, 1);
@@ -69,7 +69,7 @@ test('planner: greenfield (owned=[]) returns direct acquisition plans only', () 
   }
 });
 
-test('planner: directional target with both parents owned — gender note present', () => {
+test('planner: directional target with both parents owned - gender note present', () => {
   const r = breedingPlan(data, codeOf('Wixen Noct'), [codeOf('Katress'), codeOf('Wixen')]);
   assert.equal(r.found, true);
   assert.equal(r.plans[0]?.steps[0]?.kind, 'directional');
@@ -77,7 +77,7 @@ test('planner: directional target with both parents owned — gender note presen
   assertPlanValid('Wixen Noct', ['Katress', 'Wixen'], r.plans[0]!);
 });
 
-test('planner: multi-step plan from a mix of owned pals — all plans verifiable', () => {
+test('planner: multi-step plan from a mix of owned pals - all plans verifiable', () => {
   // Jormuntide + Blazehowl -> Jormuntide Ignis (unique), then Ignis + Pengullet -> Felbat (rank).
   const owned = ['Jormuntide', 'Blazehowl', 'Pengullet'];
   const r = breedingPlan(data, codeOf('Felbat'), owned.map(codeOf), 3);
@@ -106,7 +106,7 @@ test('planner: maxSteps bound respected and depth-limited answers empty', () => 
   const deep = breedingPlan(data, codeOf('Felbat'), owned.map(codeOf), 3);
   const shallow = breedingPlan(data, codeOf('Felbat'), owned.map(codeOf), 1);
   assert.ok(deep.totalPlans > 0);
-  assert.equal(shallow.totalPlans, 0, 'Felbat needs 2 steps — a 1-step cap must find nothing');
+  assert.equal(shallow.totalPlans, 0, 'Felbat needs 2 steps - a 1-step cap must find nothing');
 });
 
 test('planner: fewer than two owned pals cannot start', () => {

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
  * Builds data/dataset.json for palworld-mcp from three sources:
- *   1. paldb.cc  /json/iv_en.json            — per-pal stats (HP/ATK/DEF, capture rate, boss block)
- *   2. paldb.cc  /Breeding_Farm              — CombiRank table + unique-combo table (cross-check)
- *   3. palcalc-tools/palworld-1.0-calculator — ranks, rankResult eligibility, unique combos,
+ *   1. paldb.cc  /json/iv_en.json            - per-pal stats (HP/ATK/DEF, capture rate, boss block)
+ *   2. paldb.cc  /Breeding_Farm              - CombiRank table + unique-combo table (cross-check)
+ *   3. palcalc-tools/palworld-1.0-calculator - ranks, rankResult eligibility, unique combos,
  *                                              paldex numbers, gender ratios, elements (MIT)
  *
  * Usage:
@@ -12,7 +12,7 @@
  *   node scripts/build-dataset.mjs --fetch         # download from paldb.cc + GitHub
  *
  * The structural validation gate must pass before data/dataset.json is written (atomically).
- * A failed run never touches the existing dataset — the shipped file is never left partial.
+ * A failed run never touches the existing dataset - the shipped file is never left partial.
  *
  * Throttle handling (paldb.cc): single requests, browser-like headers, and retry with
  * backoff when the site answers 200 with an empty body (its rate-limit signature).
@@ -59,7 +59,7 @@ async function fetchWithRetry(url, { retries = 3, baseDelayMs = 2000 } = {}) {
 async function readRaw(name, url) {
   if (fetchMode) return fetchWithRetry(url);
   const p = join(rawDir, name);
-  if (!existsSync(p)) throw new Error(`raw file missing: ${p} — run with --fetch or --raw-dir`);
+  if (!existsSync(p)) throw new Error(`raw file missing: ${p} - run with --fetch or --raw-dir`);
   return readFileSync(p, 'utf8');
 }
 
@@ -122,7 +122,7 @@ function parsePalcalc(raw) {
     });
   }
   // Drop tower-boss self-rows ("X_Tower + X_Tower = X_Tower"): paldb calculator artifacts,
-  // not real breeding — tower bosses are not among the 299 breedable forms.
+  // not real breeding - tower bosses are not among the 299 breedable forms.
   // Also drop identity rows (X + X = X): covered by the engine's identity rule, and the
   // farm page's combo table omits them (keeps the dataset minimal and parity-checkable).
   const unique = data.unique.filter(
@@ -188,7 +188,7 @@ function buildDataset(iv, palcalc, farm) {
 
   const errors = [];
   // Directional unique combos: an unordered parent pair with more than one child.
-  // The raw combo rows do NOT encode gender — the male/female mapping below comes from
+  // The raw combo rows do NOT encode gender - the male/female mapping below comes from
   // the game's DT_PalCombiUnique rows 80/81 (extracted by palcalc-tools, MIT). Entry
   // order is [maleParent, femaleParent, child]. The gate fails if the data ever contains
   // a directional pair we don't know, forcing a human to supply the gender semantics.
@@ -211,7 +211,7 @@ function buildDataset(iv, palcalc, farm) {
     if (children.size <= 1) continue;
     const known = KNOWN_DIRECTIONAL[k];
     if (!known) {
-      errors.push(`directional pair ${k} (children: ${[...children].join(', ')}) not in KNOWN_DIRECTIONAL — add gender semantics`);
+      errors.push(`directional pair ${k} (children: ${[...children].join(', ')}) not in KNOWN_DIRECTIONAL - add gender semantics`);
       continue;
     }
     const knownChildren = new Set(known.map((e) => e[2]));
@@ -298,7 +298,7 @@ async function main() {
     readRaw('paldb_iv.json', 'https://paldb.cc/json/iv_en.json?_=' + Date.now()),
     readRaw('palcalc_index.html', 'https://raw.githubusercontent.com/palcalc-tools/palworld-1.0-calculator/main/index.html'),
     readRaw('paldb_farm.html', 'https://paldb.cc/Breeding_Farm').catch((e) => {
-      console.warn(`[dataset] farm page unavailable (${e.message}) — skipping cross-check`);
+      console.warn(`[dataset] farm page unavailable (${e.message}) - skipping cross-check`);
       return null;
     }),
   ]);

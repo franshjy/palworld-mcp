@@ -1,6 +1,6 @@
 /**
  * End-to-end stdio harness: spawns the real MCP server and drives it over the
- * MCP protocol — the same path a client (Hermes, Claude Desktop, ...) uses.
+ * MCP protocol - the same path a client (Hermes, Claude Desktop, ...) uses.
  *
  * Runs against the compiled-or-tsx server with the shipped dataset.
  */

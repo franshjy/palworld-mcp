@@ -12,7 +12,7 @@ import { parseItemPage, parsePalPage, parseCraftingRows } from '../scripts/parse
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f: string) => readFileSync(join(ROOT, 'tests', 'fixtures', f), 'utf8');
 
-test('parseItemPage: Wool fixture → canonical record', () => {
+test('parseItemPage: Wool fixture -> canonical record', () => {
   const item = parseItemPage(read('item-wool.html'), 'Wool');
   assert.ok(item, 'expected an item record');
   assert.equal(item.name, 'Wool');
@@ -30,7 +30,7 @@ test('parseItemPage: pal-style page is rejected (returns null)', () => {
   assert.equal(parseItemPage(read('pal-melpaca.html'), 'Melpaca'), null);
 });
 
-test('parsePalPage: Melpaca fixture → enrichment fields', () => {
+test('parsePalPage: Melpaca fixture -> enrichment fields', () => {
   const pal = parsePalPage(read('pal-melpaca.html'));
   assert.equal(pal.size, 'M');
   assert.equal(pal.rarity, '3');

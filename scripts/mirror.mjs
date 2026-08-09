@@ -31,7 +31,7 @@ const FAILED_FILE = join(RAW, 'failed.json');
 const ITEMS_INDEX_FILE = join(RAW, 'items_index.html');
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 
-/** Load the set of slugs that permanently fail (404 etc.) — skipped on resume. */
+/** Load the set of slugs that permanently fail (404 etc.) - skipped on resume. */
 function loadPermanentMisses() {
   try {
     const d = JSON.parse(readFileSync(FAILED_FILE, 'utf8'));
@@ -59,7 +59,7 @@ const ONLY = arg('--only', 'all');
 const LIMIT = parseInt(arg('--limit', '0'), 10) || Infinity;
 const DELAY = parseInt(arg('--delay', '1600'), 10);
 
-/** Slugs from the sitemap fixture (source A — historical, omits Feybreak-era content). */
+/** Slugs from the sitemap fixture (source A - historical, omits Feybreak-era content). */
 function sitemapSlugs() {
   const xml = readFileSync(join(ROOT, 'exp', 'recon', 'paldb_sitemap.xml'), 'utf8');
   return [
@@ -67,10 +67,10 @@ function sitemapSlugs() {
   ];
 }
 
-/** Slugs from paldb's /Items index page (source B — the complete item universe). */
+/** Slugs from paldb's /Items index page (source B - the complete item universe). */
 function itemsIndexSlugs() {
   if (!existsSync(ITEMS_INDEX_FILE)) {
-    throw new Error(`items index missing — run "node scripts/mirror.mjs --fetch-index" once to cache ${ITEMS_INDEX_FILE}`);
+    throw new Error(`items index missing - run "node scripts/mirror.mjs --fetch-index" once to cache ${ITEMS_INDEX_FILE}`);
   }
   const h = readFileSync(ITEMS_INDEX_FILE, 'utf8');
   return [...new Set([...h.matchAll(/href="([A-Za-z0-9_%\-]+)"/g)].map((m) => m[1]))];
@@ -119,7 +119,7 @@ async function fetchPage(page) {
     if (!isThrottle) {
       if (res.status !== 200) {
         // Permanent/non-throttle failure (404, 5xx): skip immediately, no backoff.
-        console.error(`[mirror] status ${res.status} ${page.url} — skipping`);
+        console.error(`[mirror] status ${res.status} ${page.url} - skipping`);
         if (res.status === 404) recordFailure(page.name, 'permanent');
         return { failed: true, permanent: true };
       }
@@ -128,7 +128,7 @@ async function fetchPage(page) {
       return { ok: true, bytes: body.length };
     }
     // Throttle signature (200 + empty/tiny body): back off and retry.
-    console.error(`[mirror] throttled (${page.url}, status ${res.status}, ${body.length}B) — attempt ${attempt + 1}/4, backing off ${Math.round(backoffMs / 1000)}s`);
+    console.error(`[mirror] throttled (${page.url}, status ${res.status}, ${body.length}B) - attempt ${attempt + 1}/4, backing off ${Math.round(backoffMs / 1000)}s`);
     await sleep(backoffMs);
     if (backoffMs < 300000) backoffMs *= 2;
   }
@@ -164,7 +164,7 @@ async function fetchIndex() {
       console.error(`[mirror] items index cached (${body.length} bytes)`);
       return;
     }
-    console.error(`[mirror] index attempt ${attempt + 1}/4 throttled (status ${res.status}, ${body.length}B) — backing off ${Math.round(backoffMs / 1000)}s`);
+    console.error(`[mirror] index attempt ${attempt + 1}/4 throttled (status ${res.status}, ${body.length}B) - backing off ${Math.round(backoffMs / 1000)}s`);
     await sleep(backoffMs);
     if (backoffMs < 300000) backoffMs *= 2;
   }
@@ -206,7 +206,7 @@ function writeProgress() {
 
 if (process.argv.includes('--fetch-index')) {
   await fetchIndex();
-  console.error('[mirror] index refreshed — run again without --fetch-index to crawl');
+  console.error('[mirror] index refreshed - run again without --fetch-index to crawl');
   process.exit(0);
 }
 

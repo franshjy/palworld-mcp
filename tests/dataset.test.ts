@@ -165,7 +165,7 @@ test('schema v2: pal enrichment from mirrored pages', () => {
   assert.ok(noSkills <= 3, `expected almost all breedable pals to have skills, ${noSkills} missing`);
 });
 
-test('schema v2: items — resolution, search, known values', () => {
+test('schema v2: items - resolution, search, known values', () => {
   const wool = data.resolveItem('Wool');
   assert.equal(wool.item?.code, 'Wool');
   assert.equal(wool.item?.rarity, 'Common');

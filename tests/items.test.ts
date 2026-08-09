@@ -12,10 +12,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ds = loadDataset(join(ROOT, 'data', 'dataset.json'));
 const data = new PalworldData(ds);
 
-test('itemRecipes: product-side recipes resolve — Laser Gatling Gun tiers (base = 100 Hexolite)', () => {
+test('itemRecipes: product-side recipes resolve - Laser Gatling Gun tiers (base = 100 Hexolite)', () => {
   const recipes = data.itemRecipes('Laser Gatling Gun');
   assert.ok(recipes.length > 0, 'expected recipes producing Laser Gatling Gun');
-  // All five craft tiers share the product name "Laser Gatling Gun 1" — deduped across
+  // All five craft tiers share the product name "Laser Gatling Gun 1" - deduped across
   // the material pages that each list them. Base tier needs 100 Hexolite.
   assert.equal(recipes.length, 5, `expected 5 craft tiers, got ${recipes.length}`);
   assert.ok(recipes.every((r) => r.product === 'Laser Gatling Gun 1'));
@@ -50,7 +50,7 @@ test('items: broken-name pages fall back to the code (Gasoline)', () => {
   assert.equal(r.item?.code, 'Gasoline');
 });
 
-test('search: dropItem filter (substring) — Melpaca drops Wool', () => {
+test('search: dropItem filter (substring) - Melpaca drops Wool', () => {
   const hits = data.search({ dropItem: 'wool' });
   assert.ok(hits.some((p) => p.name === 'Melpaca'), 'Melpaca drops Wool and must match');
   for (const p of hits) {
@@ -61,7 +61,7 @@ test('search: dropItem filter (substring) — Melpaca drops Wool', () => {
   }
 });
 
-test('search: dropItem filter — Paldium Fragment droppers exist', () => {
+test('search: dropItem filter - Paldium Fragment droppers exist', () => {
   const hits = data.search({ dropItem: 'Paldium Fragment' });
   assert.ok(hits.length > 0, 'expected some pal to drop Paldium Fragment');
   for (const p of hits) {

@@ -1,20 +1,20 @@
 /**
- * breeding_plan — multi-step breeding path solver.
+ * breeding_plan - multi-step breeding path solver.
  *
  * Given a target pal and the pals you own, find ranked step-by-step breeding
- * plans. Search: BFS over owned-set growth — each step picks two owned (or
+ * plans. Search: BFS over owned-set growth - each step picks two owned (or
  * already-produced) pals and breeds them; the child joins the set. BFS finds
  * the fewest-step plans first; ties rank by fewest new catches (parents the
  * plan needs but you don't own and can't produce earlier in the path).
  *
  * Correctness:
  *   - Unbreedable targets (rankResult:false with no unique combo, e.g. Jetragon)
- *     are reported via `unbreedable` — never a fabricated path.
+ *     are reported via `unbreedable` - never a fabricated path.
  *   - Every step is computed by the validated engine, so the 116 excluded pals,
  *     136 unique combos and the Katress|Wixen directional pair are respected.
  *   - Directional steps carry a gender note (both children are treated as
- *     producible — the planner has no gender input).
- *   - Greenfield mode (owned = []): direct acquisition plans only — "catch
+ *     producible - the planner has no gender input).
+ *   - Greenfield mode (owned = []): direct acquisition plans only - "catch
  *     these two parents and breed", circular usesTarget pairs excluded.
  */
 import type { PalworldData } from './dataset.js';
@@ -42,7 +42,7 @@ export interface PlanResult {
   totalPlans: number;
 }
 
-/** Frontier cap per BFS depth — bounds the exponential owned-set growth. */
+/** Frontier cap per BFS depth - bounds the exponential owned-set growth. */
 const MAX_STATES = 4000;
 /** Plans returned per query. */
 const MAX_PLANS = 5;
@@ -54,7 +54,7 @@ function directionalNote(data: PalworldData, a: string, b: string): string | und
   return (
     entries
       .map(([m, f, c]) => `${data.byCodeLookup(m)?.name ?? m} (male) + ${data.byCodeLookup(f)?.name ?? f} (female) -> ${data.byCodeLookup(c)?.name ?? c}`)
-      .join('; ') + ' — child depends on which parent is male.'
+      .join('; ') + ' - child depends on which parent is male.'
   );
 }
 
@@ -78,7 +78,7 @@ export function breedingPlan(data: PalworldData, targetCode: string, ownedCodes:
   const direct = data.findParentPairs(targetCode, undefined, 100);
   if (direct.total === 0) return { found: true, unbreedable: true, plans: [], totalPlans: 0 };
 
-  // Greenfield mode: no owned pals — direct acquisition plans (skip circular usesTarget pairs).
+  // Greenfield mode: no owned pals - direct acquisition plans (skip circular usesTarget pairs).
   if (ownedCodes.length === 0) {
     const plans: BreedingPlan[] = direct.pairs
       .filter((p) => !p.usesTarget)
@@ -133,7 +133,7 @@ export function breedingPlan(data: PalworldData, targetCode: string, ownedCodes:
       }
     }
     frontier = next;
-    // BFS: the first depth with any plan is the minimum-step depth — stop there.
+    // BFS: the first depth with any plan is the minimum-step depth - stop there.
     if (plans.length > 0) break;
     if (frontier.length === 0) break;
   }

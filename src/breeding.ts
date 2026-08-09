@@ -5,7 +5,7 @@
  * calculator (9/9 live API pairs), manual in-game/calculator checks (3/3), and
  * palcalc-tools' engine (2,853/2,853 pairs). Rules, in order:
  *
- *   1. Directional unique combos (one pair in 1.0: Katress|Wixen) — child depends
+ *   1. Directional unique combos (one pair in 1.0: Katress|Wixen) - child depends
  *      on which parent is male. Returns BOTH children (no gender input in MCP).
  *   2. Unique combos (136 fixed pairs) override rank math.
  *   3. Identity: A + A = A, always.
@@ -28,7 +28,7 @@ export type DirectionalMap = Record<string, DirectionalEntry[]>;
 export interface BreedingResult {
   /** Child pal code. */
   child: string;
-  /** Second child code — only for directional combos. */
+  /** Second child code - only for directional combos. */
   child2?: string;
   kind: BreedingKind;
   /** Present for rank-math results: the computed child rank and the parent ranks used. */

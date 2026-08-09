@@ -1,5 +1,5 @@
 /**
- * Pure parsing for paldb.cc pal + item pages. No I/O — unit-tested against
+ * Pure parsing for paldb.cc pal + item pages. No I/O - unit-tested against
  * page fixtures (tests/fixtures/). The crawl + merge orchestration lives in
  * scripts/parse-pages.mjs.
  *
@@ -14,8 +14,8 @@ const CONTENT_MIN = 29000;
 
 function decodeHtml(s) {
   return s
-    .replace(/&ndash;/g, '–')
-    .replace(/&mdash;/g, '—')
+    .replace(/&ndash;/g, '-')
+    .replace(/&mdash;/g, '-')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
@@ -37,7 +37,7 @@ function splitCells(rowHtml) {
   return cells;
 }
 
-/** paldb writes <tr><td>..<td>..<tr> — rows are delimited by the NEXT <tr>, not </tr>. */
+/** paldb writes <tr><td>..<td>..<tr> - rows are delimited by the NEXT <tr>, not </tr>. */
 function rowsOf(html) {
   return [...html.matchAll(/<tr>([\s\S]*?)(?=<tr>|<\/table>)/g)].map((m) => m[1]);
 }
@@ -80,7 +80,7 @@ function sectionMap(html) {
     const s = content[i];
     const end = i + 1 < content.length ? content[i + 1].header : html.length;
     // Pages carry the content twice (a second render variant with stripped links);
-    // keep the FIRST occurrence of each section — it is the complete one.
+    // keep the FIRST occurrence of each section - it is the complete one.
     if (!(s.title in out)) out[s.title] = html.slice(s.start, end);
   }
   return out;
@@ -150,8 +150,8 @@ function parseDrops(sec) {
 function parseSpawns(sec) {
   const out = [];
   const flat = text(sec);
-  // Rows like "55 | Anubis Dunes -134,-94" / "68–72 | desertisland_1" — level + location pairs.
-  const re = /(\d+(?:–\d+)?)\s*([A-Za-z][A-Za-z0-9_ ,.\-–]*?)(?=\s*\d+(?:–\d+)?\s*[A-Za-z]|$)/g;
+  // Rows like "55 | Anubis Dunes -134,-94" / "68-72 | desertisland_1" - level + location pairs.
+  const re = /(\d+(?:-\d+)?)\s*([A-Za-z][A-Za-z0-9_ ,.\--]*?)(?=\s*\d+(?:-\d+)?\s*[A-Za-z]|$)/g;
   let m;
   while ((m = re.exec(flat))) {
     const level = m[1];
@@ -212,11 +212,11 @@ function parseItemPage(html, slug) {
   const stats = kvOf(divRowsOf(secs.Stats ?? ''));
   const others = kvOf(divRowsOf(secs.Others ?? ''));
   // Classification: pal pages and non-item pages (categories, NPCs) that slipped into
-  // the item crawl list — skip them rather than emit garbage items.
+  // the item crawl list - skip them rather than emit garbage items.
   if (stats.Size || stats.Health || stats.Food) return null; // pal-style page
   if (!stats.Rarity && !stats.Type && !stats.Code && !stats.MaxStackCount) return null; // not an item page
   // Display name: prefer the page's own itemname anchor ("Ancient Civilization Parts"),
-  // fall back to the <title> minus the site suffix, then to the item code — some pages
+  // fall back to the <title> minus the site suffix, then to the item code - some pages
   // render a broken "-" anchor (e.g. Gasoline) where the code is the real name.
   const selfLink = html.match(new RegExp(`class="itemname"[^>]*href="${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">([\\s\\S]*?)</a>`));
   const selfName = selfLink ? text(selfLink[1]).trim() : '';
@@ -255,7 +255,7 @@ function parseShopRows(sec) {
   return [...shops].sort();
 }
 
-/** Crafting Materials table: Materials | Product | Schematic — per-row material list + product. */
+/** Crafting Materials table: Materials | Product | Schematic - per-row material list + product. */
 function parseCraftingRows(sec) {
   const out = [];
   for (const row of rowsOf(sec)) {
