@@ -271,8 +271,8 @@ function buildDataset(iv, palcalc, farm) {
     generatedAt: new Date().toISOString(),
     gameVersion: '1.0',
     sources: [
-      { name: 'paldb.cc /json/iv_en.json', url: 'https://paldb.cc/json/iv_en.json', license: 'CC BY-NC-SA (paldb.cc)' },
-      { name: 'paldb.cc /Breeding_Farm', url: 'https://paldb.cc/Breeding_Farm', license: 'CC BY-NC-SA (paldb.cc)' },
+      { name: 'paldb.cc /json/iv_en.json', url: 'https://paldb.cc/json/iv_en.json', license: 'no license published by paldb.cc; compilation CC BY 4.0 (see LICENSE.data)' },
+      { name: 'paldb.cc /Breeding_Farm', url: 'https://paldb.cc/Breeding_Farm', license: 'no license published by paldb.cc; compilation CC BY 4.0 (see LICENSE.data)' },
       {
         name: 'palcalc-tools/palworld-1.0-calculator',
         url: 'https://github.com/palcalc-tools/palworld-1.0-calculator',

@@ -1,0 +1,32 @@
+Palworld MCP — Data Attribution & Licensing Notes
+
+The software code in this repository (src/, scripts/, tests/, build
+configuration) is licensed under the MIT License — see LICENSE.
+
+The shipped dataset (data/dataset.json) is a compilation licensed under
+CC BY 4.0 — see LICENSE.data. It is assembled from the following sources:
+
+1. paldb.cc (https://paldb.cc)
+   Item records, recipes, drops, spawns, and pal page data. paldb.cc
+   publishes no content license (robots.txt is fully permissive; the site
+   states only that it is a fan-made site not affiliated with Pocketpair).
+   This project uses the data with attribution. When redistributing or
+   adapting the dataset, preserve this attribution: "Data sourced from
+   paldb.cc".
+
+2. palcalc-tools/palworld-1.0-calculator
+   (https://github.com/palcalc-tools/palworld-1.0-calculator)
+   Breeding ranks, unique combos, result eligibility, male ratios, and
+   elements. MIT License, Copyright (c) 2026 Palworld Calc contributors
+   (per their license, this notice must be preserved in copies or
+   substantial portions).
+
+3. Palworld game data (pal names, stats, skill effects, paldeck summaries)
+   © Pocketpair, Inc. Palworld is a trademark of Pocketpair. This is an
+   unofficial fan project and is not affiliated with or endorsed by
+   Pocketpair. Game data is declared, not licensed.
+
+Required attribution when redistributing the dataset:
+
+    Dataset: palworld-mcp (CC BY 4.0), data sourced from paldb.cc;
+    breeding data from palcalc-tools (MIT); game data © Pocketpair.
