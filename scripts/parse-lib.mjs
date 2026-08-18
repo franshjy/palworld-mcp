@@ -14,8 +14,8 @@ const CONTENT_MIN = 29000;
 
 function decodeHtml(s) {
   return s
-    .replace(/&ndash;/g, '-')
-    .replace(/&mdash;/g, '-')
+    .replace(/&ndash;/g, '\u2013')
+    .replace(/&mdash;/g, '\u2014')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
@@ -151,7 +151,8 @@ function parseSpawns(sec) {
   const out = [];
   const flat = text(sec);
   // Rows like "55 | Anubis Dunes -134,-94" / "68-72 | desertisland_1" - level + location pairs.
-  const re = /(\d+(?:-\d+)?)\s*([A-Za-z][A-Za-z0-9_ ,.\--]*?)(?=\s*\d+(?:-\d+)?\s*[A-Za-z]|$)/g;
+  // Level/location ranges mirror paldb's en-dash (U+2013) via the \u2013 escape to keep source ASCII.
+  const re = /(\d+(?:\u2013\d+)?)\s*([A-Za-z][A-Za-z0-9_ ,.\-\u2013]*?)(?=\s*\d+(?:\u2013\d+)?\s*[A-Za-z]|$)/g;
   let m;
   while ((m = re.exec(flat))) {
     const level = m[1];
