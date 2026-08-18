@@ -1,7 +1,7 @@
 {
  "schemaVersion": 2,
- "generatedAt": "2026-08-09T07:18:23.846Z",
- "gameVersion": "1.0.2",
+ "generatedAt": "2026-08-18T18:15:16.497Z",
+ "gameVersion": "1.0.3",
  "sources": [
   {
    "name": "paldb.cc /json/iv_en.json",
@@ -13006,7 +13006,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -15559,7 +15559,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -18768,7 +18768,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -24962,7 +24962,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -26646,7 +26646,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -26817,7 +26817,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -27005,7 +27005,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -28321,7 +28321,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -28675,7 +28675,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -28715,7 +28715,7 @@
      "location": "Map worldtree_9_03_C"
     }
    ],
-   "summary": "Tossing a heated Snock Lux into the bath for a scorching spa was once a fad of the distant past. Owing to a recent revival, it is now quite literally a hot trend.",
+   "summary": "Tossing a heated Snock Terra into the bath for a scorching spa was once a fad of the distant past. Owing to a recent revival, it is now quite literally a hot trend.",
    "partnerSkill": {
     "name": "Grounding Shell",
     "description": "While in party, player and party Pals take (15~30)% less Water damage, and are immune to Soak . (Does not stack)"
@@ -29649,7 +29649,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -31843,7 +31843,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -34345,7 +34345,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -35816,7 +35816,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -37428,7 +37428,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -37656,7 +37656,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -37832,7 +37832,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -38365,7 +38365,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -38408,7 +38408,7 @@
    "summary": "Whenever it's confused, it resorts to consulting with the snakes on its head. However, since they're all ultimately the same being, it comes to understand that nothing is understood.",
    "partnerSkill": {
     "name": "Snake's Sagacity",
-    "description": "While in party, the player's attacks inflict Blind (2~6) . (Does not stack)"
+    "description": "While in party, the player's attacks increase Blind buildup by (2~6) . (Does not stack)"
    }
   },
   {
@@ -38922,7 +38922,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -40272,7 +40272,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -41406,7 +41406,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -42509,7 +42509,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -43613,7 +43613,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -44441,7 +44441,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -44612,7 +44612,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -44795,7 +44795,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -44989,7 +44989,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -45088,7 +45088,7 @@
    "summary": "One entity, two minds. When their wills clash, it's impossible to tell where the armor will wander until they reconcile.",
    "partnerSkill": {
     "name": "Forest Laser",
-    "description": "Can be ridden. When activated, Dualith fires a powerful Grass laser from its right hand."
+    "description": "Can be ridden. While mounted, Dualith fires a powerful Grass laser from its right hand."
    }
   },
   {
@@ -45213,7 +45213,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -45980,7 +45980,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -46145,7 +46145,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -46401,7 +46401,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -46568,7 +46568,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -47227,7 +47227,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -47549,7 +47549,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -47798,7 +47798,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -48192,7 +48192,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -48279,7 +48279,7 @@
    "summary": "At a glance, its movements appear exaggerated and full of openings. Strangely, however, any opponents become overwhelmed, and become unable to look away, as if transfixed.",
    "partnerSkill": {
     "name": "Stage Combat",
-    "description": "While in party, the player's attacks inflict Burn (2~6) . (Does not stack)"
+    "description": "While in party, the player's attacks increase Burn buildup by (2~6) . (Does not stack)"
    }
   },
   {
@@ -48412,7 +48412,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -48593,7 +48593,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -48764,7 +48764,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -49005,7 +49005,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -49052,7 +49052,7 @@
    "summary": "One entity, two minds. They rarely agree and bicker constantly, but once battle begins, mind and body instantly unite as one!",
    "partnerSkill": {
     "name": "Corruption Laser",
-    "description": "Can be ridden. When activated, Dualith Noct fires a powerful Dark laser from its right hand."
+    "description": "Can be ridden. While mounted, Dualith Noct fires a powerful Dark laser from its right hand."
    }
   },
   {
@@ -49211,7 +49211,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -49627,7 +49627,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -49901,7 +49901,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -50072,7 +50072,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -50119,7 +50119,7 @@
    "summary": "Even if the stones on its back were to be removed, Tetroise Primo will know where they are. No matter how far apart, it will always track them down.",
    "partnerSkill": {
     "name": "Stone-Chaser Archelon",
-    "description": "Can be ridden. While in party, increases the durability of all weapons and armor by (80~100)% . (Does not stack)"
+    "description": "Can be ridden. While in party, reduces durability loss of all weapons and armor by (80~100)% . (Does not stack)"
    }
   },
   {
@@ -51045,7 +51045,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -51088,7 +51088,7 @@
    "summary": "A new Pal that was only recently discovered. It trusts nothing and no one, and its tempermental nature leads to it constantly venting its rage at the nearest target.",
    "partnerSkill": {
     "name": "Resentful Pterosaur",
-    "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by (2~6)% or each other Dragon or Fire Pal in your party. (Excluding Eidrolon Ignis )"
+    "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by (2~6)% for each other Dragon or Fire Pal in your party. (Excluding Eidrolon Ignis )"
    }
   },
   {
@@ -51354,7 +51354,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -52027,7 +52027,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -52372,7 +52372,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -52415,7 +52415,7 @@
    "summary": "Since ancient times, it has remained within the World Tree, continuing its vigil. What it protects, and for what purpose, Dandilord does not care. After all, the World Tree knows everything. Only the mist it wields can reveal the truth.",
    "partnerSkill": {
     "name": "Mist Stalwart",
-    "description": "When activated, the player's attacks inflict Poison (2~6) . While in party, grants the player and party Pals immunity to Poison , and nullifies the effects of toxic gas in the World Tree area. (Does not stack)"
+    "description": "When activated, the player's attacks increase Poison buildup by (2~6) . While in party, grants the player and party Pals immunity to Poison , and nullifies the effects of toxic gas in the World Tree area. (Does not stack)"
    }
   },
   {
@@ -52554,7 +52554,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -52780,7 +52780,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -52954,7 +52954,7 @@
     },
     {
      "item": "World Tree Holy Water",
-     "qty": "1–3",
+     "qty": "2–4",
      "probability": "70"
     },
     {
@@ -69357,7 +69357,7 @@
    "name": "Aquatic Construction Kit",
    "rarity": "Epic",
    "type": "Key Items",
-   "rank": 4,
+   "rank": 2,
    "price": 200,
    "weight": null,
    "maxStackCount": 9999,
@@ -207986,415 +207986,460 @@
    "type": "Consumable",
    "rank": 1,
    "price": 5000,
-   "weight": 1,
+   "weight": 0.1,
    "maxStackCount": 9999,
    "typeA": "Consume",
    "typeB": "ConsumeWorldTreeHolyWater",
    "droppedBy": [
     {
      "item": "Bastigor Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Smokie Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Nitemary Botan Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Rayhound Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Polapup Terra Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Beakon Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Starryon Primo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Celesdir Noct Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Sibelyx Primo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Petallia Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Knocklem Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Skutlass Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Elgrove Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Elgrove Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Dualith Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Eidrolon Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
-     "item": "Snock Lux Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "item": "Snock Terra Lv.70",
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Pierdon Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Aegidron Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Renjishi Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Carnibora Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Loomen Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Majex Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Dupin Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Wispaw Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Solenne Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Wistella Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Mycora Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Snugloo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Venusa Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Roujay Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Shaolong Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Knocklem Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Grizzbolt Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Mossanda Lux Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Faleris Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Faleris Aqua Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Lyleen Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Lyleen Noct Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Selyne Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Flaracle Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Dualith Noct Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Whalaska Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Solmora Lux Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Univolt Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Shroomer Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Tetroise Primo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Orserk Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Chilly Little Hero Smokie Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Soul of the Green Rabbit Nitemary Botan Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Blustery Blizzard Fiend Univolt Cryst Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Frost-Fringed Zoomies Rayhound Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Star of the Dunes Polapup Terra Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Wings of Frost Beakon Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Silvermane Starryon Primo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Beast of Chaos Celesdir Noct Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Gilded Lady Sibelyx Primo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Lady of the Ashen Wastes Petallia Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Blazing Suit of Armor Knocklem Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Blazing Determined Draw Skutlass Ignis Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Verdant Minotaur Elgrove Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Frozen Minotaur Elgrove Cryst Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Twinhearted Azure Construct Dualith Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Wings of Freedom Eidrolon Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
-     "item": "Sluggish Dazzling Flash Snock Lux Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "item": "Wings of Distrust Eidrolon Ignis Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Sluggish Dazzling Flash Snock Terra Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Shuffling Glacier Pierdon Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Guardian of Luminous Trails Aegidron Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Scorching Ovation Renjishi Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Open-Minded Glutton Carnibora Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Revealer of Truths Loomen Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Flickering Shadow Majex Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Illusionist Cottontail Dupin Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Adorable Phantom Thief Wispaw Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Veiled Dancer of Dusk Solenne Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Mantle of the Night Sky Wistella Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Cute as a Button Mycora Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Alpine Dwarf Snugloo Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Salon Shunner Venusa Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Pitch Black Pilferer Roujay Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Frigid Voyager Moldron Cryst Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Beast of Salvation Celesdir Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "King of Frostfang Bastigor Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
     },
     {
      "item": "Silvance Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Dandilord Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "2–4",
+     "probability": "75%"
     },
     {
      "item": "Immortal Shade Silvance Lv.70",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Bewitching Lurker Dandilord Lv.70",
+     "qty": "20–30",
+     "probability": "100%"
+    },
+    {
+     "item": "Bewitching Lurker Dandilord Lv.78 (Tower Normal)",
+     "qty": "60–80",
+     "probability": "100%"
     },
     {
      "item": "Immortal Shade Silvance Lv.78 (Tower Normal)",
-     "qty": "1–3",
-     "probability": "50%"
+     "qty": "60–80",
+     "probability": "100%"
+    },
+    {
+     "item": "Highly Modified Grizzbolt Lv.78 (Tower Normal)",
+     "qty": "60–80",
+     "probability": "100%"
     }
    ],
    "usedInCrafting": [
@@ -209117,6 +209162,6 @@
  "coverage": {
   "pals": 299,
   "items": 2170,
-  "at": "2026-08-09T07:18:23.846Z"
+  "at": "2026-08-18T18:15:16.498Z"
  }
 }
