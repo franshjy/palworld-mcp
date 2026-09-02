@@ -81,13 +81,21 @@ export interface SkillRecord {
   pals: { name: string; unlockLevel: number | null }[];
 }
 
-// Skill pages use a different element vocabulary than pal pages - accept both.
-const SKILL_ELEMENT_ALIAS: Record<string, string> = {
-  earth: 'Ground',
-  normal: 'Neutral',
-  electricity: 'Electric',
-  leaf: 'Grass',
+// Pal pages and skill pages label the same 9 game elements differently (e.g. a Leaf pal's
+// skills are Grass). canonicalSkillElement resolves either dialect to the SKILL spelling
+// (lowercase), so search_pals and search_skills accept the same inputs natively.
+const PAL_TO_SKILL: Record<string, string> = {
+  leaf: 'grass',
+  earth: 'ground',
+  electricity: 'electric',
+  normal: 'neutral',
 };
+
+/** Canonical (skill-vocab) spelling in lowercase; identity for dialect-free elements. */
+function canonicalSkillElement(input: string): string {
+  const i = input.trim().toLowerCase();
+  return PAL_TO_SKILL[i] ?? i;
+}
 
 /** Passive descriptions carry raw trailing metadata ("... Weight 100 Pal") - strip it. */
 function cleanPassiveDesc(desc: string | null | undefined): string | null {
@@ -292,12 +300,11 @@ export class PalworldData {
     limit?: number;
   }): SkillRecord[] {
     const ql = opts.query?.trim().toLowerCase();
-    const elRaw = opts.element?.trim().toLowerCase();
-    const el = elRaw ? (SKILL_ELEMENT_ALIAS[elRaw] ?? elRaw).toLowerCase() : undefined;
+    const el = opts.element ? canonicalSkillElement(opts.element) : undefined;
     let skills = this.skills.filter((s) => {
       if (ql && !s.name.toLowerCase().includes(ql)) return false;
       if (opts.kind && s.kind !== opts.kind) return false;
-      if (el && (s.element ?? '').toLowerCase() !== el) return false;
+      if (el && canonicalSkillElement(s.element ?? '') !== el) return false;
       if (opts.minPower !== undefined && (s.power ?? -1) < opts.minPower) return false;
       return true;
     });
@@ -326,12 +333,14 @@ export class PalworldData {
     limit?: number;
   }): PalRecord[] {
     const ql = opts.query?.trim().toLowerCase();
-    const el = opts.element?.trim().toLowerCase();
+    // Pal elements are stored in the pal dialect (Leaf) but accept the skill dialect too
+    // (Grass <-> Leaf, etc.) - canonicalize both sides to the skill spelling and compare.
+    const elSkill = opts.element ? canonicalSkillElement(opts.element) : undefined;
     const work = opts.workSuitability?.trim().toLowerCase();
     const drop = opts.dropItem?.trim().toLowerCase();
     let pals = this.dataset.pals.filter((p) => {
       if (ql && !p.name.toLowerCase().includes(ql)) return false;
-      if (el && !p.element.some((e) => e.toLowerCase() === el)) return false;
+      if (elSkill && !p.element.some((e) => canonicalSkillElement(e) === elSkill)) return false;
       if (opts.minHp !== undefined && (p.stats?.hp ?? -1) < opts.minHp) return false;
       if (opts.minAttack !== undefined && (p.stats?.attack ?? -1) < opts.minAttack) return false;
       if (opts.minDefense !== undefined && (p.stats?.defense ?? -1) < opts.minDefense) return false;

@@ -30,12 +30,34 @@ test('searchSkills: reverse lookup - Rock Lance is learned by Anubis at level 50
   assert.equal(anubis!.unlockLevel, 50);
 });
 
-test('searchSkills: element filter accepts pal vocabulary (Earth -> Ground skills)', () => {
-  const viaAlias = data.searchSkills({ element: 'Earth', kind: 'active', limit: 50 });
-  const viaCanonical = data.searchSkills({ element: 'Ground', kind: 'active', limit: 50 });
-  assert.ok(viaAlias.length > 0, 'expected Ground-element skills');
-  assert.deepEqual(viaAlias.map((s) => s.name), viaCanonical.map((s) => s.name));
-  for (const s of viaAlias) assert.equal(s.element, 'Ground');
+test('searchSkills: element input is trimmed and case/whitespace tolerant; typos filter to empty', () => {
+  const padded = data.searchSkills({ element: '  LeAf ', kind: 'active', limit: 50 });
+  const plain = data.searchSkills({ element: 'Leaf', kind: 'active', limit: 50 });
+  assert.deepEqual(padded.map((s) => s.name), plain.map((s) => s.name));
+  assert.deepEqual(data.searchSkills({ element: 'leafy', kind: 'active' }), [], 'unknown element must filter to empty, not throw');
+});
+
+test('searchSkills: full dialect symmetry - every pal spelling maps to the skill spelling', () => {
+  const pairs: [string, string][] = [
+    ['Leaf', 'Grass'],
+    ['Earth', 'Ground'],
+    ['Electricity', 'Electric'],
+    ['Normal', 'Neutral'],
+  ];
+  for (const [palEl, skillEl] of pairs) {
+    const viaPal = data.searchSkills({ element: palEl, kind: 'active', limit: 50 });
+    const viaSkill = data.searchSkills({ element: skillEl, kind: 'active', limit: 50 });
+    assert.ok(viaSkill.length > 0, `${skillEl} skills must exist`);
+    assert.deepEqual(
+      viaPal.map((s) => s.name),
+      viaSkill.map((s) => s.name),
+      `${palEl} should equal ${skillEl}`,
+    );
+  }
+  // The canonical elements are unchanged - non-dialect elements still match by identity.
+  const fire = data.searchSkills({ element: 'Fire', kind: 'active', limit: 50 });
+  assert.ok(fire.length > 0);
+  for (const s of fire) assert.equal(s.element, 'Fire');
 });
 
 test('searchSkills: minPower excludes weaker and non-active skills; sortBy power descends', () => {

@@ -92,6 +92,32 @@ test('search filters', () => {
   assert.ok(query.some((p) => p.name === 'Anubis'));
 });
 
+test('search element filter: skill vocabulary is accepted and matches the pal dialect', () => {
+  // Pal elements are stored as Leaf/Earth/Electricity/Normal - the skill spelling
+  // (Grass/Ground/Electric/Neutral) must resolve to the same pals.
+  const byLeaf = data.search({ element: 'Leaf', limit: 50 });
+  const byGrass = data.search({ element: 'Grass', limit: 50 });
+  assert.ok(byLeaf.length > 0);
+  assert.deepEqual(byLeaf.map((p) => p.name), byGrass.map((p) => p.name), 'Leaf and Grass must be the same element');
+
+  const byEarth = data.search({ element: 'Earth', limit: 50 });
+  const byGround = data.search({ element: 'Ground', limit: 50 });
+  assert.deepEqual(byEarth.map((p) => p.name), byGround.map((p) => p.name));
+
+  const byElec = data.search({ element: 'Electricity', limit: 50 });
+  const byElectric = data.search({ element: 'Electric', limit: 50 });
+  assert.deepEqual(byElec.map((p) => p.name), byElectric.map((p) => p.name));
+
+  const byNormal = data.search({ element: 'Normal', limit: 50 });
+  const byNeutral = data.search({ element: 'Neutral', limit: 50 });
+  assert.deepEqual(byNormal.map((p) => p.name), byNeutral.map((p) => p.name));
+
+  // Edge: pal element input is trimmed + case-insensitive, unknown elements filter to empty.
+  const padded = data.search({ element: '  GrAsS ', limit: 50 });
+  assert.deepEqual(padded.map((p) => p.name), byGrass.map((p) => p.name));
+  assert.deepEqual(data.search({ element: 'leafy' }), []);
+});
+
 test('findParentPairs: reverse lookup for a generic-breedable pal', () => {
   const anubis = data.resolve('Anubis').pal!;
   const { total, pairs } = data.findParentPairs(anubis.code);

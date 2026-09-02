@@ -168,7 +168,7 @@ try {
   process.exit(1);
 }
 
-const server = new McpServer({ name: 'palworld-mcp', version: '0.1.0' });
+const server = new McpServer({ name: 'palworld-mcp', version: '1.0.0' });
 
 server.registerTool(
   'search_pals',
@@ -178,7 +178,7 @@ server.registerTool(
       'Search the Palworld pal roster by name, element, base stats (HP/ATK/DEF), capture rate, boss availability or breedability. All filters are optional and combined with AND.',
     inputSchema: {
       query: z.string().optional().describe('Name substring, e.g. "anub"'),
-      element: z.string().optional().describe('Element: Fire, Water, Leaf, Electricity, Ice, Earth, Dark, Dragon, Normal'),
+      element: z.string().optional().describe('Element: Fire, Water, Leaf, Electricity, Ice, Earth, Dark, Dragon, Normal (skill spelling Grass/Ground/Electric/Neutral also accepted for the same elements)'),
       minHp: z.number().int().nonnegative().optional(),
       minAttack: z.number().int().nonnegative().optional(),
       minDefense: z.number().int().nonnegative().optional(),
@@ -398,11 +398,11 @@ server.registerTool(
   {
     title: 'Search skills',
     description:
-      'Search the skill index built from all pal records: active (combat) skills, passive skills, and partner skills. Answers "which pals learn X", "who has passive X", "strongest Ground move". Returns each skill with the pals that have it (unlock level for active skills). Passive coverage is partial - only pals whose pages listed passives.',
+      'Search the skill index built from all pal records: active (combat) skills, passive skills, and partner skills. Answers "which pals learn X", "who has passive X", "strongest Ground move". Returns each skill with the pals that have it (unlock level for active skills). Passive coverage is partial - only pals whose pages listed passives. Filters combine with AND. query matches skill NAMES only - for "strongest <element> move" (e.g. "strongest leaf skill") use element + sortBy: "power" and leave query empty.',
     inputSchema: {
       query: z.string().min(1).optional().describe('Skill name substring, e.g. "rock lance"'),
       kind: z.enum(['active', 'passive', 'partner']).optional().describe('active = combat move learned by level, passive = trait, partner = ridden/summoned bonus'),
-      element: z.string().optional().describe('Skill element: Fire, Water, Grass, Electric, Ice, Ground, Dark, Dragon, Neutral (pal vocabulary Leaf/Electricity/Earth/Normal also accepted)'),
+      element: z.string().optional().describe('Skill element: Fire, Water, Grass, Electric, Ice, Ground, Dark, Dragon, Neutral. Accepts the same elements by their pal spelling too: Leaf (Grass), Earth (Ground), Electricity (Electric), Normal (Neutral)'),
       minPower: z.number().int().nonnegative().optional().describe('Minimum power (matches active skills only)'),
       sortBy: z.enum(['name', 'power', 'cooldown']).optional().describe('power: highest first; cooldown: shortest first'),
       limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
