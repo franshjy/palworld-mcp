@@ -24,6 +24,27 @@ MCP (Model Context Protocol) server for Palworld database queries - pals, breedi
 
 ## Install & build
 
+The package is published to npm - install it from a client project:
+
+```bash
+npm i palworld-mcp
+```
+
+Then point your MCP client at `node_modules/palworld-mcp/dist/index.js`:
+
+```json
+{
+  "mcpServers": {
+    "palworld": {
+      "command": "node",
+      "args": ["C:/absolute/path/to/your-project/node_modules/palworld-mcp/dist/index.js"]
+    }
+  }
+}
+```
+
+Working from this repository instead (development):
+
 ```bash
 npm install
 npm run build
@@ -33,14 +54,14 @@ npm run build
 
 ## Register with an MCP client
 
-Any MCP-compatible client (Claude Desktop, Hermes, opencode, etc.) - the server speaks stdio:
+Any MCP-compatible client (Claude Desktop, Hermes, opencode, etc.) - the server speaks stdio. With the package installed via npm, register it with the path from the Install section; from a dev checkout, point at the built `dist/index.js`:
 
 ```json
 {
   "mcpServers": {
     "palworld": {
       "command": "node",
-      "args": ["C:/absolute/path/to/pal-mcp/dist/index.js"]
+      "args": ["C:/absolute/path/to/project/node_modules/palworld-mcp/dist/index.js"]
     }
   }
 }
