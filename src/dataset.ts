@@ -302,7 +302,8 @@ export class PalworldData {
     const ql = opts.query?.trim().toLowerCase();
     const el = opts.element ? canonicalSkillElement(opts.element) : undefined;
     let skills = this.skills.filter((s) => {
-      if (ql && !s.name.toLowerCase().includes(ql)) return false;
+      // query matches the skill NAME or its description (passive/partner effects).
+      if (ql && !s.name.toLowerCase().includes(ql) && !(s.description ?? '').toLowerCase().includes(ql)) return false;
       if (opts.kind && s.kind !== opts.kind) return false;
       if (el && canonicalSkillElement(s.element ?? '') !== el) return false;
       if (opts.minPower !== undefined && (s.power ?? -1) < opts.minPower) return false;

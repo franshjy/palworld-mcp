@@ -60,6 +60,14 @@ test('searchSkills: full dialect symmetry - every pal spelling maps to the skill
   for (const s of fire) assert.equal(s.element, 'Fire');
 });
 
+test('searchSkills: query also matches description text (partner effect lookup)', () => {
+  // Gobfin's partner skill "Angry Shark": "While in party, increases the player's Attack by (10~20)%".
+  const hits = data.searchSkills({ query: "player's attack", kind: 'partner' });
+  const angryShark = hits.find((s) => s.name === 'Angry Shark');
+  assert.ok(angryShark, `expected Angry Shark from description search, got: ${hits.map((s) => s.name).join(', ')}`);
+  assert.ok(angryShark!.pals.some((p) => p.name === 'Gobfin'));
+});
+
 test('searchSkills: minPower excludes weaker and non-active skills; sortBy power descends', () => {
   const hits = data.searchSkills({ minPower: 500, sortBy: 'power', limit: 50 });
   assert.ok(hits.length > 0);
