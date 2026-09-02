@@ -23,7 +23,7 @@ function withTimeout<T>(p: Promise<T>, ms: number, label: string): Promise<T> {
   ]);
 }
 
-test('MCP server: listTools + seven tools over stdio', async (t) => {
+test('MCP server: listTools + eight tools over stdio', async (t) => {
   const transport = new StdioClientTransport({
     command: process.execPath,
     args: [TSX_CLI, SERVER],
@@ -37,7 +37,7 @@ test('MCP server: listTools + seven tools over stdio', async (t) => {
     const tools = await withTimeout(client.listTools(), 10000, 'listTools');
     assert.deepEqual(
       tools.tools.map((x) => x.name).sort(),
-      ['breeding_plan', 'find_breeding_pairs', 'get_breeding_result', 'get_item', 'get_pal', 'search_items', 'search_pals'],
+      ['breeding_plan', 'find_breeding_pairs', 'get_breeding_result', 'get_item', 'get_pal', 'search_items', 'search_pals', 'search_skills'],
     );
 
     const search = await withTimeout(client.callTool({ name: 'search_pals', arguments: { query: 'anub' } }), 10000, 'search_pals');
@@ -251,6 +251,26 @@ test('MCP server: listTools + seven tools over stdio', async (t) => {
     );
     assert.equal(lvlBad.isError, true);
     assert.match(lvlBad.content[0].text, /minWorkLevel requires workSuitability/);
+
+    // search_skills reverse index + passive coverage note
+    const sk = await withTimeout(
+      client.callTool({ name: 'search_skills', arguments: { query: 'Rock Lance' } }),
+      10000,
+      'search_skills',
+    );
+    const skOut = JSON.parse(sk.content[0].text);
+    assert.ok(skOut.skills.some((s: { name: string; pals: { name: string }[] }) =>
+      s.name === 'Rock Lance' && s.pals.some((p) => p.name === 'Anubis'),
+    ));
+
+    const skPassive = await withTimeout(
+      client.callTool({ name: 'search_skills', arguments: { kind: 'passive', limit: 5 } }),
+      10000,
+      'search_skills passive',
+    );
+    const skPassiveOut = JSON.parse(skPassive.content[0].text);
+    assert.ok(skPassiveOut.count >= 1);
+    assert.match(skPassiveOut.note, /Passive skill coverage is partial/);
   } finally {
     await client.close().catch(() => {});
     // Hard-kill the server child if it is still alive (prevents stray tsx processes).

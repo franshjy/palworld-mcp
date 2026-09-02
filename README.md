@@ -15,6 +15,7 @@ MCP (Model Context Protocol) server for Palworld database queries - pals, breedi
 | `breeding_plan` | Multi-step breeding path solver: target pal + owned pals -> ranked step-by-step plans |
 | `search_items` | Search items by name, type, or rarity |
 | `get_item` | Full item record: rarity, price, weight, drops, shops, and every crafting recipe it appears in |
+| `search_skills` | Reverse skill index: which pals learn an active skill, carry a passive, or have a partner skill (filter by kind, element, power) |
 
 ## Requirements
 

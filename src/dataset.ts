@@ -69,6 +69,33 @@ export interface CraftRecipe {
   materials: { item: string; qty: number | null }[];
 }
 
+/** A skill indexed from pal records (reverse index: skill -> pals that have it). */
+export interface SkillRecord {
+  name: string;
+  /** active = combat move learned at a level, passive = trait, partner = ridden/summoned bonus. */
+  kind: 'active' | 'passive' | 'partner';
+  element: string | null; // active only
+  power: number | null; // active only
+  cooldown: number | null; // active only
+  description: string | null; // passive + partner
+  pals: { name: string; unlockLevel: number | null }[];
+}
+
+// Skill pages use a different element vocabulary than pal pages - accept both.
+const SKILL_ELEMENT_ALIAS: Record<string, string> = {
+  earth: 'Ground',
+  normal: 'Neutral',
+  electricity: 'Electric',
+  leaf: 'Grass',
+};
+
+/** Passive descriptions carry raw trailing metadata ("... Weight 100 Pal") - strip it. */
+function cleanPassiveDesc(desc: string | null | undefined): string | null {
+  if (!desc) return null;
+  const cleaned = desc.replace(/\s*Weight \d+(?: Pal)?\s*$/, '').trim();
+  return cleaned || null;
+}
+
 /** A parent pair from the reverse breeding index, enriched for consumers. */
 export interface ParentPair {
   parent1: string;
@@ -114,6 +141,10 @@ export class PalworldData {
   private readonly itemByCode = new Map<string, ItemRecord>();
   private readonly itemByNameLower = new Map<string, ItemRecord>();
   private readonly recipesByProduct = new Map<string, CraftRecipe[]>();
+  private readonly skillByNameLower = new Map<string, SkillRecord>();
+  readonly skills: SkillRecord[] = [];
+  /** Passive data is partial: only pals whose mirrored pages listed passives. */
+  readonly palsWithPassives: number;
 
   constructor(dataset: Dataset) {
     this.dataset = dataset;
@@ -143,7 +174,45 @@ export class PalworldData {
         this.recipesByProduct.set(key, arr);
       }
     }
+    // Skill reverse index: skill name -> pals that have it (no name collisions across kinds).
+    // ??= merge: the first pal's element/power/cooldown wins - values verified consistent across pals.
+    let withPassives = 0;
+    for (const p of dataset.pals) {
+      for (const s of p.activeSkills ?? []) {
+        const rec = this.skillEntry(s.name, 'active');
+        rec.element ??= s.element;
+        rec.power ??= s.power;
+        rec.cooldown ??= s.cooldown;
+        rec.pals.push({ name: p.name, unlockLevel: s.level });
+      }
+      if (p.passiveSkills?.length) withPassives++;
+      for (const s of p.passiveSkills ?? []) {
+        const rec = this.skillEntry(s.name, 'passive');
+        rec.description ??= cleanPassiveDesc(s.description);
+        rec.pals.push({ name: p.name, unlockLevel: null });
+      }
+      if (p.partnerSkill) {
+        const rec = this.skillEntry(p.partnerSkill.name, 'partner');
+        rec.description ??= p.partnerSkill.description ?? null;
+        rec.pals.push({ name: p.name, unlockLevel: null });
+      }
+    }
+    this.palsWithPassives = withPassives;
+    for (const rec of this.skills) {
+      rec.pals.sort((a, b) => (a.unlockLevel ?? Infinity) - (b.unlockLevel ?? Infinity) || a.name.localeCompare(b.name));
+    }
     this.engine = new BreedingEngine(dataset.pals, dataset.uniqueCombos, dataset.directional);
+  }
+
+  private skillEntry(name: string, kind: SkillRecord['kind']): SkillRecord {
+    const key = name.toLowerCase();
+    let rec = this.skillByNameLower.get(key);
+    if (!rec) {
+      rec = { name, kind, element: null, power: null, cooldown: null, description: null, pals: [] };
+      this.skillByNameLower.set(key, rec);
+      this.skills.push(rec);
+    }
+    return rec;
   }
 
   byCodeLookup(code: string): PalRecord | undefined {
@@ -211,6 +280,34 @@ export class PalworldData {
     });
     items = [...items].sort((a, b) => a.name.localeCompare(b.name));
     return items.slice(0, Math.min(opts.limit ?? 20, 50));
+  }
+
+  /** Skill search over the reverse skill index. minPower excludes non-active skills. */
+  searchSkills(opts: {
+    query?: string;
+    kind?: 'active' | 'passive' | 'partner';
+    element?: string;
+    minPower?: number;
+    sortBy?: 'name' | 'power' | 'cooldown';
+    limit?: number;
+  }): SkillRecord[] {
+    const ql = opts.query?.trim().toLowerCase();
+    const elRaw = opts.element?.trim().toLowerCase();
+    const el = elRaw ? (SKILL_ELEMENT_ALIAS[elRaw] ?? elRaw).toLowerCase() : undefined;
+    let skills = this.skills.filter((s) => {
+      if (ql && !s.name.toLowerCase().includes(ql)) return false;
+      if (opts.kind && s.kind !== opts.kind) return false;
+      if (el && (s.element ?? '').toLowerCase() !== el) return false;
+      if (opts.minPower !== undefined && (s.power ?? -1) < opts.minPower) return false;
+      return true;
+    });
+    const sort = opts.sortBy ?? 'name';
+    skills = [...skills].sort((a, b) => {
+      if (sort === 'power') return (b.power ?? -1) - (a.power ?? -1) || a.name.localeCompare(b.name);
+      if (sort === 'cooldown') return (a.cooldown ?? Infinity) - (b.cooldown ?? Infinity) || a.name.localeCompare(b.name);
+      return a.name.localeCompare(b.name);
+    });
+    return skills.slice(0, Math.min(opts.limit ?? 20, 50));
   }
 
   search(opts: {

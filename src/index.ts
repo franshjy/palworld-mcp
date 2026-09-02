@@ -6,6 +6,10 @@
  *   - get_pal              full record for one pal (stats, breeding data, combos)
  *   - get_breeding_result  breeding outcome for a parent pair (offline engine)
  *   - find_breeding_pairs  reverse lookup: which parent pairs produce a child
+ *   - breeding_plan        multi-step breeding path solver (owned pals -> target)
+ *   - search_items         text/type/rarity filters over the item database
+ *   - get_item             full record for one item (drops, shops, recipes)
+ *   - search_skills        skill -> pals reverse index (active/passive/partner)
  *
  * All data is served from the shipped dataset (data/dataset.json) - no network.
  * Override the dataset location with PALWORLD_MCP_DATA.
@@ -386,6 +390,42 @@ server.registerTool(
         : fail(`unknown item "${name}"`);
     }
     return ok({ found: true, item: { ...r.item, recipes: data.itemRecipes(r.item.name) } });
+  },
+);
+
+server.registerTool(
+  'search_skills',
+  {
+    title: 'Search skills',
+    description:
+      'Search the skill index built from all pal records: active (combat) skills, passive skills, and partner skills. Answers "which pals learn X", "who has passive X", "strongest Ground move". Returns each skill with the pals that have it (unlock level for active skills). Passive coverage is partial - only pals whose pages listed passives.',
+    inputSchema: {
+      query: z.string().min(1).optional().describe('Skill name substring, e.g. "rock lance"'),
+      kind: z.enum(['active', 'passive', 'partner']).optional().describe('active = combat move learned by level, passive = trait, partner = ridden/summoned bonus'),
+      element: z.string().optional().describe('Skill element: Fire, Water, Grass, Electric, Ice, Ground, Dark, Dragon, Neutral (pal vocabulary Leaf/Electricity/Earth/Normal also accepted)'),
+      minPower: z.number().int().nonnegative().optional().describe('Minimum power (matches active skills only)'),
+      sortBy: z.enum(['name', 'power', 'cooldown']).optional().describe('power: highest first; cooldown: shortest first'),
+      limit: z.number().int().min(1).max(50).optional().describe('Max results (default 20)'),
+    },
+  },
+  async ({ query, kind, element, minPower, sortBy, limit }) => {
+    const skills = data.searchSkills({ query, kind, element, minPower, sortBy, limit });
+    const note =
+      kind === 'passive' || skills.some((s) => s.kind === 'passive')
+        ? `Passive skill coverage is partial: only ${data.palsWithPassives} of ${data.dataset.pals.length} pals have passive data.`
+        : undefined;
+    return ok({
+      count: skills.length,
+      skills: skills.map((s) => ({
+        name: s.name,
+        kind: s.kind,
+        ...(s.kind === 'active'
+          ? { element: s.element, power: s.power, cooldown: s.cooldown }
+          : { description: s.description }),
+        pals: s.pals.map((p) => ({ name: p.name, ...(p.unlockLevel != null ? { unlockLevel: p.unlockLevel } : {}) })),
+      })),
+      ...(note ? { note } : {}),
+    });
   },
 );
 
