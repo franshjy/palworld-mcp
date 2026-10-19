@@ -114,3 +114,12 @@ test('planner: fewer than two owned pals cannot start', () => {
   assert.equal(r.found, false);
   assert.equal(r.plans.length, 0);
 });
+
+test('planner: unreachable target with a large owned set returns fast', () => {
+  // 150 owned pals cannot produce Blue Slime - used to exhaust all 8 BFS depths (~90s).
+  const owned = data.dataset.pals.filter((p) => p.rankResult).slice(0, 150).map((p) => p.code);
+  const start = Date.now();
+  const r = breedingPlan(data, codeOf('Blue Slime'), owned, 8);
+  assert.equal(r.found, false);
+  assert.ok(Date.now() - start < 5000, `took ${Date.now() - start}ms`);
+});

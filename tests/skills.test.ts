@@ -91,3 +91,9 @@ test('searchSkills: kind filter and pals sorted by unlock level', () => {
     }
   }
 });
+
+test('searchSkills: prototype-key element filters do not throw', () => {
+  for (const element of ['constructor', '__proto__', 'hasOwnProperty']) {
+    assert.deepEqual(data.searchSkills({ element }), []);
+  }
+});

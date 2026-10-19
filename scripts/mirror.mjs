@@ -21,7 +21,7 @@
  * Output: data/raw/pal/<slug>.html, data/raw/item/<slug>.html,
  *         data/raw/progress.json (fetched counts, for polling).
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 

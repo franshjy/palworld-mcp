@@ -16,12 +16,12 @@ function decodeHtml(s) {
   return s
     .replace(/&ndash;/g, '\u2013')
     .replace(/&mdash;/g, '\u2014')
-    .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ');
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&'); // last, so "&amp;lt;" stays "&lt;" (no double decode)
 }
 
 function text(s) {

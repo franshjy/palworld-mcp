@@ -127,7 +127,7 @@ export function loadDataset(path?: string): Dataset {
   const resolved = isAbsolute(p) ? p : resolve(p);
   const raw = readFileSync(resolved, 'utf8');
   const ds = JSON.parse(raw) as Dataset;
-  if ((ds.schemaVersion < 1 || ds.schemaVersion > 2) || !Array.isArray(ds.pals) || ds.pals.length === 0) {
+  if (!(ds.schemaVersion >= 1 && ds.schemaVersion <= 2) || !Array.isArray(ds.pals) || ds.pals.length === 0) {
     throw new Error(`unrecognized dataset schema at ${resolved}`);
   }
   return ds;
@@ -293,7 +293,7 @@ export class PalworldData {
   }): SkillRecord[] {
     const ql = opts.query?.trim().toLowerCase();
     const elRaw = opts.element?.trim().toLowerCase();
-    const el = elRaw ? (SKILL_ELEMENT_ALIAS[elRaw] ?? elRaw).toLowerCase() : undefined;
+    const el = elRaw ? (Object.hasOwn(SKILL_ELEMENT_ALIAS, elRaw) ? SKILL_ELEMENT_ALIAS[elRaw]! : elRaw).toLowerCase() : undefined;
     let skills = this.skills.filter((s) => {
       if (ql && !s.name.toLowerCase().includes(ql)) return false;
       if (opts.kind && s.kind !== opts.kind) return false;

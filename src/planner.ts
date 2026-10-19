@@ -46,6 +46,8 @@ export interface PlanResult {
 const MAX_STATES = 4000;
 /** Plans returned per query. */
 const MAX_PLANS = 5;
+/** Breed evaluations per query - bounds CPU time on the single-threaded stdio server. */
+const MAX_BREEDS = 2_000_000;
 
 function directionalNote(data: PalworldData, a: string, b: string): string | undefined {
   const key = a < b ? `${a}|${b}` : `${b}|${a}`;
@@ -56,6 +58,27 @@ function directionalNote(data: PalworldData, a: string, b: string): string | und
       .map(([m, f, c]) => `${data.byCodeLookup(m)?.name ?? m} (male) + ${data.byCodeLookup(f)?.name ?? f} (female) -> ${data.byCodeLookup(c)?.name ?? c}`)
       .join('; ') + ' - child depends on which parent is male.'
   );
+}
+
+/** True if `target` can be produced from `owned` at any depth (fixpoint over all pairs). */
+function reachable(data: PalworldData, owned: Set<string>, target: string): boolean {
+  const reach = new Set(owned);
+  for (let grew = true; grew && !reach.has(target); ) {
+    grew = false;
+    const list = [...reach];
+    for (let i = 0; i < list.length; i++) {
+      for (let j = i + 1; j < list.length; j++) {
+        const r = data.engine.breed(list[i]!, list[j]!);
+        for (const c of r.child2 ? [r.child, r.child2] : [r.child]) {
+          if (!reach.has(c)) {
+            reach.add(c);
+            grew = true;
+          }
+        }
+      }
+    }
+  }
+  return reach.has(target);
 }
 
 /** Parents the plan needs that are neither owned nor produced by an earlier step. */
@@ -91,7 +114,8 @@ export function breedingPlan(data: PalworldData, targetCode: string, ownedCodes:
     return { found: plans.length > 0, plans, totalPlans: plans.length };
   }
 
-  if (ownedCodes.length < 2) {
+  // Unreachable targets would otherwise exhaust every BFS depth (minutes with large owned sets).
+  if (owned.size < 2 || !reachable(data, owned, targetCode)) {
     return { found: false, plans: [], totalPlans: 0 };
   }
 
@@ -99,12 +123,15 @@ export function breedingPlan(data: PalworldData, targetCode: string, ownedCodes:
   const planKeys = new Set<string>();
   let frontier: { set: string[]; path: PlanStep[] }[] = [{ set: [...owned], path: [] }];
   const seen = new Set<string>([[...owned].sort().join(',')]);
+  let breeds = 0;
 
-  for (let depth = 1; depth <= maxSteps; depth++) {
+  // shortcut: past MAX_BREEDS the search stops and returns what it found (deep plans from huge owned sets may be missed).
+  search: for (let depth = 1; depth <= maxSteps; depth++) {
     const next: { set: string[]; path: PlanStep[] }[] = [];
     for (const { set, path } of frontier) {
       for (let i = 0; i < set.length; i++) {
         for (let j = i + 1; j < set.length; j++) {
+          if (++breeds > MAX_BREEDS) break search;
           const a = set[i]!;
           const b = set[j]!;
           const r = data.engine.breed(a, b);
