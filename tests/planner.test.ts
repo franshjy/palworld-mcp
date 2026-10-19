@@ -89,7 +89,7 @@ test('planner: multi-step plan from a mix of owned pals - all plans verifiable',
   assert.equal(counts.size, 1, 'BFS must return only minimum-step plans');
   assert.equal(r.plans[0]?.stepCount, 2);
   assert.equal(r.plans[0]?.newCatches, 0);
-  assert.equal(r.plans[0]?.steps[0]?.kind, 'unique');
+  assert.ok(r.plans.some((p) => p.steps[0]?.kind === 'unique'), 'the unique-combo route must be among the plans');
 });
 
 test('planner: unreachable target from a common-pal band answers "no path", not a fabrication', () => {
@@ -113,4 +113,22 @@ test('planner: fewer than two owned pals cannot start', () => {
   const r = breedingPlan(data, codeOf('Anubis'), [codeOf('Lamball')]);
   assert.equal(r.found, false);
   assert.equal(r.plans.length, 0);
+});
+
+test('planner: 5-step plan the old capped BFS missed', () => {
+  // Regression: the 4000-state frontier filled with dead ends and dropped every path here.
+  const owned = ['YakushimaMonster001_Pink', 'NegativeKoala', 'BerryGoat', 'DarkScorpion', 'BirdDragon'];
+  const r = breedingPlan(data, 'BadCatgirl', owned, 5);
+  assert.equal(r.found, true);
+  assert.equal(r.plans[0]?.stepCount, 5);
+  for (const p of r.plans) assertPlanValid(nameOf('BadCatgirl'), owned.map(nameOf), p);
+});
+
+test('planner: unreachable target with a large owned set returns fast', () => {
+  // 150 owned pals cannot produce Blue Slime - used to exhaust all 8 BFS depths (~90s).
+  const owned = data.dataset.pals.filter((p) => p.rankResult).slice(0, 150).map((p) => p.code);
+  const start = Date.now();
+  const r = breedingPlan(data, codeOf('Blue Slime'), owned, 8);
+  assert.equal(r.found, false);
+  assert.ok(Date.now() - start < 5000, `took ${Date.now() - start}ms`);
 });

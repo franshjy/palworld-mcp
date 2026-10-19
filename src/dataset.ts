@@ -94,7 +94,7 @@ const PAL_TO_SKILL: Record<string, string> = {
 /** Canonical (skill-vocab) spelling in lowercase; identity for dialect-free elements. */
 function canonicalSkillElement(input: string): string {
   const i = input.trim().toLowerCase();
-  return PAL_TO_SKILL[i] ?? i;
+  return Object.hasOwn(PAL_TO_SKILL, i) ? PAL_TO_SKILL[i]! : i; // hasOwn: "constructor" etc. must not hit Object.prototype
 }
 
 /** Passive descriptions carry raw trailing metadata ("... Weight 100 Pal") - strip it. */
@@ -135,7 +135,7 @@ export function loadDataset(path?: string): Dataset {
   const resolved = isAbsolute(p) ? p : resolve(p);
   const raw = readFileSync(resolved, 'utf8');
   const ds = JSON.parse(raw) as Dataset;
-  if ((ds.schemaVersion < 1 || ds.schemaVersion > 2) || !Array.isArray(ds.pals) || ds.pals.length === 0) {
+  if (!(ds.schemaVersion >= 1 && ds.schemaVersion <= 2) || !Array.isArray(ds.pals) || ds.pals.length === 0) {
     throw new Error(`unrecognized dataset schema at ${resolved}`);
   }
   return ds;
